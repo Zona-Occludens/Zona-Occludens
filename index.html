@@ -1664,7 +1664,7 @@
 
     // --- REPLACED google.script.run WITH fetch API ---
     // PASTE YOUR GOOGLE SCRIPT WEB APP URL HERE:
-    const API_URL = "https://script.google.com/macros/s/AKfycbwZMFVx6n6R7kA_eKsfkLQv4ujopRZITcfDEug8WLBl5IEqC9bpm9KEYFtXNTSowLdg/exec"; 
+    const API_URL = "https://script.google.com/macros/s/AKfycbw778dSeqBYAG3g9mYZiGHhMMSXHfmF6w2_klvvNEvXmWHNp2j5OfWdAx0n877LiLsi/exec"; 
 
     window.onload = function() {
       const saved = localStorage.getItem('pgmedprep_db_zacurians');
@@ -1684,35 +1684,31 @@
       }
     };
 
-    function resetMyData() {
-      const confirmDelete = confirm('This will delete your saved account data and log you out permanently. Do you want to continue?');
-      if (!confirmDelete) return;
-      localStorage.removeItem('pgmedprep_db_zacurians');
-      showToast('Your data has been removed. Reloading...');
-      setTimeout(() => location.reload(), 500);
+    async function resetMyData() {
+  const confirmDelete = confirm('⚠️ WARNING: This will permanently delete your account, all your data, your planner, and any study partner match from the cloud. This cannot be undone. Continue?');
+  if (!confirmDelete) return;
+
+  // 1. If we have a logged-in user, delete from the cloud backend
+  if (state.userProfile && state.userProfile.mobile) {
+    try {
+      showToast('Deleting account from cloud...');
+      await fetch(API_URL, {
+        method: 'POST',
+        body: JSON.stringify({ action: 'deleteUser', userId: state.userProfile.mobile })
+      });
+    } catch (e) {
+      console.warn('Cloud delete failed, clearing locally anyway.', e);
     }
+  }
 
-    async function deleteProfile() {
-      if (!state.userProfile || !state.userProfile.mobile) {
-        showToast('No profile found to delete.', 'error');
-        return;
-      }
-      const confirmDelete = confirm('Delete your profile? This will remove your profile and cloud account record.');
-      if (!confirmDelete) return;
+  // 2. Clear local browser data
+  localStorage.removeItem('pgmedprep_db_zacurians');
+  localStorage.removeItem('upsc-pyts-state');
+  localStorage.removeItem('zona-theme');
 
-      try {
-        await fetch(API_URL, {
-          method: 'POST',
-          body: JSON.stringify({ action: 'deleteUser', userId: state.userProfile.mobile }),
-        });
-      } catch (e) {
-        console.warn('Cloud delete failed', e);
-      }
-
-      state.userProfile = null;
-      localStorage.removeItem('pgmedprep_db_zacurians');
-      location.reload();
-    }
+  showToast('Account deleted. Reloading...');
+  setTimeout(() => location.reload(), 800);
+}
 
     async function submitLogin() {
       const name = document.getElementById('reg-name').value.trim();

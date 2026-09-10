@@ -4660,129 +4660,106 @@ if (ctxT) {
       saveData(); showToast('Action Undone! 🔄');
     }
         // ============================================================
-    // INI-CET 2026 November Schedule Auto-Populator
+        // ============================================================
+        // ============================================================
+    // INI-CET 2026 Schedule Auto-Populator (Sep 10 → Oct 31)
     // ============================================================
     function applyInicetNovemberSchedule() {
-      // Only apply if the user hasn't already populated November 2026
-      const hasNovData = Object.keys(state.planner).some(date => 
-        date.startsWith('2026-11') && state.planner[date].subject !== ''
-      );
-      
-      if (hasNovData) {
-        console.log("INI-CET November schedule already applied or modified. Skipping auto-population.");
+      // 1. Check if schedule already applied (using a marker on today's date)
+      const todayStr = getLocalDateString();
+      const markerDate = '2026-09-10';
+      if (state.planner[markerDate] && state.planner[markerDate].notes === 'INI-CET_SCHEDULE_APPLIED') {
+        console.log("INI-CET schedule already applied. Skipping.");
         return;
       }
 
+      // 2. Full schedule from your image (Total = 50 days of study)
       const schedule = [
-        { subject: "Anatomy", days: 2 },
-        { subject: "Physiology", days: 1 },
-        { subject: "Biochemistry", days: 2 },
-        { subject: "Pathology", days: 3 },
-        { subject: "Microbiology", days: 2 },
-        { subject: "Pharmacology", days: 3 },
-        { subject: "PSM", days: 3 },
-        { subject: "ENT", days: 1.5 },
-        { subject: "Ophthal", days: 1.5 },
-        { subject: "Medicine", days: 3 },
-        { subject: "Surgery", days: 3 },
-        { subject: "Gyne", days: 3 },
-        { subject: "Pediatrics", days: 1 },
-        { subject: "Psychiatry", days: 1 },
-        { subject: "Radiology", days: 1 },
-        { subject: "Orthopedics", days: 1 },
-        { subject: "Anesthesia", days: 1 },
-        { subject: "Forensic medicine", days: 1 },
-        { subject: "Dermatology", days: 1 },
-        { subject: "Buffer days", days: 2 },
-        { subject: "Final revision / Sprint", days: 10 },
-        { subject: "GTs", days: 0 } // Special handling for GTs
+        { subject: "Anatomy", days: 2 }, { subject: "Physiology", days: 2 },
+        { subject: "Biochemistry", days: 2 }, { subject: "Pathology", days: 3 },
+        { subject: "Microbiology", days: 2 }, { subject: "Pharmacology", days: 3 },
+        { subject: "PSM", days: 3 }, { subject: "ENT", days: 1.5 },
+        { subject: "Ophthal", days: 1.5 }, { subject: "Medicine", days: 3 },
+        { subject: "Surgery", days: 3 }, { subject: "Gyne", days: 3 },
+        { subject: "Pediatrics", days: 2 }, { subject: "Psychiatry", days: 1 },
+        { subject: "Radiology", days: 1 }, { subject: "Orthopedics", days: 1 },
+        { subject: "Anesthesia", days: 1 }, { subject: "Forensic medicine", days: 1 },
+        { subject: "Dermatology", days: 1 }, { subject: "Buffer days", days: 3 },
+        { subject: "Final revision / Sprint", days: 7 }
       ];
 
-      const startDate = new Date('2026-11-01T00:00:00');
+      // 3. Start from Sep 10, 2026 (today)
+      const startDate = new Date('2026-09-10T00:00:00');
       let currentDate = new Date(startDate);
-      let dayCounter = 0;
-      
-      const fullDaySubjects = [];
 
-      // Map INI-CET subject names to the app's canonical Subject Emojis
       const subjectMap = {
-        "Anatomy": "Anatomy", "Physiology": "Physiology", "Biochemistry": "Biochemistry",
-        "Pathology": "Pathology", "Microbiology": "Microbiology", "Pharmacology": "Pharmacology",
-        "PSM": "Community Medicine", "ENT": "ENT", "Ophthal": "Ophthalmology",
-        "Medicine": "General Medicine", "Surgery": "General Surgery", "Gyne": "OBG",
-        "Pediatrics": "Pediatrics", "Psychiatry": "Psychiatry", "Radiology": "Radiology",
-        "Orthopedics": "Orthopedics", "Anesthesia": "Anesthesia", "Forensic medicine": "Forensic Medicine",
-        "Dermatology": "Dermatology", "Buffer days": "", "Final revision / Sprint": ""
+        "PSM": "Community Medicine", "Ophthal": "Ophthalmology", "Medicine": "General Medicine",
+        "Surgery": "General Surgery", "Gyne": "OBG", "Forensic medicine": "Forensic Medicine"
       };
 
-      schedule.forEach(item => {
-        if (item.subject === "GTs") return; // Skip GT block here, handle manually below
+      // 4. Helper to ensure a planner day exists
+      const ensureDayExists = (dStr) => {
+        if (!state.planner[dStr]) {
+          state.planner[dStr] = { status: 'PENDING', priority: '', subject: '', targets: [], arsenal: [], notes: '', dayFinished: false, starClaimed: false, trophyEarned: false, isEditing: false };
+        }
+      };
 
+      // 5. Populate days
+      schedule.forEach(item => {
         const mappedSubject = subjectMap[item.subject] || item.subject;
         const totalDays = item.days;
 
-        // Handle half days by splitting into AM and PM blocks
         if (totalDays === 1.5) {
-          const day1 = new Date(currentDate);
-          const day2 = new Date(currentDate); day2.setDate(day2.getDate() + 1);
-          
-          const d1Str = getLocalDateString(day1);
-          const d2Str = getLocalDateString(day2);
+          // Half day handling: AM on day 1, PM on day 2
+          const d1Str = getLocalDateString(currentDate);
+          const nextDate = new Date(currentDate); nextDate.setDate(nextDate.getDate() + 1);
+          const d2Str = getLocalDateString(nextDate);
 
-          if (state.planner[d1Str]) {
-            state.planner[d1Str].subject = mappedSubject;
-            state.planner[d1Str].targets.push({ text: `[AM] ${item.subject} Study`, done: false });
-          }
-          if (state.planner[d2Str]) {
-            state.planner[d2Str].subject = mappedSubject;
-            state.planner[d2Str].targets.push({ text: `[PM] ${item.subject} Study`, done: false });
-          }
-          currentDate.setDate(currentDate.getDate() + 1); // Advance 1 day (since 1.5 spans across 2 days)
+          ensureDayExists(d1Str); ensureDayExists(d2Str);
+          state.planner[d1Str].subject = mappedSubject;
+          state.planner[d1Str].targets.push({ text: `[AM] ${item.subject} Study`, done: false });
+          state.planner[d2Str].subject = mappedSubject;
+          state.planner[d2Str].targets.push({ text: `[PM] ${item.subject} Study`, done: false });
+          
+          currentDate.setDate(currentDate.getDate() + 1);
         } 
         else {
-          // Handle full days (1, 2, 3, or 10)
+          // Full days handling
           for (let i = 0; i < Math.floor(totalDays); i++) {
             const dStr = getLocalDateString(currentDate);
-            if (state.planner[dStr]) {
-              state.planner[dStr].subject = mappedSubject;
-              state.planner[dStr].targets.push({ text: `[Day ${i + 1}] ${item.subject} Study`, done: false });
-              
-              // Add full-day subject to list for GT logic
-              fullDaySubjects.push({ date: dStr, subject: mappedSubject });
-            }
+            ensureDayExists(dStr);
+            state.planner[dStr].subject = mappedSubject;
+            state.planner[dStr].targets.push({ text: `[Day ${i + 1}] ${item.subject} Study`, done: false });
             currentDate.setDate(currentDate.getDate() + 1);
           }
         }
       });
 
-      // Handle the 5 GTs (1 every 10 days)
+      // 6. Handle the 5 GTs (1 every 10 days starting from Sep 10)
       for (let i = 1; i <= 5; i++) {
-        const gtDate = new Date('2026-11-01T00:00:00');
+        const gtDate = new Date('2026-09-10T00:00:00');
         gtDate.setDate(gtDate.getDate() + (i * 10)); // Day 10, 20, 30, 40, 50
         const dStr = getLocalDateString(gtDate);
-        if (state.planner[dStr]) {
-          // If there's already a subject, append GT to targets
-          state.planner[dStr].targets.push({ text: `🏆 GRAND TEST #${i}`, done: false });
-        }
+        ensureDayExists(dStr);
+        state.planner[dStr].targets.push({ text: `🏆 GRAND TEST #${i}`, done: false });
       }
 
-      // Ensure the Final Revision / Sprint (10 days) is handled properly
-      // (The loop above already handled it, but we mark it clearly)
-      const sprintStart = new Date('2026-11-01T00:00:00');
-      sprintStart.setDate(sprintStart.getDate() + 41); // Start after 41 days of study
+      // 7. Mark as applied to prevent duplicate runs
+      if (state.planner['2026-09-10']) {
+        state.planner['2026-09-10'].notes = 'INI-CET_SCHEDULE_APPLIED';
+      }
 
-      console.log("INI-CET November Schedule applied successfully.");
+      console.log("INI-CET Schedule applied successfully from Sep 10 to Oct 31.");
     }
 
-    // Call this function immediately after the app initializes
-    // It safely checks if the schedule is already applied to avoid duplication.
+    // 8. Execute after the app and cloud data have loaded
     setTimeout(() => {
       applyInicetNovemberSchedule();
       saveData();
       if(document.getElementById('page-planner').classList.contains('active')) {
         renderPlanner();
       }
-    }, 1000);
+    }, 3000);
 
     
   </script>

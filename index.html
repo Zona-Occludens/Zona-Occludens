@@ -1528,9 +1528,11 @@
                 <li style="margin-bottom:8px;">Candidates are not permitted to use calculators.</li>
                 <li>Both the Papers of the CMSE will be of MBBS standard.</li>
               </ul>
-            </div>
-          </div>
-                  <!-- ================= MEDNOTES VAULT (embedded) ================= -->
+            </div>       <!-- closes the syllabus glass-card -->
+          </div>         <!-- closes .grid-2 of syllabus page -->
+        </div>           <!-- closes #page-syllabus -->
+
+        <!-- ================= MEDNOTES VAULT (embedded) ================= -->
         <div id="page-mednotes" class="page">
           <div class="glass-card" style="padding: 12px; border-top: 4px solid var(--green);">
             <div class="flex-between" style="flex-wrap: wrap; gap: 12px; margin-bottom: 12px; padding: 0 8px;">
@@ -1547,10 +1549,9 @@
             <iframe id="mednotesFrame" src="mednotes.html"
                     style="width:100%; height:calc(100vh - 220px); min-height:600px; border:1px solid var(--glass-border); border-radius:var(--radius-md); background:#fff;"></iframe>
           </div>
-        </div>
-        </div>
+        </div>           <!-- closes #page-mednotes -->
 
-      </div>
+      </div>             <!-- closes .content -->
     </main>
   </div>
 
@@ -4755,14 +4756,12 @@ if (ctxT) {
       }
       saveData(); showToast('Action Undone! 🔄');
     }
-        // ============================================================
-        // ============================================================
-        // ============================================================
+
+    // ============================================================
     // INI-CET 2026 Schedule Auto-Populator (Sep 10 → Oct 31)
     // ============================================================
     function applyInicetNovemberSchedule() {
       // 1. Check if schedule already applied (using a marker on today's date)
-      const todayStr = getLocalDateString();
       const markerDate = '2026-09-10';
       if (state.planner[markerDate] && state.planner[markerDate].notes === 'INI-CET_SCHEDULE_APPLIED') {
         console.log("INI-CET schedule already applied. Skipping.");
@@ -4784,7 +4783,7 @@ if (ctxT) {
         { subject: "Final revision / Sprint", days: 7 }
       ];
 
-      // 3. Start from Sep 10, 2026 (today)
+      // 3. Start from Sep 10, 2026
       const startDate = new Date('2026-09-10T00:00:00');
       let currentDate = new Date(startDate);
 
@@ -4816,9 +4815,9 @@ if (ctxT) {
           state.planner[d1Str].targets.push({ text: `[AM] ${item.subject} Study`, done: false });
           state.planner[d2Str].subject = mappedSubject;
           state.planner[d2Str].targets.push({ text: `[PM] ${item.subject} Study`, done: false });
-          
+
           currentDate.setDate(currentDate.getDate() + 1);
-        } 
+        }
         else {
           // Full days handling
           for (let i = 0; i < Math.floor(totalDays); i++) {
@@ -4847,17 +4846,6 @@ if (ctxT) {
 
       console.log("INI-CET Schedule applied successfully from Sep 10 to Oct 31.");
     }
-
-    // 8. Execute after the app and cloud data have loaded
-    setTimeout(() => {
-      applyInicetNovemberSchedule();
-      saveData();
-      if(document.getElementById('page-planner').classList.contains('active')) {
-        renderPlanner();
-      }
-    }, 3000);
-
-    
   </script>
 </body>
 </html>

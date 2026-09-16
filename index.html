@@ -889,6 +889,9 @@
         <div class="nav-section">Community & Resources</div>
         <div class="nav-item" onclick="navTo('revision-schedule', this)" style="color:var(--orange); font-weight:600;"><i class="fas fa-calendar-alt w-5 text-center"></i> 90-Day Revision Schedule</div>
         <div class="nav-item" onclick="navTo('syllabus', this)"><i class="fas fa-scale-balanced w-5 text-center"></i> Syllabus & Weightage</div>
+
+        <div class="nav-section">Vault</div>
+        <div class="nav-item" onclick="navTo('mednotes', this)" style="color:var(--green); font-weight:600;"><i class="fas fa-notes-medical w-5 text-center"></i> MedNotes Vault</div>
       </div>
       <button onclick="resetMyData()" 
         style="margin:0 16px 8px 16px; width:calc(100% - 32px); padding:8px 10px; font-size:13px; background:red; color:white; font-weight:700; cursor:pointer; border:none; border-radius:8px;">
@@ -1527,6 +1530,24 @@
               </ul>
             </div>
           </div>
+                  <!-- ================= MEDNOTES VAULT (embedded) ================= -->
+        <div id="page-mednotes" class="page">
+          <div class="glass-card" style="padding: 12px; border-top: 4px solid var(--green);">
+            <div class="flex-between" style="flex-wrap: wrap; gap: 12px; margin-bottom: 12px; padding: 0 8px;">
+              <div>
+                <h2 class="h2-title" style="margin:0; color:var(--green);"><i class="fas fa-notes-medical mr-2"></i> MedNotes Vault</h2>
+                <p class="sub-text" style="margin:4px 0 0 0;">Triads · Drug Traps · DOC · Milestones · 52-Day Plan · Cancer Drugs</p>
+              </div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button class="btn btn-outline btn-sm" onclick="mednotesForcePush()" title="Push local MedNotes to cloud"><i class="fas fa-cloud-upload-alt mr-1"></i> Push to Cloud</button>
+                <button class="btn btn-outline btn-sm" onclick="mednotesForcePull()" title="Pull latest MedNotes from cloud"><i class="fas fa-cloud-download-alt mr-1"></i> Pull from Cloud</button>
+                <span id="mednotesStatusBadge" style="font-size:11px; padding:6px 10px; border-radius:6px; background:rgba(59,130,246,0.1); color:var(--blue); font-weight:700;">Loading...</span>
+              </div>
+            </div>
+            <iframe id="mednotesFrame" src="mednotes.html"
+                    style="width:100%; height:calc(100vh - 220px); min-height:600px; border:1px solid var(--glass-border); border-radius:var(--radius-md); background:#fff;"></iframe>
+          </div>
+        </div>
         </div>
 
       </div>
@@ -1665,6 +1686,84 @@
     // --- REPLACED google.script.run WITH fetch API ---
     // PASTE YOUR GOOGLE SCRIPT WEB APP URL HERE:
     const API_URL = "https://script.google.com/macros/s/AKfycbw778dSeqBYAG3g9mYZiGHhMMSXHfmF6w2_klvvNEvXmWHNp2j5OfWdAx0n877LiLsi/exec"; 
+        // ============================================================
+    // MEDNOTES IFRAME BRIDGE
+    // ============================================================
+    let mednotesBridgeReady = false;
+    let mednotesLastPush = 0;
+    const MEDNOTES_PUSH_DEBOUNCE_MS = 800;
+
+    function updateMednotesBadge(text, color) {
+      const b = document.getElementById('mednotesStatusBadge');
+      if (!b) return;
+      b.textContent = text;
+      b.style.color = color;
+      b.style.background = color === 'var(--green)' ? 'rgba(16,185,129,0.12)' :
+                           color === 'var(--red)'   ? 'rgba(239,68,68,0.12)'  :
+                           color === 'var(--orange)'? 'rgba(245,158,11,0.12)' :
+                                                      'rgba(59,130,246,0.1)';
+    }
+
+    function mednotesSendHydrate() {
+      const frame = document.getElementById('mednotesFrame');
+      if (!frame || !frame.contentWindow) return;
+      frame.contentWindow.postMessage({
+        source: 'zona',
+        type: 'hydrate',
+        payload: state.medNotes || null
+      }, '*');
+      updateMednotesBadge(state.medNotes ? '☁️ Synced from cloud' : '📝 Fresh vault', 'var(--green)');
+    }
+
+    function mednotesForcePush() {
+      const frame = document.getElementById('mednotesFrame');
+      if (!frame || !frame.contentWindow) return;
+      frame.contentWindow.postMessage({ source: 'zona', type: 'requestPush' }, '*');
+      showToast('Pushing MedNotes to cloud...');
+    }
+
+    function mednotesForcePull() {
+      const frame = document.getElementById('mednotesFrame');
+      if (!frame || !frame.contentWindow) return;
+      frame.contentWindow.postMessage({ source: 'zona', type: 'requestPull' }, '*');
+      updateMednotesBadge('Pulling from cloud...', 'var(--orange)');
+    }
+
+    window.addEventListener('message', (e) => {
+      const d = e.data;
+      if (!d || d.source !== 'mednotes') return;
+
+      if (d.type === 'ready') {
+        mednotesBridgeReady = true;
+        mednotesSendHydrate();
+      }
+      else if (d.type === 'changed') {
+        // Debounce: don't hammer cloud on every keystroke
+        const now = Date.now();
+        if (now - mednotesLastPush < MEDNOTES_PUSH_DEBOUNCE_MS) return;
+        mednotesLastPush = now;
+
+        state.medNotes = d.payload;
+        saveData();
+        updateMednotesBadge('☁️ Pending cloud sync', 'var(--orange)');
+        // Trigger cloud sync after a short idle
+        setTimeout(() => {
+          if (typeof syncDataCloud === 'function' && state.userProfile && state.userProfile.mobile) {
+            syncDataCloud(true);
+            updateMednotesBadge('✅ Synced to cloud', 'var(--green)');
+          }
+        }, 1200);
+      }
+      else if (d.type === 'pushed') {
+        updateMednotesBadge('✅ Pushed to cloud', 'var(--green)');
+        showToast('MedNotes pushed to cloud ✓');
+      }
+      else if (d.type === 'pullDone') {
+        mednotesSendHydrate();
+        showToast('MedNotes pulled from cloud ✓');
+      }
+    });
+    // ============ END MEDNOTES BRIDGE ============
 
     window.onload = function() {
       const saved = localStorage.getItem('pgmedprep_db_zacurians');
@@ -1798,6 +1897,7 @@
       if (!state.streak) state.streak = { count: 0, lastDate: null, cards: 3, history: [], pendingRepair: false };
       if (!state.upscCmsPyts) state.upscCmsPyts = { selectedSubject: 'ALL', topics: {} };
       persistUpscPytsState(getUpscPytsStateFromStorage(), state.upscCmsPyts.selectedSubject || 'ALL');
+      if (!state.medNotes) state.medNotes = null;
 
       initMasterData(); setupPlanner(); handleStreak(); setUserGreeting();
 

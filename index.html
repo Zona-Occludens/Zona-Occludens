@@ -1952,6 +1952,10 @@
       updateDatalists(); 
       renderProgressSliders();
       renderDashboard();
+
+      // Apply INI-CET auto-schedule AFTER cloud + local data has fully loaded
+      applyInicetNovemberSchedule();
+      saveData(); 
     }
 
     // --- Smart Filters (Datalists) ---
@@ -4812,7 +4816,7 @@ if (ctxT) {
 
           ensureDayExists(d1Str); ensureDayExists(d2Str);
           state.planner[d1Str].subject = mappedSubject;
-          state.planner[d1Str].targets.push({ text: `[AM] ${item.subject} Study`, done: false });
+          const targetText = `[AM] ${item.subject} Study`; if (!state.planner[d1Str].targets.some(t => (typeof t === 'string' ? t : t.text) === targetText)) {   state.planner[d1Str].targets.push({ text: targetText, done: false }); }
           state.planner[d2Str].subject = mappedSubject;
           state.planner[d2Str].targets.push({ text: `[PM] ${item.subject} Study`, done: false });
 

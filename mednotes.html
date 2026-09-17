@@ -174,6 +174,79 @@
     .gm-table { font-size: 0.78em; }
     .gm-table th, .gm-table td { padding: 6px 8px; }
   }
+    /* ===== PREGNANCY PHARMACOLOGY SIDEBAR (right side) ===== */
+  #pregSidebar { transition: transform .3s ease; }
+  .preg-content { font-size: 13px; line-height: 1.55; }
+  .preg-content h2 { font-size: 15px; font-weight: 800; margin: 18px 0 8px; color: #0f172a; display: flex; align-items: center; gap: 6px; }
+  .dark .preg-content h2 { color: #f1f5f9; }
+  .preg-content h4 { font-size: 13px; font-weight: 700; margin: 10px 0 4px; color: #1e293b; }
+  .dark .preg-content h4 { color: #e2e8f0; }
+  .preg-content .card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; }
+  .dark .preg-content .card { background: #1e293b; border-color: #334155; }
+  .preg-content .card-title { font-weight: 800; font-size: 13px; color: #0369a1; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .dark .preg-content .card-title { color: #7dd3fc; }
+  .preg-content ul, .preg-content ol { padding-left: 18px; margin: 4px 0; }
+  .preg-content li { margin-bottom: 3px; }
+  .preg-content p { margin: 5px 0; }
+  .preg-content .table-wrap { overflow-x: auto; margin: 8px 0 12px; border-radius: 8px; border: 1px solid #e2e8f0; }
+  .dark .preg-content .table-wrap { border-color: #334155; }
+  .preg-content table { width: 100%; border-collapse: collapse; font-size: 11px; min-width: 480px; }
+  .preg-content th { background: #0ea5e9; color: #fff; padding: 6px 8px; text-align: left; font-weight: 700; white-space: nowrap; }
+  .preg-content td { padding: 5px 8px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  .dark .preg-content td { border-bottom-color: #334155; color: #e2e8f0; }
+  .preg-content tr:nth-child(even) td { background: #f8fafc; }
+  .dark .preg-content tr:nth-child(even) td { background: #0f172a; }
+  .preg-content .badge { display: inline-block; padding: 1px 6px; border-radius: 6px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+  .preg-content .badge-green { background: #dcfce7; color: #166534; }
+  .dark .preg-content .badge-green { background: #064e3b; color: #86efac; }
+  .preg-content .badge-yellow { background: #fef3c7; color: #92400e; }
+  .dark .preg-content .badge-yellow { background: #78350f; color: #fde68a; }
+  .preg-content .badge-red { background: #fee2e2; color: #991b1b; }
+  .dark .preg-content .badge-red { background: #7f1d1d; color: #fecaca; }
+  .preg-content .badge-blue { background: #dbeafe; color: #1e40af; }
+  .dark .preg-content .badge-blue { background: #1e3a8a; color: #bfdbfe; }
+  .preg-content .highlight-box { background: #eff6ff; border-left: 4px solid #0ea5e9; border-radius: 8px; padding: 10px 12px; margin: 10px 0; }
+  .dark .preg-content .highlight-box { background: #0c4a6e; border-left-color: #38bdf8; color: #e0f2fe; }
+  .preg-content .highlight-box.success { background: #f0fdf4; border-left-color: #22c55e; }
+  .dark .preg-content .highlight-box.success { background: #052e16; border-left-color: #4ade80; }
+  .preg-content .highlight-box.caution { background: #fffbeb; border-left-color: #f59e0b; }
+  .dark .preg-content .highlight-box.caution { background: #451a03; border-left-color: #fbbf24; }
+  .preg-content .highlight-box.warning { background: #fef2f2; border-left-color: #ef4444; }
+  .dark .preg-content .highlight-box.warning { background: #450a0a; border-left-color: #f87171; }
+  .preg-content .grid-2 { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .preg-content .grid-3 { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  @media (min-width: 480px) {
+    .preg-content .grid-2, .preg-content .grid-3 { grid-template-columns: 1fr 1fr; }
+  }
+  .preg-content .footnote { font-size: 11px; color: #64748b; padding: 12px 0; border-top: 1px dashed #cbd5e1; margin-top: 16px; text-align: center; }
+  .dark .preg-content .footnote { color: #94a3b8; border-top-color: #334155; }
+  .preg-content strong { color: #0f172a; }
+  .dark .preg-content strong { color: #f8fafc; }
+  .preg-content .callout { background: #f0f9ff; border: 1px solid #bae6fd; border-left: 4px solid #0284c7; border-radius: 8px; padding: 10px 12px; margin: 10px 0; font-size: 12px; }
+.dark .preg-content .callout { background: #082f49; border-color: #0369a1; border-left-color: #38bdf8; color: #e0f2fe; }
+.preg-content .chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 10px; font-weight: 700; margin: 2px 4px 2px 0; background: #e0e7ff; color: #3730a3; }
+.dark .preg-content .chip { background: #312e81; color: #c7d2fe; }
+.preg-content .emoji-head { font-size: 18px; margin-right: 4px; }
+.preg-content .muted { color: #64748b; font-size: 11px; }
+.dark .preg-content .muted { color: #94a3b8; }
+.preg-content .two-col { display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 560px) { .preg-content .two-col { grid-template-columns: 1fr 1fr; } }
+  /* ===== PREGNANCY EDITOR MODAL ===== */
+  #pregEditOverlay { backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+  #pregEditTextarea {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    tab-size: 2;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: auto;
+  }
+  .preg-edit-btn-active {
+    background: #f59e0b !important;
+    color: #fff !important;
+    border-color: #f59e0b !important;
+  }
 </style>
 </head>
 <body class="min-h-screen pb-28 sm:pb-20 bg-slate-50 dark:bg-slate-950 transition-colors">
@@ -198,11 +271,2360 @@
   </div>
 </aside>
 
+<!-- ============ PREGNANCY PHARMACOLOGY SIDEBAR (right) ============ -->
+<div id="pregOverlay" class="fixed inset-0 bg-black/40 z-[60] hidden" onclick="closePregSidebar()"></div>
+<aside id="pregSidebar" class="fixed top-0 right-0 h-full w-[95vw] max-w-[520px] bg-white dark:bg-slate-900 z-[70] shadow-2xl translate-x-full overflow-y-auto">
+  <div class="sticky top-0 bg-white dark:bg-slate-900 p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between z-10">
+    <h2 class="font-extrabold text-slate-900 dark:text-white flex items-center gap-2 text-sm">💊 Clinical Pharmacology in Pregnancy</h2>
+    <div class="flex items-center gap-2">
+      <button id="pregEditBtn" onclick="openPregEditor()" class="text-xs font-bold px-2 py-1 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition" title="Edit content">✏️</button>
+      <button onclick="window.print()" class="text-xs font-bold px-2 py-1 rounded-lg bg-sky-600 text-white hover:bg-sky-500" title="Print">🖨️</button>
+      <button onclick="closePregSidebar()" class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl leading-none">✕</button>
+    </div>
+  </div>
+  <div class="preg-content p-4" id="pregContentBody">
+
+        <!-- ===== 1. CORE PRESCRIBING RULES ===== -->
+    <div class="card">
+      <div class="card-title">🛡️ 1. Core Prescribing Rules</div>
+      <ul>
+        <li>Use the <strong>fewest drugs possible</strong> and the <strong>lowest effective dose</strong>.</li>
+        <li>Prefer drugs with <strong>long safety experience</strong> in pregnancy.</li>
+        <li>Check <strong>gestational age</strong> — risk profile changes by trimester.</li>
+        <li>Prefer <strong>monotherapy</strong> when possible.</li>
+        <li>Reassess <strong>maternal benefit vs fetal risk</strong> at every decision.</li>
+        <li>Document counseling and shared decision-making.</li>
+      </ul>
+      <div class="grid-3" style="margin-top:12px;">
+        <div class="badge badge-green">✓ Green = Safe / preferred</div>
+        <div class="badge badge-yellow">⚠ Yellow = Use with caution</div>
+        <div class="badge badge-red">✕ Red = Contraindicated / avoid</div>
+      </div>
+      <div class="callout"><strong>When to seek specialist help:</strong> known teratogen exposure · polypharmacy · epilepsy · anticoagulation · psychiatric disease · transplant medicine · severe hypertension · maternal organ dysfunction · fetal growth concerns.</div>
+    </div>
+
+    <!-- ===== 2. TRIMESTER QUICK-REFERENCE TABLE ===== -->
+    <h2>📋 2. Trimester Quick-Reference Table</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Trimester</th><th>🟢 Safe / Preferred</th><th>🟡 Use With Caution</th><th>🔴 Contraindicated / Avoid</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1st (0–13 wks)</strong></td>
+            <td>Folic acid, Levothyroxine, Insulin, Penicillins/cephalosporins, Acetaminophen, Doxylamine + pyridoxine, Inhaled albuterol/budesonide</td>
+            <td>Metformin, Ondansetron, Sertraline/selected SSRIs, Corticosteroids (when clearly needed), LMWH (when indicated)</td>
+            <td>Isotretinoin, Methotrexate, ACE inhibitors/ARBs, Warfarin, Valproate, Thalidomide</td>
+          </tr>
+          <tr>
+            <td><strong>2nd (14–27 wks)</strong></td>
+            <td>Insulin, Levothyroxine, Labetalol, Nifedipine, Methyldopa, LMWH, Penicillins/cephalosporins, Nitrofurantoin</td>
+            <td>Metformin, SSRIs, Short-course opioids, NSAIDs only if necessary and avoid after 20 weeks, Lithium with specialist monitoring</td>
+            <td>ACE inhibitors/ARBs, Isotretinoin, Methotrexate, Warfarin, Tetracyclines, Valproate</td>
+          </tr>
+          <tr>
+            <td><strong>3rd (28 wks–delivery)</strong></td>
+            <td>Insulin, Levothyroxine, Labetalol, Nifedipine, Methyldopa, LMWH with delivery planning, Penicillins/cephalosporins, Inhaled asthma medications</td>
+            <td>SSRIs (neonatal adaptation), Opioids (NAS risk), Benzodiazepines, Lithium, Beta-blockers with fetal growth monitoring</td>
+            <td>NSAIDs (esp. after 20 wks), ACE inhibitors/ARBs, Warfarin, Tetracyclines, Isotretinoin, Methotrexate</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== 3. EXAMPLES BY DRUG CLASS ===== -->
+    <div class="card">
+      <div class="card-title">💊 3. Examples by Drug Class</div>
+      <div class="grid-3">
+        <div>
+          <span class="badge badge-green">🟢 Safe / Preferred</span>
+          <ul style="margin-top:6px;">
+            <li>Penicillins, cephalosporins</li>
+            <li>Insulin</li>
+            <li>Levothyroxine</li>
+            <li>Labetalol / nifedipine / methyldopa</li>
+            <li>Acetaminophen</li>
+          </ul>
+        </div>
+        <div>
+          <span class="badge badge-yellow">🟡 Caution</span>
+          <ul style="margin-top:6px;">
+            <li>SSRIs</li>
+            <li>Metformin</li>
+            <li>Ondansetron</li>
+            <li>Opioids</li>
+            <li>Lithium</li>
+            <li>Corticosteroids</li>
+          </ul>
+        </div>
+        <div>
+          <span class="badge badge-red">🔴 Contraindicated</span>
+          <ul style="margin-top:6px;">
+            <li>Isotretinoin</li>
+            <li>Methotrexate</li>
+            <li>ACE inhibitors / ARBs</li>
+            <li>Warfarin</li>
+            <li>Valproate</li>
+            <li>Thalidomide</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 4. HIGH-YIELD PEARLS ===== -->
+    <div class="highlight-box">
+      <strong>💡 4. High-Yield Practical Pearls</strong>
+      <ul style="margin-top:8px;">
+        <li>Organogenesis risk is highest in the <strong>1st trimester</strong>.</li>
+        <li>NSAIDs become more concerning <strong>after 20 weeks</strong> and especially late pregnancy.</li>
+        <li>ACE inhibitors/ARBs can injure <strong>fetal kidneys</strong>.</li>
+        <li>Warfarin causes <strong>fetal warfarin syndrome</strong> — heparins are preferred.</li>
+        <li><strong>Retinoids and methotrexate</strong> are classic major teratogens.</li>
+        <li>Near delivery: consider <strong>neonatal respiratory, bleeding, withdrawal, adaptation</strong> risks.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 5. APPENDIX B: DRUG DOSING ADJUSTMENT ===== -->
+    <h2>📈 5. Appendix B — Drug Dosing Adjustment Chart</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Drug Class</th><th>PK/PD Change</th><th>Impact</th><th>2nd Tri</th><th>3rd Tri</th><th>Postpartum</th><th>Monitoring</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Antiepileptics</strong><br><span class="muted">Lamotrigine</span></td>
+            <td>↑ Clearance; ↑ Vd</td>
+            <td>↓ Serum concentration (20–70% decrease)</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> 20–50%; check 2–4 wks</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> 25–50%+; frequent monitoring</td>
+            <td><span class="badge badge-green">↓ DECREASE</span> to pre-pregnancy over 1–2 wks</td>
+            <td>Levels q4wks; within 1–2 wks postpartum</td>
+          </tr>
+          <tr>
+            <td><strong>Opioids for OUD</strong><br><span class="muted">Methadone</span></td>
+            <td>↑ Clearance; ↑ Vd</td>
+            <td>↓ Levels; withdrawal risk</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> 10–30%</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> 20–30%+; split dosing</td>
+            <td><span class="badge badge-green">↓ DECREASE</span> to pre-pregnancy over 1–2 wks</td>
+            <td>Withdrawal, cravings, NAS</td>
+          </tr>
+          <tr>
+            <td><strong>Beta-lactam Antibiotics</strong></td>
+            <td>↑ Vd; ↑ Renal clearance</td>
+            <td>↓ Levels; shorter t½</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> — higher end or shorter interval</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> — may need extended infusion</td>
+            <td><span class="badge badge-green">↺ RETURN</span> to pre-pregnancy immediately</td>
+            <td>Ensure adequate time above MIC</td>
+          </tr>
+          <tr>
+            <td><strong>Anticoagulants</strong><br><span class="muted">Enoxaparin</span></td>
+            <td>↑ Vd; ↑ Renal clearance</td>
+            <td>↓ Anti-Xa levels</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> 20–30%; adjust to Anti-Xa</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> 20–30% or weight-based</td>
+            <td><span class="badge badge-green">↺ RETURN</span> within 24–72 hrs</td>
+            <td>Anti-Xa (peak 4 hrs post-dose)</td>
+          </tr>
+          <tr>
+            <td><strong>Thyroid Hormone</strong><br><span class="muted">Levothyroxine</span></td>
+            <td>↑ TBG; ↑ Clearance</td>
+            <td>↓ Free T4; ↑ TSH</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> 20–30% early</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> — may need further</td>
+            <td><span class="badge badge-green">↓ DECREASE</span> to pre-pregnancy over 4–6 wks</td>
+            <td>TSH q4–6 wks; 6 wks postpartum</td>
+          </tr>
+          <tr>
+            <td><strong>Bronchodilators</strong><br><span class="muted">Albuterol</span></td>
+            <td>Minimal change</td>
+            <td>No change; therapeutic levels maintained</td>
+            <td><span class="badge badge-blue">↔ NO CHANGE</span></td>
+            <td><span class="badge badge-blue">↔ NO CHANGE</span></td>
+            <td><span class="badge badge-blue">↔ USUAL DOSE</span></td>
+            <td>Titrate to symptoms</td>
+          </tr>
+          <tr>
+            <td><strong>Antihypertensives</strong><br><span class="muted">Labetalol, Nifedipine</span></td>
+            <td>↑ Clearance (labetalol); ↓ SVR</td>
+            <td>↓ Serum concentration</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> may need dose increase</td>
+            <td><span class="badge badge-yellow">↑ INCREASE</span> may need further increase</td>
+            <td><span class="badge badge-green">↓ DECREASE</span> to pre-pregnancy over 1–2 wks</td>
+            <td>Monitor BP; avoid hypotension postpartum</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">↑ INCREASE = Higher dose / more frequent · ↔ NO CHANGE = Usual dose · ↓ DECREASE = Reduce postpartum</p>
+
+    <div class="highlight-box success">
+      <strong>🔑 General dose-adjustment principles</strong>
+      <ul>
+        <li>Changes are most pronounced in the 2nd–3rd trimesters.</li>
+        <li>Use therapeutic drug monitoring when available.</li>
+        <li>Adjust based on clinical response + labs.</li>
+        <li>Consider weight gain and organ function.</li>
+        <li>Reassess and return to pre-pregnancy dose postpartum.</li>
+        <li>Communicate dose changes clearly at delivery.</li>
+        <li>Document baseline dose & adjustment plan in chart.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 6. CLINICAL CASE STUDIES ===== -->
+    <h2>🩺 6. Clinical Case Studies</h2>
+    <div class="grid-2">
+      <div class="card"><div class="card-title">❤️ Hypertension (1st Tri)</div><p><strong>28y G1P0 at 8 wks on lisinopril.</strong></p><p><span class="badge badge-red">Key</span> ACEi contraindicated → switch to labetalol or methyldopa.</p></div>
+      <div class="card"><div class="card-title">🧠 Thyroid Disorder</div><p><strong>32y hypothyroid on levothyroxine.</strong></p><p><span class="badge badge-yellow">Key</span> ↑ Dose 20–30%. TSH q4–6 wks.</p></div>
+      <div class="card"><div class="card-title">😊 Depression</div><p><strong>27y stable on sertraline.</strong></p><p><span class="badge badge-green">Key</span> SSRIs generally safe; monitor neonatal adaptation.</p></div>
+      <div class="card"><div class="card-title">🧪 UTI</div><p><strong>25y at 14 wks with cystitis.</strong></p><p><span class="badge badge-green">Key</span> Nitrofurantoin or cephalexin.</p></div>
+      <div class="card"><div class="card-title">⚖️ Bipolar Disorder</div><p><strong>29y on lithium.</strong></p><p><span class="badge badge-yellow">Key</span> Lowest effective dose; monitor levels.</p></div>
+      <div class="card"><div class="card-title">👶 Preterm Labor</div><p><strong>28y at 32 wks preterm contractions.</strong></p><p><span class="badge badge-green">Key</span> Betamethasone for lung maturity.</p></div>
+      <div class="card"><div class="card-title">🩸 Anemia</div><p><strong>30y at 20 wks with iron deficiency.</strong></p><p><span class="badge badge-green">Key</span> Oral iron; IV iron if intolerant.</p></div>
+      <div class="card"><div class="card-title">⚡ Epilepsy (2nd Tri)</div><p><strong>30y on lamotrigine, breakthrough seizures.</strong></p><p><span class="badge badge-yellow">Key</span> ↑ Dose; monitor levels.</p></div>
+      <div class="card"><div class="card-title">💉 T1DM on pump</div><p><strong>29y planning pregnancy.</strong></p><p><span class="badge badge-yellow">Key</span> Insulin needs ↓ 1st tri, then ↑.</p></div>
+      <div class="card"><div class="card-title">❤️ Mechanical valve</div><p><strong>31y on warfarin.</strong></p><p><span class="badge badge-red">Key</span> LMWH; warfarin teratogenic (wks 6–12).</p></div>
+      <div class="card"><div class="card-title">🦴 RA</div><p><strong>30y on methotrexate, planning.</strong></p><p><span class="badge badge-red">Key</span> Stop MTX ≥ 3 months pre-conception.</p></div>
+      <div class="card"><div class="card-title">🍬 GDM</div><p><strong>26y at 26 wks.</strong></p><p><span class="badge badge-green">Key</span> Lifestyle first; insulin if goals not met.</p></div>
+      <div class="card"><div class="card-title">💊 OUD on methadone</div><p><strong>Pregnant on maintenance.</strong></p><p><span class="badge badge-green">Key</span> Continue methadone; adjust dose.</p></div>
+      <div class="card"><div class="card-title">🕐 Postpartum DVT prophylaxis</div><p><strong>35y prior DVT.</strong></p><p><span class="badge badge-green">Key</span> LMWH × 6 wks postpartum.</p></div>
+    </div>
+
+    <!-- ===== 7. Q&A ===== -->
+    <div class="card">
+      <div class="card-title">❓ 7. Rapid-Fire Questions & Answers</div>
+      <ul>
+        <li><strong>Q:</strong> Lisinopril in early pregnancy? <br><strong>A:</strong> Discontinue. Switch to labetalol or methyldopa.</li>
+        <li><strong>Q:</strong> First-line for nausea in pregnancy? <br><strong>A:</strong> Doxylamine-pyridoxine.</li>
+        <li><strong>Q:</strong> Lamotrigine levels in pregnancy? <br><strong>A:</strong> Decrease; monitor and ↑ dose.</li>
+        <li><strong>Q:</strong> Levothyroxine adjustment? <br><strong>A:</strong> ↑ 20–30%; monitor TSH.</li>
+        <li><strong>Q:</strong> Inhaled ICS safe? <br><strong>A:</strong> Yes, continue for asthma control.</li>
+        <li><strong>Q:</strong> Insulin needs across trimesters? <br><strong>A:</strong> ↓ 1st, ↑ 2nd–3rd.</li>
+        <li><strong>Q:</strong> SSRIs safe? <br><strong>A:</strong> Generally yes; monitor neonate for adaptation.</li>
+        <li><strong>Q:</strong> Analgesic avoided in 3rd tri? <br><strong>A:</strong> NSAIDs (premature PDA closure).</li>
+        <li><strong>Q:</strong> Preferred anticoagulant? <br><strong>A:</strong> LMWH (enoxaparin).</li>
+        <li><strong>Q:</strong> Antibiotics for UTI? <br><strong>A:</strong> Nitrofurantoin or cephalexin.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 8. HYPERTENSION IN PREGNANCY ===== -->
+    <h2>❤️ 8. Hypertension in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Conditions:</strong> Gestational hypertension · Preeclampsia · Chronic hypertension</p>
+      <p><strong>Preferred:</strong> Labetalol, Nifedipine, Methyldopa</p>
+      <p><strong>Severe acute HTN:</strong> Hydralazine, IV labetalol, IV nicardipine, oral short-acting nifedipine</p>
+      <p><strong>Avoid:</strong> ACE inhibitors, ARBs, renin inhibitors</p>
+      <p><strong>Preeclampsia prevention:</strong> Low-dose aspirin 75–150 mg/day, start wk 12, stop wk 36–37</p>
+      <div class="highlight-box success">✓ Protect maternal health and organs while avoiding fetotoxic medications.</div>
+    </div>
+
+    <!-- ===== 9. TERATOLOGY (Expanded) ===== -->
+    <h2>🧬 9. Teratology & Critical Periods of Development</h2>
+    <div class="card">
+      <div class="card-title">📖 Overview</div>
+      <p>Teratology = study of congenital malformations and developmental toxicity caused by drugs, chemicals, infections, radiation, or maternal disease. Harm depends mainly on timing, dose, duration, placental transfer, and fetal susceptibility. Risk may involve structural defects, pregnancy loss, growth restriction, or later functional impairment.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📝 Principles of Teratogenesis</div>
+      <ol>
+        <li>Susceptibility depends on fetal genotype + maternal factors.</li>
+        <li>Dose & duration matter: higher exposure usually ↑ risk.</li>
+        <li>Timing is critical: same drug can be harmless in one stage, dangerous in another.</li>
+        <li>Placental transfer depends on lipophilicity, size, protein binding, transporters.</li>
+        <li>Teratogens produce characteristic patterns of malformation, not random injury.</li>
+        <li>Outcomes: death, malformation, growth restriction, functional/neurobehavioral toxicity.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="card-title">🕐 Critical Periods of Development</div>
+      <ul>
+        <li><strong>0–2 weeks (Pre-implantation):</strong> All-or-none effect — embryonic death or normal development.</li>
+        <li><strong>3–8 weeks (Organogenesis):</strong> Highest risk of major structural malformations.</li>
+        <li><strong>9 weeks–birth (Fetal period):</strong> Growth, functional maturation, CNS and endocrine vulnerability.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🎯 Organ-Specific Risk Windows</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Organ</th><th>Major Risk Window</th><th>Minor/Continued Risk</th></tr></thead>
+          <tbody>
+            <tr><td>CNS</td><td>3–6 wks</td><td>Functional risk throughout</td></tr>
+            <tr><td>Heart</td><td>3–6 wks</td><td>6–8 wks</td></tr>
+            <tr><td>Upper limbs</td><td>4–5 wks</td><td>6–8 wks</td></tr>
+            <tr><td>Lower limbs</td><td>4–5 wks</td><td>6–8 wks</td></tr>
+            <tr><td>Eyes</td><td>4–8 wks</td><td>Functional to birth</td></tr>
+            <tr><td>Ears</td><td>4–9 wks</td><td>—</td></tr>
+            <tr><td>Palate / Teeth</td><td>6–9 wks</td><td>Later risk</td></tr>
+            <tr><td>External genitalia</td><td>7–12 wks</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Agent</th><th>Mechanism</th><th>Main Fetal Effects</th><th>Key Timing</th></tr></thead>
+        <tbody>
+          <tr><td>Isotretinoin</td><td>Retinoic acid signaling disruption</td><td>Craniofacial, cardiac, thymic, CNS defects</td><td>1st trimester</td></tr>
+          <tr><td>Valproate</td><td>Folate-related & epigenetic effects</td><td>NTDs, facial anomalies, cognitive impairment, autism</td><td>Early 1st tri onwards</td></tr>
+          <tr><td>Warfarin</td><td>Vitamin K antagonism</td><td>Fetal warfarin syndrome, nasal hypoplasia, stippled epiphyses, CNS bleeding</td><td>Wks 6–12; CNS later</td></tr>
+          <tr><td>ACE inhibitors/ARBs</td><td>Fetal RAAS blockade</td><td>Renal dysgenesis, oligohydramnios, skull & pulmonary hypoplasia</td><td>2nd–3rd tri</td></tr>
+          <tr><td>Methotrexate</td><td>Folate antagonist</td><td>Abortion, growth restriction, craniofacial/limb defects</td><td>Early pregnancy</td></tr>
+          <tr><td>Thalidomide</td><td>Anti-angiogenic</td><td>Limb reduction, ear & cranial abnormalities</td><td>Wks 4–8</td></tr>
+          <tr><td>Alcohol</td><td>Direct fetal toxicity</td><td>FASD, growth & neurodevelopmental impairment</td><td>Throughout</td></tr>
+          <tr><td>Lithium</td><td>Altered embryonic signaling</td><td>Cardiac malformation esp. Ebstein anomaly</td><td>Early 1st tri</td></tr>
+          <tr><td>Tetracyclines</td><td>Deposition in calcifying tissue</td><td>Tooth discoloration, impaired bone growth</td><td>Later pregnancy</td></tr>
+          <tr><td>Aminoglycosides</td><td>Fetal ototoxicity</td><td>Congenital hearing loss</td><td>Exposure-dependent</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key Take-Home Messages</strong>
+      <ul>
+        <li>Weeks 3–8 = most vulnerable for major malformations.</li>
+        <li>After wk 9, functional & growth effects still matter greatly.</li>
+        <li>Timing + dose + placental transfer determine fetal risk.</li>
+        <li>Some agents are proven human teratogens and must be avoided.</li>
+        <li>Safe prescribing requires individualized risk–benefit assessment.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 10. FDA CATEGORIES & PLLR (Expanded) ===== -->
+    <h2>🏷️ 10. FDA Categories, PLLR & International Systems</h2>
+    <div class="card">
+      <div class="card-title">📜 Historical FDA Categories (A–X) — 1979–2014</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Cat.</th><th>Definition</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td>A</td><td>Controlled human studies show no risk.</td><td>Folic acid, Levothyroxine</td></tr>
+            <tr><td>B</td><td>No evidence of risk in humans; animal studies negative.</td><td>Penicillins, Cephalosporins, Metformin, Amlodipine</td></tr>
+            <tr><td>C</td><td>Risk cannot be ruled out; animal studies show adverse effects.</td><td>Phenytoin, Warfarin</td></tr>
+            <tr><td>D</td><td>Positive human fetal risk, but benefits may outweigh.</td><td>Phenytoin, Warfarin</td></tr>
+            <tr><td>X</td><td>Contraindicated; risks outweigh benefits.</td><td>Isotretinoin, Thalidomide</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted"><strong>Limitations:</strong> Animal + imperfect human data; no timing/severity detail; encouraged therapeutic nihilism; replaced by PLLR (2015).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📄 FDA PLLR — Since June 30, 2015</div>
+      <p>Replaces letter categories with narrative, evidence-based labeling in 3 sections:</p>
+      <ul>
+        <li><strong>A. Pregnancy:</strong> Risk Summary, Clinical Considerations, Data. No overall risk category.</li>
+        <li><strong>B. Lactation:</strong> Drug excretion in human milk; effects on infant & milk production.</li>
+        <li><strong>C. Reproductive Potential:</strong> Effects on fertility, pregnancy testing, contraception (females & males).</li>
+      </ul>
+      <p class="muted">Not a category system — promotes transparent, balanced info for shared decision-making.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🌍 International Risk Classification Systems</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>System</th><th>Categories / Approach</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Australia (TGA)</strong></td><td>A · B1 · B2 · B3 · C · D · X</td><td>Letter + number; considers severity & data availability</td></tr>
+            <tr><td><strong>Europe (EMA)</strong></td><td>1–4 + Contraindicated</td><td>Narrative sections like PLLR; not all products categorized</td></tr>
+            <tr><td><strong>Health Canada</strong></td><td>Narrative (Part II–IV)</td><td>Similar to PLLR</td></tr>
+            <tr><td><strong>UK (MHRA)</strong></td><td>Narrative + trimester advice</td><td>"Use in Pregnancy" guidance</td></tr>
+            <tr><td><strong>WHO / ICR</strong></td><td>No universal categories</td><td>Evidence-based risk–benefit recommended</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted"><strong>Remember:</strong> No classification system replaces clinical judgment & patient values. The safest drug is the one not used without a reason.</p>
+    </div>
+
+    <!-- ===== 11. WHY DOSES CHANGE (Expanded) ===== -->
+    <h2>🔄 11. Why Doses Change in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Goal:</strong> Maintain maternal efficacy while minimizing fetal/neonatal risk. Dose by clinical response, therapeutic targets, and drug levels when available.</p>
+      <p><strong>Physiologic changes:</strong> ↑ Plasma volume & total body water (↓ concentration of hydrophilic drugs) · ↓ Albumin (↑ free fraction of highly bound drugs) · ↑ Renal blood flow & GFR (faster renal clearance) · Altered hepatic enzyme activity · Net effect: concentrations fall in pregnancy, rebound postpartum.</p>
+      <p>Greatest changes in the <strong>2nd and 3rd trimesters</strong>.</p>
+      <div class="grid-2" style="margin-top:12px;">
+        <div>
+          <h4>🧠 Lamotrigine</h4>
+          <ul>
+            <li>Clearance ↑ → levels fall.</li>
+            <li>Underdosing → breakthrough seizures.</li>
+            <li>Trough q ~4 weeks.</li>
+            <li>Increase stepwise (~20–25% at a time).</li>
+            <li>Postpartum: reduce to pre-pregnancy dose; recheck level in 1–2 weeks.</li>
+            <li>Watch for postpartum toxicity: dizziness, diplopia, ataxia, nausea.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>💊 Methadone</h4>
+          <ul>
+            <li>Metabolism ↑; duration shortens.</li>
+            <li>May need dose ↑, esp. late pregnancy.</li>
+            <li>Split dosing may help.</li>
+            <li>Adjust by symptoms: craving, withdrawal, oversedation.</li>
+            <li>Do not undertreat OUD.</li>
+            <li>Postpartum: no automatic large reduction; reassess.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>🦠 Beta-lactams</h4>
+          <ul>
+            <li>Penicillins, cephalosporins.</li>
+            <li>↑ Vd + renal elimination → lower exposure.</li>
+            <li>Severe infection: higher dose, shorter interval, extended infusion.</li>
+            <li>Return to standard adult dosing after delivery.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>📊 Therapeutic Drug Monitoring (TDM)</h4>
+          <ul>
+            <li>Best for narrow therapeutic index drugs.</li>
+            <li>Baseline target level before pregnancy.</li>
+            <li>Repeat at planned intervals & postpartum.</li>
+            <li>Free levels may be more informative when binding changes.</li>
+            <li>Examples: Lamotrigine, lithium, some AEDs, digoxin, immunosuppressants.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box caution">
+        <strong>⚠️ Rule:</strong> Increase cautiously during pregnancy — de-escalate thoughtfully after birth. Review all pregnancy-adjusted meds within 24–72 hrs of delivery.
+      </div>
+    </div>
+
+    <!-- ===== 12. FOUNDATIONS OF PHARMACOLOGY — PK/ADME ===== -->
+    <h2>🔬 12. Foundations of Pharmacology — PK/ADME in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Key principle:</strong> Maternal physiologic changes begin early and progress throughout pregnancy. They affect all ADME processes and drug response. Consider gestational age at every prescribing decision.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Trimester</th><th>Main physiologic changes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1st (0–13 wk)</strong></td><td>Early hormonal changes; ↑ blood volume begins</td></tr>
+            <tr><td><strong>2nd (14–27 wk)</strong></td><td>Peak plasma volume; ↑ GFR, CO, body water</td></tr>
+            <tr><td><strong>3rd (28–40 wk)</strong></td><td>Maximal changes; GI & vessel compression</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">🍽️ A — Absorption</div>
+      <ul>
+        <li>Nausea/vomiting, delayed gastric emptying, ↑ gastric pH, ↓ motility, ↑ splanchnic flow.</li>
+        <li>Weak bases: absorption ↑; weak acids: absorption ↓.</li>
+        <li><strong>Examples:</strong> ↑ antacids, metformin; ↓ aspirin, furosemide.</li>
+        <li>Prefer reliable formulations; consider non-oral routes if severe N/V.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">💧 D — Distribution</div>
+      <ul>
+        <li>↑ Total body water, fat, lean mass.</li>
+        <li>↑ Plasma volume 40–50%.</li>
+        <li>↓ Albumin 20–30% & α1-acid glycoprotein.</li>
+        <li>↑ Vd for hydrophilic (aminoglycosides, lithium) and lipophilic drugs.</li>
+        <li>↑ Free fraction of highly bound drugs (phenytoin, warfarin, valproate).</li>
+        <li>May need higher loading/maintenance doses; monitor free (unbound) levels.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">⚙️ M — Hepatic Metabolism (CYP changes)</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>CYP</th><th>Change</th><th>Impact</th></tr></thead>
+          <tbody>
+            <tr><td>CYP3A4/5</td><td>↑ Increased</td><td>Some substrates need ↑ dose</td></tr>
+            <tr><td>CYP2D6</td><td>↑ Increased</td><td>—</td></tr>
+            <tr><td>CYP2C19</td><td>↑ Increased</td><td>—</td></tr>
+            <tr><td>CYP2C9</td><td>↓ Decreased</td><td>Some substrates need ↓ dose</td></tr>
+            <tr><td>CYP1A2</td><td>No significant change</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">Greatest changes in 3rd trimester. ↑ pathway drugs: labetalol, nifedipine, sertraline, methadone. ↓ pathway drugs: warfarin, phenytoin.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🚽 E — Renal Excretion</div>
+      <ul>
+        <li>↑ Renal plasma flow 50–80%; ↑ GFR 40–60%; ↓ tubular reabsorption.</li>
+        <li>↑ Clearance: penicillins, cephalosporins, aminoglycosides, lithium, digoxin.</li>
+        <li>May need dose adjustment or shorter intervals; use TDM.</li>
+        <li>Return to pre-pregnancy dosing postpartum.</li>
+      </ul>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Summary — PK changes in pregnancy</strong>
+      <div class="table-wrap" style="margin-top:8px;">
+        <table>
+          <thead><tr><th>PK</th><th>Physiologic change</th><th>Effect</th><th>Typical examples</th></tr></thead>
+          <tbody>
+            <tr><td>Absorption</td><td>↑ pH, ↓ motility, delayed emptying</td><td>Variable (↑ bases, ↓ acids)</td><td>↑ metformin; ↓ aspirin</td></tr>
+            <tr><td>Distribution</td><td>↑ water, fat, plasma volume, ↓ albumin</td><td>↑ Vd; ↑ free drug</td><td>Aminoglycosides, phenytoin</td></tr>
+            <tr><td>Metabolism</td><td>CYP isoform changes</td><td>↑ or ↓ metabolism</td><td>↑ sertraline; ↓ warfarin</td></tr>
+            <tr><td>Excretion</td><td>↑ RBF, ↑ GFR, ↓ reabsorption</td><td>↑ renal clearance</td><td>Penicillins, lithium</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ===== 13. PHARMACODYNAMICS IN PREGNANCY ===== -->
+    <h2>⚙️ 13. Pharmacodynamics in Pregnancy</h2>
+    <div class="card">
+      <p><strong>PD = what the drug does to the body.</strong> Pregnancy can change tissue responsiveness even when drug concentration is unchanged. Changes are drug-, organ-, and trimester-specific, and less predictable than PK changes.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔧 Physiologic changes affecting PD</div>
+      <ul>
+        <li>Hormonal environment: E2, progesterone, hCG, prolactin alter set points.</li>
+        <li>Cardiovascular adaptation: ↑ CO and vasodilation change response to vasoactive drugs.</li>
+        <li>Autonomic & receptor adaptation: altered receptor density, affinity, downstream signaling.</li>
+        <li>Homeostatic resetting: renal, respiratory, endocrine, coagulation systems at new baselines.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🎯 Key PD mechanisms</div>
+      <ul>
+        <li><strong>Altered drug sensitivity:</strong> increased or blunted effect at same concentration; narrower therapeutic window.</li>
+        <li><strong>Receptor changes:</strong> up/down-regulation, affinity changes, tissue-specific expression shifts.</li>
+        <li><strong>Post-receptor signaling changes:</strong> G-protein, second messenger, NO, prostaglandin, calcium channel, adrenergic pathways.</li>
+        <li><strong>Compensatory responses:</strong> baroreflexes, RAAS, insulin resistance, respiratory drive.</li>
+      </ul>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Drug category</th><th>Key PD points</th></tr></thead>
+        <tbody>
+          <tr><td>Insulin / glucose-lowering</td><td>Progressive insulin resistance → dose adjusted to glucose response, not habit.</td></tr>
+          <tr><td>Antihypertensives</td><td>Effect depends on altered vascular tone & volume; monitor BP + symptoms.</td></tr>
+          <tr><td>Uterotonics / tocolytics</td><td>Uterine receptor signaling changes with gestational age; use with maternal + fetal monitoring.</td></tr>
+          <tr><td>Anticoagulants / antiplatelets</td><td>Net effect reflects drug action + pregnancy-related hypercoagulability.</td></tr>
+          <tr><td>Sedatives / analgesics / anesthetics</td><td>CNS response may change → stronger maternal sedation or cardiorespiratory effects.</td></tr>
+          <tr><td>Vasopressors / vasodilators</td><td>Pregnancy is vasodilated → titrate to BP & uteroplacental perfusion.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box caution">
+      <strong>💡 High-yield PD pearls</strong>
+      <ul>
+        <li>Same concentration ≠ same effect.</li>
+        <li>PD changes are less predictable than PK changes.</li>
+        <li>Receptors, signaling pathways, compensatory responses may change.</li>
+        <li>Clinical monitoring is essential — response may vary.</li>
+        <li>Reassess postpartum as physiology returns to baseline.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 14. PLACENTAL DRUG TRANSFER (Expanded) ===== -->
+    <h2>🔁 14. Placental Drug Transfer</h2>
+    <div class="card">
+      <p><strong>Overview:</strong> Placenta is a dynamic barrier regulating gas/nutrient/xenobiotic exchange. Drug transfer depends on physicochemical properties, placental transporters, and gestational age.</p>
+      <p><strong>Barrier:</strong> syncytiotrophoblast → cytotrophoblast → basement membrane → fetal capillary endothelium.</p>
+      <h4>Factors affecting transfer</h4>
+      <ul>
+        <li><strong>Molecular weight:</strong> &lt; 500 Da crosses more easily.</li>
+        <li><strong>Lipophilicity:</strong> More lipophilic → crosses faster.</li>
+        <li><strong>Ionization (pKa):</strong> Non-ionized form crosses more readily.</li>
+        <li><strong>Protein binding:</strong> Only free (unbound) drug crosses.</li>
+        <li><strong>Gestational age:</strong> Transfer ↑ as pregnancy advances.</li>
+        <li><strong>Maternal factors:</strong> pH, CO, diseases (e.g., preeclampsia).</li>
+        <li><strong>Drug transporters:</strong> Efflux transporters can limit fetal exposure.</li>
+      </ul>
+      <h4>Mechanisms</h4>
+      <ul>
+        <li><strong>Passive diffusion (main):</strong> Anesthetics, opioids, benzodiazepines, most antibiotics, SSRIs.</li>
+        <li><strong>Active transport:</strong> L-DOPA (LAT1), folate, some antivirals.</li>
+        <li><strong>Endocytosis:</strong> Insulin, IgG, transferrin, some nanoparticles.</li>
+      </ul>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Transporter</th><th>Location</th><th>Function</th><th>Substrates</th><th>Clinical Implication</th></tr></thead>
+          <tbody>
+            <tr><td>P-gp (ABCB1)</td><td>Apical (maternal)</td><td>Efflux → back to mother</td><td>Lopinavir, digoxin, ARVs, opioids, tacrolimus</td><td>Limits fetal exposure; may be saturated/inhibited</td></tr>
+            <tr><td>BCRP (ABCG2)</td><td>Apical</td><td>Efflux</td><td>Sulfasalazine, MTX, rosuvastatin, antivirals</td><td>Reduces fetal exposure; polymorphisms ↑ transfer</td></tr>
+            <tr><td>MRP1/2/5</td><td>Apical</td><td>Efflux organic anions</td><td>Glucuronide, sulfate, GSH conjugates</td><td>Protects fetus from toxic metabolites</td></tr>
+            <tr><td>OATP</td><td>Basolateral (fetal)</td><td>Uptake into placenta</td><td>Statins, thyroid hormones, bilirubin</td><td>May ↑ fetal exposure</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight-box">
+        <strong>✓ Key take-home messages</strong>
+        <ul>
+          <li>Most drugs cross the placenta to some extent.</li>
+          <li>Passive diffusion is main; transporters (P-gp, BCRP, MRP) play a critical protective role.</li>
+          <li>Efflux transporter inhibition/polymorphism → ↑ fetal exposure.</li>
+          <li>Fetal exposure varies with drug, dose, timing, gestational age.</li>
+          <li>Always weigh maternal benefit vs fetal risk.</li>
+        </ul>
+      </div>
+      <div class="two-col">
+        <div>
+          <h4>High transfer (mostly passive)</h4>
+          <p>Opioids · Benzodiazepines · SSRIs · Statins · Local anesthetics</p>
+        </div>
+        <div>
+          <h4>Limited transfer</h4>
+          <p>Heparin · Insulin · Large polar molecules · Monoclonal antibodies (limited)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 15. EMERGENCY & CRITICAL CARE (Expanded) ===== -->
+    <h2>🚑 15. Emergency & Critical Care Pharmacology</h2>
+    <div class="card">
+      <div class="card-title">🎯 Core principles</div>
+      <ul>
+        <li>Maternal stabilization comes first — fetal benefit depends on maternal resuscitation.</li>
+        <li>Multidisciplinary care: OB, ICU, anesthesia, cardiology/hematology, neonatology, pharmacy.</li>
+        <li>PK altered: ↑ Vd, ↑ renal clearance, ↓ albumin.</li>
+        <li>Do not delay life-saving drugs because of pregnancy when benefits outweigh fetal risk.</li>
+        <li>Reassess maternal hemodynamics, oxygenation, fetal status, and need for urgent delivery.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">⚡ Seizures and Eclampsia</div>
+      <p><strong>Magnesium sulfate (first-line):</strong> Loading 4–6 g IV over 20–30 min. Maintenance 1–2 g/hour. Recurrent seizure: additional 2–4 g IV over 5 min. Continue 24 hrs after delivery or last seizure.</p>
+      <p><strong>Supportive:</strong> Control severe HTN: IV labetalol, IV hydralazine, oral IR nifedipine. Refractory: diazepam/lorazepam rescue; consider levetiracetam or phenytoin in selected cases. Monitor reflexes, RR, urine output.</p>
+      <p><strong>Antidote:</strong> Calcium gluconate 1 g IV slowly for toxicity (loss of patellar reflexes, respiratory depression).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🫁 Thromboembolism (DVT/PE)</div>
+      <p><strong>Preferred anticoagulant:</strong> LMWH (enoxaparin, dalteparin). LMWH does not cross placenta.</p>
+      <p><strong>Start therapeutic LMWH</strong> when acute VTE strongly suspected, unless contraindicated, while testing proceeds.</p>
+      <p><strong>Use UFH</strong> when rapid reversal needed, around delivery, severe renal impairment, or hemodynamic instability.</p>
+      <p><strong>Massive PE:</strong> IV UFH initially; consider thrombolysis (alteplase) for life-threatening PE.</p>
+      <p><strong>Avoid:</strong> DOACs; Warfarin in pregnancy (can be used postpartum, compatible with breastfeeding).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💔 Cardiac Arrest</div>
+      <p>Standard ACLS meds & defibrillation — pregnancy does not change shock dose.</p>
+      <ul>
+        <li>Epinephrine 1 mg IV q3–5 min.</li>
+        <li>Refractory VF/pulseless VT: amiodarone per ACLS.</li>
+        <li>Continuous left uterine displacement when fundal height ≥ umbilicus.</li>
+        <li>IV access above diaphragm; early airway management.</li>
+        <li>If on IV magnesium & toxicity suspected → stop magnesium, give calcium.</li>
+        <li>Prepare resuscitative delivery if no ROSC by 5 min.</li>
+        <li>Think: B.H.E.D.S. + H's & T's (Bleeding, Hypertension/Preeclampsia, Embolism, Drugs/Anesthesia, Fever/Sepsis).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🦠 Sepsis and Septic Shock</div>
+      <p><strong>Vasopressor:</strong> Norepinephrine first; add vasopressin if needed; consider epinephrine/dopamine in selected shock states.</p>
+      <p><strong>Antibiotics:</strong> Broad-spectrum within 1 hr (pip-tazo, cefepime, meropenem; add vancomycin for MRSA).</p>
+      <p><strong>Fluids:</strong> 1–2 L balanced crystalloids early (first 3 hrs).</p>
+      <p><strong>Steroid:</strong> Consider IV hydrocortisone in refractory shock.</p>
+      <p><strong>Source control</strong> is essential — if uterine source, delivery/evacuation may be needed.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Condition</th><th>First-line</th><th>Key pearl</th></tr></thead>
+        <tbody>
+          <tr><td>Eclampsia</td><td>Magnesium sulfate</td><td>Seizure control & prophylaxis</td></tr>
+          <tr><td>Severe HTN in preeclampsia</td><td>Labetalol / Hydralazine / Nifedipine</td><td>Prevent stroke & maternal complications</td></tr>
+          <tr><td>Acute DVT or stable PE</td><td>LMWH</td><td>Preferred in pregnancy</td></tr>
+          <tr><td>Massive PE</td><td>IV UFH ± Alteplase</td><td>Rapid escalation for unstable patients</td></tr>
+          <tr><td>Cardiac arrest</td><td>Epinephrine + ACLS drugs</td><td>Add left uterine displacement</td></tr>
+          <tr><td>Septic shock</td><td>Broad-spectrum abx + norepinephrine</td><td>Treat within 1 hr; source control</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+        <!-- ===== 16. SUBSTANCE USE (Expanded) ===== -->
+    <h2>🚭 16. Smoking, Alcohol, Opioid & Illicit Drug Use</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">🚫 Smoking Cessation</div>
+        <ul>
+          <li><strong>Behavioral (first-line):</strong> counseling, CBT, digital support, partner involvement, quit date + follow-up.</li>
+          <li><strong>NRT (patch, gum, lozenge, inhaler, spray):</strong> Generally safe (2nd tri); use lowest effective dose; short-acting forms if needed; start before quit date.</li>
+          <li><strong>Bupropion SR:</strong> Use if benefits outweigh risks; monitor mood; avoid in eating disorders or seizure history.</li>
+          <li><strong>Varenicline:</strong> Not recommended (limited data).</li>
+          <li><strong>Benefits of cessation:</strong> ↓ miscarriage, preterm birth, IUGR; ↑ placental function & O₂ delivery; ↓ SIDS & childhood respiratory disease.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">🍷 Alcohol Use Disorder</div>
+        <ul>
+          <li>No safe level of alcohol in pregnancy.</li>
+          <li>Screen at every visit; brief intervention + referrals.</li>
+          <li><strong>Withdrawal:</strong> Benzodiazepines (diazepam, lorazepam) preferred; thiamine 100 mg IV/IM daily <em>before</em> dextrose.</li>
+          <li><strong>Avoid:</strong> Disulfiram, topiramate, naltrexone.</li>
+          <li><strong>Fetal:</strong> FASD (facial anomalies, growth restriction, CNS dysfunction); ↑ miscarriage, stillbirth, preterm delivery.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">💊 Opioid Use Disorder (MOUD)</div>
+        <ul>
+          <li><strong>Methadone:</strong> Full agonist; safe & effective; reduces illicit use & obstetric complications.</li>
+          <li><strong>Buprenorphine:</strong> Partial agonist; safe & effective; lower NAS severity than methadone.</li>
+          <li><strong>Naltrexone:</strong> Not recommended (requires detox before initiation).</li>
+          <li><strong>Do NOT abruptly withdraw</strong> — ↑ relapse, overdose, preterm labor, fetal distress.</li>
+          <li>Breastfeeding encouraged if stable on MOUD & no illicit use.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">🌿 Illicit Drugs – Withdrawal</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Drug</th><th>Withdrawal</th><th>Management</th></tr></thead>
+            <tbody>
+              <tr><td>Cocaine</td><td>Fatigue, depression, hypersomnia, cravings</td><td>Supportive; monitor BP & fetal growth</td></tr>
+              <tr><td>Amphetamines</td><td>Fatigue, depression, ↑ appetite</td><td>Supportive + CBT; sleep hygiene</td></tr>
+              <tr><td>Cannabis</td><td>Irritability, sleep disturbance, ↓ appetite</td><td>Supportive; advise cessation</td></tr>
+              <tr><td>Benzodiazepines</td><td>Anxiety, insomnia, tremor, seizures</td><td>Gradual taper; long-acting (lorazepam) if needed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Cross-cutting principles</strong>
+      <p>Non-judgmental, trauma-informed care · screen for co-occurring mental health disorders · folic acid 4–5 mg/day if substance use · coordinate with addiction specialists · encourage breastfeeding (if no illicit use) · plan postpartum relapse prevention.</p>
+    </div>
+
+    <!-- ===== 17. CARDIOVASCULAR DISEASES (Expanded) ===== -->
+    <h2>❤️ 17. Cardiovascular Diseases in Pregnancy</h2>
+    <div class="card">
+      <div class="card-title">🎯 Core principles</div>
+      <ul>
+        <li>Mother first, fetus protected whenever possible.</li>
+        <li>Use drugs with pregnancy safety experience; avoid teratogenic cardiovascular drugs.</li>
+        <li>Multidisciplinary Pregnancy Heart Team.</li>
+        <li>PK changes: ↑ plasma volume, ↑ CO, ↑ GFR, altered protein binding.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">📊 Hypertension</div>
+      <p><strong>Preferred:</strong> Labetalol, Nifedipine, Methyldopa, Metoprolol</p>
+      <p><strong>Target:</strong> BP &lt;140/90 mmHg; severe ≥160/110 → hospital emergency</p>
+      <p><strong>Emergency:</strong> IV labetalol, IV nicardipine, IV urapidil, oral short-acting nifedipine, IV hydralazine (2nd line), IV nitroglycerin for preeclampsia + pulmonary edema</p>
+      <p><strong>Preeclampsia prevention:</strong> Low-dose aspirin 75–150 mg/day from wk 12 to wk 36–37</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💔 Heart Failure</div>
+      <p><strong>Preferred:</strong> Metoprolol or bisoprolol; Hydralazine + nitrates; Furosemide if congested; LMWH if EF &lt;35% or intracardiac thrombus.</p>
+      <p><strong>Acute HF:</strong> O₂/ventilation; diuretics if overloaded; nitrates if BP allows; inotropes/vasopressors in shock (dobutamine, milrinone, levosimendan); expert-center care ± mechanical support.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💓 Arrhythmias</div>
+      <p><strong>SVT:</strong> Vagal maneuvers → adenosine → metoprolol for prevention; verapamil in selected cases.</p>
+      <p><strong>AF/flutter:</strong> Rate control: beta-blocker, verapamil, digoxin; unstable → electrical cardioversion.</p>
+      <p><strong>Avoid routine amiodarone</strong> (reserve for life-threatening).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💉 Anticoagulation</div>
+      <p><strong>Preferred:</strong> LMWH — does not cross placenta; strong safety experience; easier outpatient use.</p>
+      <p><strong>Mechanical heart valves:</strong> Very high risk; plan depends on valve type, trimester, thrombosis risk, expert supervision.</p>
+      <p><strong>Avoid:</strong> DOACs.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🚨 Acute Coronary Syndrome</div>
+      <ul>
+        <li>Do not delay life-saving care; manage similar to non-pregnant when needed.</li>
+        <li><strong>Preferred antiplatelets:</strong> Low-dose aspirin; clopidogrel if DAPT required.</li>
+        <li><strong>Avoid:</strong> Ticagrelor; prasugrel only in special situations.</li>
+      </ul>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Drugs to Avoid (Cardiovascular)</strong>
+      <p>ACE inhibitors · ARBs · Sacubitril/valsartan (ARNI) · Aliskiren · Spironolactone · SGLT2 inhibitors · Ivabradine · Atenolol · DOACs · Routine amiodarone · Ticagrelor · Nitroprusside (except last resort).</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>📊 Monitoring</strong>
+      <p><strong>Maternal:</strong> BP log, ECG, echo, BNP/NT-proBNP if HF, renal & liver function, electrolytes, Anti-Xa if therapeutic LMWH.</p>
+      <p><strong>Fetal:</strong> Serial growth US; fetal echo if indicated; FHR during labor in significant heart disease.</p>
+    </div>
+
+    <!-- ===== 18. RESPIRATORY DISEASES (Expanded) ===== -->
+    <h2>🫁 18. Respiratory Diseases in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Core principle:</strong> Treat the mother effectively; maternal oxygenation protects the fetus. Untreated respiratory disease is often more dangerous than appropriate therapy.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🌬️ Asthma</div>
+      <p><strong>Controller:</strong> ICS — budesonide preferred; beclomethasone or fluticasone acceptable. <strong>Do not stop ICS.</strong></p>
+      <p><strong>Reliever:</strong> SABA (albuterol/salbutamol).</p>
+      <p><strong>Add-on:</strong> LABA (formoterol/salmeterol) only with ICS.</p>
+      <p><strong>Exacerbation:</strong> O₂; nebulized albuterol ± ipratropium; systemic corticosteroids; IV magnesium sulfate for severe refractory attacks.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🤧 Allergic Rhinitis</div>
+      <p><strong>Preferred:</strong> Intranasal corticosteroids (budesonide, beclomethasone, fluticasone); saline irrigation; nasal cromolyn; antihistamines (chlorpheniramine, diphenhydramine, cetirizine, loratadine).</p>
+      <p><strong>Caution:</strong> Oxymetazoline only short course; avoid oral decongestants (esp. pseudoephedrine in 1st tri).</p>
+      <p><strong>Immunotherapy:</strong> Continue if tolerated; do not initiate during pregnancy.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🦠 Influenza</div>
+      <p>Vaccinate with inactivated or recombinant influenza vaccine.</p>
+      <p><strong>Treatment:</strong> Oseltamivir 75 mg BID × 5 days — start ASAP.</p>
+      <p><strong>Post-exposure:</strong> Oseltamivir 75 mg once daily × 7 days.</p>
+      <p><strong>Avoid:</strong> Live attenuated influenza vaccine.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🫁 Pneumonia</div>
+      <p><strong>Safer abx:</strong> Penicillins (amoxicillin, ampicillin, amox-clav); Cephalosporins (cefuroxime, ceftriaxone, cefpodoxime); Macrolide (azithromycin preferred for atypicals).</p>
+      <p><strong>Key:</strong> Treat early; maintain maternal oxygenation.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🫁 Tuberculosis</div>
+      <p><strong>Active TB:</strong> Isoniazid + Rifampin + Ethambutol; add pyridoxine (B6).</p>
+      <p><strong>Avoid:</strong> Streptomycin.</p>
+      <p><strong>Caution:</strong> Pyrazinamide depends on expert/guideline context.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🌬️ COPD / Chronic Airway Disease</div>
+      <ul>
+        <li>Main strategy: smoking cessation; O₂ if hypoxemic; continue needed inhaled bronchodilators; treat exacerbations promptly.</li>
+        <li>Options: SABA (albuterol), SAMA (ipratropium), LABA (salmeterol if specialist-directed), ICS/LABA if asthma overlap, systemic corticosteroids for exacerbations.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">✅ Acceptable / Use When Needed</div>
+      <p>Systemic corticosteroids (prednisone, prednisolone, methylprednisolone) · Montelukast · Cromolyn · Theophylline (rarely; monitor levels) · Omalizumab/selected biologics (severe specialist-managed asthma).</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Avoid or Use with Caution (Respiratory)</strong>
+      <p>Pseudoephedrine in 1st trimester · Ribavirin · Tetracyclines · Fluoroquinolones (unless no safer alternative) · Streptomycin · Long-term topical decongestants · Codeine-containing cough syrups when avoidable · Live attenuated influenza vaccine · Undertreatment of severe asthma.</p>
+    </div>
+
+    <!-- ===== 19. GASTROINTESTINAL DISEASES (Expanded) ===== -->
+    <h2>🫄 19. Gastrointestinal Diseases in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Core principle:</strong> Treat the mother safely and effectively. Untreated severe GI disease can be more dangerous to the fetus than properly selected medications.</p>
+      <p><strong>Goals:</strong> Relieve symptoms · maintain nutrition & hydration · control underlying disease · prevent complications · safest effective drug at lowest dose.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🍽️ 19.1 Nausea & Vomiting of Pregnancy</div>
+      <p><strong>Step 1:</strong> Small frequent meals; avoid triggers; hydration; ginger 250 mg QID; Vitamin B6.</p>
+      <p><strong>Step 2:</strong> Pyridoxine (B6) 10–25 mg 3–4×/day ± Doxylamine 12.5–25 mg at bedtime (or combination 10/10 mg QID, titrate).</p>
+      <p><strong>Step 3:</strong> Metoclopramide 10–15 mg PO; Promethazine; Prochlorperazine.</p>
+      <p><strong>Step 4:</strong> Ondansetron 10–15 mg PO (severe cases; avoid high-dose 1st tri unless benefits outweigh risks).</p>
+      <p><strong>Hyperemesis:</strong> IV fluids + thiamine <em>before</em> dextrose + electrolytes + antiemetics.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔥 19.2 GERD / Heartburn</div>
+      <p><strong>Step 1:</strong> Lifestyle — elevate head, small meals, avoid late meals & triggers.</p>
+      <p><strong>Step 2:</strong> Antacids (CaCO₃, Mg(OH)₂, Al(OH)₃) / Alginates.</p>
+      <p><strong>Step 3:</strong> Famotidine (H2 blocker).</p>
+      <p><strong>Step 4:</strong> PPI (omeprazole/pantoprazole).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🚽 19.3 Constipation</div>
+      <p><strong>Step 1:</strong> Fiber + water + exercise.</p>
+      <p><strong>Step 2:</strong> Bulk laxative (Psyllium, methylcellulose).</p>
+      <p><strong>Step 3:</strong> Docusate (stool softener).</p>
+      <p><strong>Step 4:</strong> PEG or Lactulose (osmotic).</p>
+      <p><strong>Step 5 (short-term):</strong> Senna or Bisacodyl.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💩 19.4 Diarrhea</div>
+      <p><strong>Step 1:</strong> ORS — hydration priority.</p>
+      <p><strong>Step 2:</strong> Loperamide (short-term, if non-invasive).</p>
+      <p><strong>Step 3:</strong> Antibiotics if bacterial infection confirmed/suspected.</p>
+      <p><strong>Red flags:</strong> Fever, bloody stool, severe pain, dehydration, hypotension.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🩸 19.5 Hemorrhoids</div>
+      <p>Fiber + fluids + stool softeners; sitz baths; topical lidocaine (short-term); avoid prolonged straining; treat constipation aggressively; surgical intervention rarely needed.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🫀 19.6 Gallstones & Biliary Disease</div>
+      <p>Pregnancy ↑ cholesterol saturation of bile → ↑ gallstones. Symptomatic management: analgesia (acetaminophen; opioids if needed); hydration; if cholangitis/cholecystitis → IV antibiotics + surgical consult. Cholecystectomy can be done in 2nd trimester if indicated.</p>
+      <p><strong>Avoid:</strong> NSAIDs after 20 weeks; high-dose opioid chronic use.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🩹 19.7 Peptic Ulcer Disease</div>
+      <p><strong>Management:</strong> Test & treat H. pylori (when indicated); avoid NSAIDs; stress reduction.</p>
+      <p><strong>Pharmacologic:</strong> Antacids PRN · Sucralfate 1 g QID · Famotidine 10–20 mg BID · Omeprazole 20 mg daily · H. pylori: amoxicillin + clarithromycin (usually deferred till after delivery unless severe).</p>
+      <p><strong>Avoid:</strong> Bismuth subsalicylate (salicylate exposure).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🧬 19.8 Inflammatory Bowel Disease (IBD)</div>
+      <p><strong>Key:</strong> Remission is safer than medication withdrawal. Continue effective therapy through pregnancy.</p>
+      <p><strong>Preferred:</strong> 5-ASA (mesalamine, sulfasalazine + folate); Corticosteroids; Thiopurines (azathioprine/6-MP); Anti-TNF (infliximab, adalimumab, certolizumab); Vedolizumab; Ustekinumab.</p>
+      <p><strong>Avoid:</strong> Methotrexate; JAK inhibitors (tofacitinib/upadacitinib).</p>
+      <p><strong>Monitor:</strong> Symptoms, CRP, fecal calprotectin, albumin, CBC; fetal growth if severe disease or steroid use.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🫀 19.9 Liver Disease in Pregnancy</div>
+      <p><strong>Intrahepatic Cholestasis of Pregnancy (ICP):</strong> Pruritus (palms/soles); check bile acids & LFTs. Treatment: Ursodeoxycholic acid (UDCA). Delivery: bile acids &gt;100 μmol/L → 36 wks; &lt;100 → 36–39 wks.</p>
+      <p><strong>Hepatitis B:</strong> Screen all; tenofovir for high viral load; newborn HB vaccine + HBIG.</p>
+      <p><strong>Hepatitis C:</strong> Screen per policy; DAAs deferred until after pregnancy; ribavirin contraindicated.</p>
+      <p><strong>Hepatitis A/E:</strong> Supportive; HEV can be severe → urgent management.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🩺 19.10 Acute Pancreatitis</div>
+      <p><strong>Causes:</strong> Gallstones (most common), hypertriglyceridemia, alcohol, drugs.</p>
+      <p><strong>Treatment:</strong> IV fluids; analgesia (acetaminophen/opioid); antiemetics; nutrition support; treat gallstone disease; insulin/plasmapheresis for severe hypertriglyceridemia; avoid unnecessary antibiotics.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔪 19.11 Appendicitis & Surgical Conditions</div>
+      <p>Diagnosis may be delayed (atypical location as uterus grows). Do not delay surgery — appendectomy is safe in all trimesters; laparoscopy preferred in 1st/2nd tri by experienced surgeons.</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 GI Drugs to Avoid</strong>
+      <p>Bismuth subsalicylate · Sodium bicarbonate (sodium load) · Misoprostol · Castor oil · Mineral oil (long-term) · Methotrexate · Mycophenolate mofetil · Leflunomide · Tofacitinib/Upadacitinib · NSAIDs after 20 wks · Tetracyclines · Fluoroquinolones · Ribavirin · Aminoglycosides (streptomycin) · High-dose vitamin A.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>🚩 Red flags — urgent care</strong>
+      <p>Persistent vomiting · GI bleeding (hematemesis, melena) · severe abdominal pain · jaundice/dark urine/severe pruritus · fever with diarrhea · reduced fetal movements · preterm labor signs.</p>
+    </div>
+
+    <!-- ===== 20. PITUITARY GLAND DISEASES (Expanded) ===== -->
+    <h2>🧠 20. Pituitary Gland Diseases in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Core principles:</strong> Optimize control before conception · use pregnancy-compatible drugs · lowest effective dose · monitor mother & fetus · avoid teratogens · do not stop effective therapy abruptly.</p>
+      <p><strong>Physiologic changes:</strong> ↑ estrogen → ↑ prolactin, ↑ TBG, ↑ CBG · ↑ plasma volume & renal clearance · physiologic hyperprolactinemia · placental transfer of many drugs.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚪ 20.1 Prolactinoma</div>
+      <p>Most common pituitary adenoma. Micro (&lt;10 mm) vs Macro (≥10 mm).</p>
+      <p><strong>Preconception:</strong> Cabergoline preferred (higher efficacy, better tolerated); Bromocriptine longest safety experience.</p>
+      <p><strong>Once pregnant:</strong> Usually stop dopamine agonist. Continue only if macroadenoma with risk of growth or visual symptoms.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Drug</th><th>Usual Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Bromocriptine</td><td>2.5–7.5 mg</td><td>Most pregnancy experience</td></tr>
+            <tr><td>Cabergoline</td><td>0.25–1 mg (1–2×/wk)</td><td>May be used if needed</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Monitoring:</strong> Clinical assessment every trimester; visual fields if macroadenoma; MRI without contrast if visual symptoms/severe headache.</p>
+      <p><strong>Risks if untreated:</strong> Tumor growth → headache, visual loss; pituitary apoplexy (rare).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📈 20.2 Acromegaly</div>
+      <p>Excess GH (usually adenoma). Risks: HTN, DM, preeclampsia, fetal growth restriction, macrosomia.</p>
+      <p><strong>Preconception:</strong> Achieve disease control; optimize HTN, DM.</p>
+      <p><strong>During pregnancy:</strong> STOP somatostatin analogs when pregnancy confirmed if disease stable; continue only for significant tumor mass effect.</p>
+      <p><strong>Options:</strong> Octreotide (limited data), Lanreotide (limited), Pegvisomant (specialist only), Dopamine agonists (occasional).</p>
+      <p><strong>Monitoring:</strong> Symptoms; BP, glucose, electrolytes; visual fields each trimester if macroadenoma; glucose tolerance; fetal growth.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚖️ 20.3 Cushing Syndrome</div>
+      <p><strong>Preferred:</strong> Surgery (transsphenoidal) in 2nd trimester when feasible.</p>
+      <p><strong>Medical (if surgery not possible):</strong> Metyrapone is main option; Ketoconazole specialist-only.</p>
+      <p><strong>Avoid:</strong> Mifepristone, pasireotide, osilodrostat, mitotane.</p>
+      <p><strong>Monitoring:</strong> Cortisol levels; BP, glucose, electrolytes; fetal growth.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💧 20.4 Diabetes Insipidus</div>
+      <p><strong>Drug of choice:</strong> Desmopressin 0.05–0.4 mg PO BID or intranasal. Resistant to placental vasopressinase → effective.</p>
+      <p><strong>Monitoring:</strong> Serum sodium (risk hyponatremia); urine output & osmolality; fluid intake & thirst; signs of overhydration.</p>
+      <p><strong>Avoid:</strong> Excess water intake (hyponatremia); vasopressin (destroyed by placental vasopressinase).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔬 20.5 Hypopituitarism</div>
+      <ul>
+        <li><strong>Glucocorticoid deficiency:</strong> Hydrocortisone 15–20 mg/day in 2–3 divided doses; stress dose for labor/illness.</li>
+        <li><strong>Thyroid hormone deficiency:</strong> Levothyroxine, adjust dose; monitor TSH & free T4.</li>
+        <li><strong>Gonadotropin deficiency:</strong> hCG/FSH for fertility, preconception.</li>
+        <li><strong>GH deficiency:</strong> GH not recommended in pregnancy.</li>
+        <li><strong>ADH deficiency:</strong> Desmopressin.</li>
+      </ul>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>Control disease before conception when possible.</li>
+        <li>Use pregnancy-compatible drugs (Bromocriptine, Cabergoline, Desmopressin, Hydrocortisone, Levothyroxine).</li>
+        <li>Monitor hormone levels & fetal well-being.</li>
+        <li>Plan delivery & postpartum management.</li>
+        <li>Educate patient about emergencies (steroid card).</li>
+      </ul>
+    </div>
+
+    <!-- ===== 21. TSH-RELATED DISEASES (Expanded) ===== -->
+    <h2>🦋 21. TSH-Related Diseases in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Overview:</strong> TSH is the anterior pituitary hormone regulating thyroid function. In pregnancy, hCG stimulates TSH receptor (mild suppression), estrogen ↑ TBG, iodine demand ↑. Main disorders: hypothyroidism, hyperthyroidism, subclinical thyroid disease.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🧪 Physiology of TSH in pregnancy</div>
+      <ul>
+        <li>hCG can stimulate TSH receptor → mild TSH suppression early.</li>
+        <li>TSH usually lowest in 1st trimester.</li>
+        <li>Total T4 ↑ (TBG rises).</li>
+        <li>Adequate iodine intake essential.</li>
+        <li>Prefer trimester-specific reference ranges.</li>
+        <li><strong>Do not diagnose on TSH alone</strong> — correlate with free T4, symptoms, antibodies, clinical context.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🔽 21.1 Hypothyroidism</div>
+      <p><strong>Causes:</strong> Hashimoto's thyroiditis; prior thyroidectomy/radioiodine; iodine deficiency; overtreatment of hyperthyroidism.</p>
+      <p><strong>Features:</strong> High TSH, low free T4; fatigue, constipation, cold intolerance, weight gain, bradycardia.</p>
+      <p><strong>Risks:</strong> Miscarriage, anemia, preeclampsia, placental abruption, impaired fetal neurodevelopment.</p>
+      <p><strong>Treatment:</strong> Levothyroxine (LT4). Increase dose early once pregnancy confirmed. Take on empty stomach; separate from iron/calcium by 4 hrs. Monitor TSH every 4 wks during adjustment.</p>
+      <p><strong>Target:</strong> TSH &lt;2.5 mIU/L in 1st trimester and generally &lt;3 mIU/L later.</p>
+      <p><strong>Pearls:</strong> Never use liothyronine (T3) as routine replacement in pregnancy.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚖️ 21.2 Subclinical Hypothyroidism</div>
+      <p>TSH elevated with normal free T4. Consider treatment if TSH clearly elevated or TPO antibodies positive. Levothyroxine preferred. Monitor closely — pregnancy ↑ thyroid hormone requirement.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔼 21.3 Hyperthyroidism / Thyrotoxicosis</div>
+      <p><strong>Causes:</strong> Graves' disease (most important); gestational transient thyrotoxicosis.</p>
+      <p><strong>Features:</strong> Low/suppressed TSH; ↑ free T4 or T3; weight loss, heat intolerance, tachycardia, anxiety.</p>
+      <p><strong>Risks:</strong> Maternal AF, HF, preeclampsia, fetal loss, growth restriction, preterm birth.</p>
+      <p><strong>Management:</strong></p>
+      <ul>
+        <li><strong>1st trimester:</strong> Propylthiouracil (PTU).</li>
+        <li><strong>2nd–3rd:</strong> Methimazole usually preferred (PTU hepatotoxicity).</li>
+        <li>Use lowest effective dose; avoid overtreatment (fetal hypothyroidism).</li>
+        <li>Propranolol short-term for severe adrenergic symptoms.</li>
+        <li>Gestational transient thyrotoxicosis often needs supportive care only.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🚨 21.4 Thyroid Storm</div>
+      <p><strong>Emergency:</strong> PTU + beta-blocker (propranolol) + iodine (after thionamide) + corticosteroids + supportive care + ICU monitoring.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🧠 21.5 Central Thyroid Disease</div>
+      <p>TSH may be low, normal, or unreliable. Follow free T4 rather than TSH alone. Treat underlying cause; coordinate with endocrinology.</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Avoid / Not Routine</strong>
+      <p>Radioactive iodine (contraindicated) · excess iodine exposure · long-term high-dose beta-blockers · T3-only therapy.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>TSH is key screening/monitoring marker — interpret with free T4 & clinical context.</li>
+        <li>Levothyroxine for hypothyroidism.</li>
+        <li>PTU preferred in 1st tri; methimazole usually preferred later.</li>
+        <li>Radioactive iodine contraindicated.</li>
+        <li>Tight monitoring improves maternal & fetal outcomes.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 22. GLUCOSE METABOLISM (Expanded) ===== -->
+    <h2>🍬 22. Glucose Metabolism Diseases in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Core principle:</strong> Poor glycemic control causes miscarriage, congenital malformations, macrosomia, preeclampsia, preterm birth, neonatal hypoglycemia, stillbirth. Insulin is preferred first-line when medication needed.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🟢 Category 1 — Preferred / Generally Safe</div>
+      <p><strong>Insulin:</strong> Rapid-acting (lispro, aspart); short-acting (regular); basal (NPH, detemir, glargine). Does not cross placenta.</p>
+      <p><strong>Dextrose:</strong> For hypoglycemia emergencies.</p>
+      <p><strong>Low-dose aspirin:</strong> When indicated for preeclampsia risk reduction.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🟡 Category 2 — Acceptable / Use When Needed</div>
+      <p><strong>Metformin:</strong> May be used in selected GDM or T2DM when benefits outweigh risks; crosses placenta.</p>
+      <p><strong>Glyburide/glibenclamide:</strong> Less preferred; may cause more neonatal hypoglycemia/macrosomia than insulin.</p>
+      <p><strong>Glucagon:</strong> Emergency for severe hypoglycemia.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔴 Category 3 — Avoid / Contraindicated</div>
+      <p>SGLT2 inhibitors (empagliflozin, dapagliflozin, canagliflozin) · GLP-1 RA (semaglutide, liraglutide, dulaglutide, tirzepatide) · DPP-4 inhibitors (sitagliptin, linagliptin) · Sulfonylureas as routine first-line · ACE inhibitors/ARBs · Routine statins · Weight-loss drugs.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📈 Stepwise management of GDM</div>
+      <ol>
+        <li>Screen/diagnose</li>
+        <li>Lifestyle: medical nutrition therapy + exercise (if safe)</li>
+        <li>Glucose monitoring (SMBG/CGM)</li>
+        <li>If fasting or post-meal targets not met → start insulin</li>
+        <li>Titrate per SMBG</li>
+        <li>Fetal surveillance if medication-treated or poorly controlled</li>
+      </ol>
+      <div class="highlight-box caution">
+        <strong>Common targets:</strong> Fasting &lt;95 mg/dL · 1-hr post-meal &lt;140 mg/dL · 2-hr post-meal &lt;120 mg/dL.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">💉 Insulin strategy</div>
+      <ul>
+        <li>Basal controls fasting; rapid/short-acting controls meals.</li>
+        <li>Requirements often ↑ later in pregnancy; may fall rapidly postpartum.</li>
+        <li>Teach injection technique, hypoglycemia recognition, meal timing.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🚨 DKA in pregnancy</div>
+      <p>Can occur at lower glucose levels than outside pregnancy. Triggers: infection, vomiting, missed insulin, steroids, pump failure.</p>
+      <p><strong>Treatment:</strong> IV fluids + IV insulin + potassium monitoring/replacement + treat trigger + fetal & maternal monitoring. <strong>Do not delay.</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚠️ Hypoglycemia</div>
+      <p>Mild: fast oral glucose (15 g carbs). Severe: glucagon or IV dextrose. Recheck & adjust regimen.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>Insulin is the preferred pharmacologic therapy.</li>
+        <li>Metformin acceptable in selected cases but not first-line everywhere.</li>
+        <li>Avoid SGLT2i, GLP-1 RA, DPP-4i, ACEi, ARBs, routine statins.</li>
+        <li>Treat DKA urgently.</li>
+        <li>Good maternal glucose control is the best fetal protection.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 23. CALCIUM METABOLISM (Expanded) ===== -->
+    <h2>🦴 23. Calcium Metabolism Diseases in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Physiology:</strong> ↑ GI calcium absorption (1,25(OH)₂D); ↑ renal calcium retention; maternal bone resorption for fetal needs; placenta actively transports calcium (esp. 3rd tri); changes in PTH, vitamin D, calcitonin.</p>
+      <p><strong>Goals:</strong> Prevent hypo/hypercalcemia; normal skeletal & neuro development; prevent nephrolithiasis, bone loss, fractures; prepare for delivery & lactation.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📈 23.1 Hypercalcemia (Primary Hyperparathyroidism)</div>
+      <p>Nausea, vomiting, constipation; polyuria, polydipsia, nephrolithiasis; bone pain, muscle weakness.</p>
+      <p><strong>Risks:</strong> Preterm birth, low birth weight, preeclampsia, miscarriage.</p>
+      <p><strong>Treatment:</strong></p>
+      <ul>
+        <li>Avoid thiazides & lithium.</li>
+        <li><strong>Definitive:</strong> Parathyroidectomy (2nd trimester preferred).</li>
+        <li>Medical: IV isotonic saline; calcitonin (does not cross placenta significantly); cinacalcet (when surgery not possible); bisphosphonates (limited data).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">📉 23.2 Hypocalcemia (Hypoparathyroidism, Vit D Deficiency)</div>
+      <p>Perioral numbness, cramps, tetany; seizures, laryngospasm (severe).</p>
+      <p><strong>Risks:</strong> Preterm birth, fetal tetany, neonatal hypocalcemia.</p>
+      <p><strong>Treatment:</strong> Calcium carbonate/citrate (safe); Vitamin D3 (safe); Calcitriol (safe, lowest dose); Magnesium (if low, safe).</p>
+      <p><strong>Avoid:</strong> Aluminum-containing antacids; high-dose vitamin D without monitoring.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">☀️ 23.3 Vitamin D Deficiency</div>
+      <p>Bone pain, muscle weakness. Risks: GDM, preeclampsia, preterm birth, low birth weight.</p>
+      <p><strong>Treatment:</strong> Monitor 25(OH)D. Vitamin D3 600–2,000 IU/day; deficiency up to 4,000 IU/day under supervision; 50,000 IU weekly for deficiency; Calcitriol for severe cases.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🦴 23.4 Pregnancy-Related Osteoporosis</div>
+      <p>Severe back pain, vertebral fractures; usually in 3rd trimester or postpartum. Treatment: calcium, pain control; limited data for antiresorptives.</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Avoid</strong>
+      <p>Aluminum-containing antacids · high-dose vitamin D without monitoring · thiazide diuretics (hypercalcemia risk) · lithium (hypercalcemia risk).</p>
+    </div>
+
+    <!-- ===== 24. ADRENAL GLAND DISEASES (Expanded) ===== -->
+    <h2>💎 24. Adrenal Gland Diseases in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Core principles:</strong> Stabilize mother to protect fetus · pregnancy-compatible drugs at lowest effective dose · avoid undertreatment · multidisciplinary care (Endo, OB, Anesthesia, Neonatology).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔵 24.1 Primary Adrenal Insufficiency (Addison)</div>
+      <p><strong>Features:</strong> Fatigue, nausea/vomiting, weight loss, postural hypotension, hyponatremia, hyperkalemia.</p>
+      <p><strong>Treatment:</strong></p>
+      <ul>
+        <li>Hydrocortisone first-line.</li>
+        <li>Fludrocortisone for mineralocorticoid replacement.</li>
+        <li>Increase hydrocortisone by 20–40% later in pregnancy.</li>
+        <li>Stress-dose steroids for illness, surgery, labor, delivery.</li>
+      </ul>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Drug</th><th>Role</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Hydrocortisone</td><td>First-line glucocorticoid</td><td>Preferred</td></tr>
+            <tr><td>Fludrocortisone</td><td>Mineralocorticoid</td><td>Preferred (primary AI)</td></tr>
+            <tr><td>Prednisolone</td><td>Alternative</td><td>Use with caution</td></tr>
+            <tr><td>Dexamethasone</td><td>Routine replacement</td><td>Avoid (crosses placenta more)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">🚨 24.2 Adrenal Crisis</div>
+      <p><strong>Features:</strong> Severe weakness, vomiting, abdominal pain, hypotension/shock, confusion, hypoglycemia.</p>
+      <p><strong>Emergency treatment:</strong></p>
+      <ul>
+        <li>Hydrocortisone 100 mg IV <em>immediately</em>.</li>
+        <li>Then 200 mg over 24 h (continuous infusion) or 50 mg IV/IM q6h.</li>
+        <li>Rapid isotonic saline; dextrose if hypoglycemia.</li>
+        <li>Treat trigger; urgent obstetric monitoring.</li>
+        <li><strong>Do not delay hydrocortisone in pregnancy.</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">⚖️ 24.3 Cushing Syndrome</div>
+      <p>Surgery in 2nd trimester preferred. Metyrapone main medical option. Ketoconazole specialist-only. <strong>Avoid mifepristone.</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-title">🩸 24.4 Primary Aldosteronism</div>
+      <p>HTN + hypokalemia. Use labetalol/nifedipine/methyldopa; KCl supplementation; eplerenone if needed; avoid spironolactone if possible.</p>
+      <p><strong>Avoid:</strong> ACE inhibitors/ARBs (fetal renal toxicity).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔺 24.5 Pheochromocytoma</div>
+      <p>Severe HTN, headache, palpitations, sweating — life-threatening if missed.</p>
+      <p><strong>Treatment:</strong></p>
+      <ul>
+        <li><strong>Alpha-blockade first:</strong> Phenoxybenzamine, Doxazosin.</li>
+        <li><strong>Beta-blocker only after</strong> adequate alpha-blockade if tachycardia persists (propranolol/metoprolol).</li>
+        <li>Surgery in 2nd trimester if diagnosed early; otherwise medical control until delivery.</li>
+      </ul>
+      <div class="highlight-box warning">
+        <strong>🚫 Never give beta-blocker before alpha-blockade</strong> — risk of unopposed alpha stimulation → hypertensive crisis.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">🧬 24.6 CAH / Steroid-Dependent Adrenal Disorders</div>
+      <p>Continue essential steroid replacement; hydrocortisone preferred; fludrocortisone if salt-wasting; stress-dose steroids in labor & severe illness.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Better recognition + safe pharmacology + close monitoring = better outcomes for mother & baby.</p>
+    </div>
+
+    <!-- ===== 25. GONADAL HORMONES ===== -->
+    <h2>♀️ 25. Gonadal Hormones Related Diseases</h2>
+    <div class="card">
+      <p><strong>Physiologic changes:</strong> hCG (1st tri) luteotropic; Estrogen ↑ 10–30× baseline; Progesterone ↑ 10–20× baseline; SHBG ↑ → ↓ free testosterone; ↑ hPL, ↑ prolactin; placental aromatase ↑ → ↑ E2.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🩸 25.1 Luteal Phase Defect & Recurrent Miscarriage</div>
+      <p>Inadequate progesterone production → early pregnancy loss.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Drug (Route)</th><th>Typical Dose</th></tr></thead>
+          <tbody>
+            <tr><td>Progesterone (micronized oral)</td><td>200–400 mg at bedtime</td></tr>
+            <tr><td>Progesterone (vaginal)</td><td>200–400 mg 1–2×/day</td></tr>
+            <tr><td>Progesterone (IM)</td><td>50–100 mg daily</td></tr>
+            <tr><td>Dydrogesterone (oral)</td><td>10 mg BID</td></tr>
+            <tr><td>17-OHP caproate (IM)</td><td>250 mg weekly (controversial)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Notes:</strong> Continue until 10–12 wks when placental progesterone is established. Vaginal route preferred.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🛡️ 25.2 Threatened Abortion / Preterm Birth Prevention</div>
+      <p>Progesterone reduces recurrent preterm birth in high-risk singletons.</p>
+      <ul>
+        <li>Progesterone IM 250 mg weekly</li>
+        <li>Vaginal progesterone 200 mg nightly</li>
+        <li>Vaginal gel/suppository 100 mg (16–36 wks)</li>
+        <li>Vaginal progesterone preferred for short cervix (≤25 mm)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">⚖️ 25.3 Hyperandrogenic Disorders (PCOS)</div>
+      <p>Do NOT use antiandrogens in pregnancy. Focus on metabolic control & fetal safety.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Drug</th><th>Use in Pregnancy</th></tr></thead>
+          <tbody>
+            <tr><td>Metformin</td><td>Yes — insulin resistance; GDM risk reduction</td></tr>
+            <tr><td>Insulin</td><td>Yes — if diabetes present</td></tr>
+            <tr><td>Low-dose aspirin 75–150 mg/day</td><td>Yes — preeclampsia risk</td></tr>
+            <tr><td>Antiandrogens (spironolactone, finasteride, flutamide)</td><td>🔴 Contraindicated</td></tr>
+            <tr><td>Isotretinoin</td><td>🔴 Contraindicated</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Antiandrogens must be stopped ≥1 month before conception.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🧬 25.4 Congenital Adrenal Hyperplasia (21-OH Deficiency)</div>
+      <p>Androgen excess in mother → risk of virilization of female fetus. Prenatal dexamethasone 0.5 mg q6h can reduce virilization (controversial; specialist management, genetic counseling).</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Drugs to Avoid (Gonadal Hormones)</strong>
+      <p>Antiandrogens (spironolactone, finasteride, flutamide) · Androgenic steroids (testosterone, danazol) · Isotretinoin · High-dose estrogens · SERMs (clomiphene once pregnant).</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>Optimize maternal health + fertility while ensuring fetal safety.</li>
+        <li>Use safest effective drug at lowest effective dose.</li>
+        <li>Metformin, insulin, progesterone, low-dose aspirin can continue if indicated.</li>
+        <li>Stop ovulation-induction drugs once pregnancy confirmed.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 26. GROWTH HORMONE ===== -->
+    <h2>📊 26. Growth Hormone Related Diseases</h2>
+    <div class="card">
+      <p><strong>GH physiology in pregnancy:</strong> ↑ hGH secretion (2–3×); ↑ placental GH & GHBP; ↓ GH receptor sensitivity; ↑ IGF-1 (mainly placental). Result: physiologic insulin resistance, lipolysis, fetal growth support.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📈 26.1 Acromegaly</div>
+      <p>Pregnancy generally well tolerated when disease is controlled. Active disease or tumor growth risk requires careful management.</p>
+      <ul>
+        <li><strong>Before conception:</strong> Achieve control with surgery, somatostatin analogs ± pegvisomant; normalize IGF-1; control tumor size.</li>
+        <li><strong>During pregnancy:</strong> STOP somatostatin analogs when pregnancy confirmed if disease controlled; continue only if tumor mass effect or symptoms recur.</li>
+        <li>Pegvisomant: not recommended.</li>
+        <li>Surgery (transsphenoidal) if significant tumor growth — safe in 2nd trimester.</li>
+      </ul>
+      <p><strong>Monitoring:</strong> Clinical assessment each trimester; visual fields if adenoma; IGF-1 not reliable; MRI without contrast if needed.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📏 26.2 Gigantism</div>
+      <p>Same approach as acromegaly; ensure control before conception; long-term metabolic follow-up.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔽 26.3 GHD</div>
+      <p>GH not essential for pregnancy survival. Stop GH when pregnancy confirmed. No evidence of teratogenicity but not indicated. No need for IGF-1 monitoring.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚪ 26.4 Prolactinoma & Hyperprolactinemia</div>
+      <p>Prolactin rises physiologically in pregnancy. Risk of tumor enlargement in macroadenomas.</p>
+      <ul>
+        <li>Microprolactinoma: stop dopamine agonist once pregnant; monitor clinically.</li>
+        <li>Macroadenoma: stop but monitor clinically.</li>
+        <li>Symptom/visual changes: restart dopamine agonist (bromocriptine preferred; cabergoline if benefits outweigh risks).</li>
+        <li><strong>Prolactin levels NOT useful for monitoring in pregnancy.</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🧠 26.5 Pituitary Tumors (Non-Functioning)</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tumor size</th><th>Management</th></tr></thead>
+          <tbody>
+            <tr><td>Microadenoma (&lt;10 mm)</td><td>Clinical monitoring; no routine imaging</td></tr>
+            <tr><td>Macroadenoma (≥10 mm)</td><td>Monitor symptoms & visual fields; MRI if symptoms</td></tr>
+            <tr><td>Mass effect / visual symptoms</td><td>Neurosurgical eval; surgery in 2nd trimester if needed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Drugs to Avoid (GH axis)</strong>
+      <p>Recombinant GH (stop in pregnancy) · GH secretagogues (no safety data) · Pegvisomant (specialist only).</p>
+    </div>
+
+    <!-- ===== 27. ACTH-RELATED DISEASES ===== -->
+    <h2>⚡ 27. ACTH Hormone-Related Diseases</h2>
+    <div class="card">
+      <p><strong>ACTH physiology:</strong> Placental CRH & ACTH contribute to rising maternal cortisol. CBG ↑ → total cortisol ↑. Free cortisol also ↑ later. Interpretation of ACTH–cortisol testing must consider pregnancy physiology.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔽 27.1 Secondary Adrenal Insufficiency / ACTH Deficiency</div>
+      <p><strong>Causes:</strong> Hypopituitarism, Sheehan syndrome, pituitary surgery, apoplexy.</p>
+      <p><strong>Symptoms:</strong> Fatigue, nausea, hypotension, dizziness, hyponatremia, hypoglycemia.</p>
+      <p><strong>Drug of choice:</strong> Hydrocortisone 15–25 mg/day divided doses. Alternatives: prednisolone, prednisone.</p>
+      <p><strong>Notes:</strong></p>
+      <ul>
+        <li>Usually <strong>NO fludrocortisone</strong> needed in isolated ACTH deficiency.</li>
+        <li>Avoid routine dexamethasone for replacement (crosses placenta more).</li>
+        <li>20–40% glucocorticoid dose increase in 2nd–3rd trimester.</li>
+        <li>Stress dosing essential for labor, surgery, vomiting illness, infection, trauma.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🚨 27.2 Adrenal Crisis</div>
+      <p><strong>Red flags:</strong> Severe vomiting, collapse, shock, confusion, profound weakness, dehydration, hypoglycemia.</p>
+      <p><strong>Immediate:</strong> Hydrocortisone 100 mg IV/IM immediately → 200 mg over 24 h or 50 mg IV/IM q6h. IV isotonic saline; dextrose if hypoglycemic. Treat precipitating cause. <strong>Do NOT delay.</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚖️ 27.3 ACTH-Dependent Cushing Syndrome</div>
+      <p>Includes pituitary Cushing disease and ectopic ACTH syndrome.</p>
+      <p><strong>Risks:</strong> Severe HTN, DM, preeclampsia, infections, hypokalemia, fetal growth restriction, prematurity.</p>
+      <p><strong>Management:</strong></p>
+      <ul>
+        <li>Preferred: surgery in 2nd trimester.</li>
+        <li>If surgery not possible: Metyrapone (leading medical option); monitor for worsening HTN & hypokalemia.</li>
+        <li>Cabergoline may be considered in selected pituitary Cushing disease cases.</li>
+        <li>Ketoconazole: limited data, specialist rescue only.</li>
+        <li>Ectopic ACTH: stabilize hypercortisolism first, then localize/treat source with expert care.</li>
+      </ul>
+      <p><strong>Avoid:</strong> Mifepristone, pasireotide, osilodrostat.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🩺 Labor & delivery steroid plan</div>
+      <ul>
+        <li>Continue usual morning replacement dose.</li>
+        <li>Stress-dose hydrocortisone: 100 mg IV at onset of active labor/anesthesia, then 50 mg q6h or continuous infusion.</li>
+        <li>Taper back to baseline within 24–48 hrs if stable.</li>
+      </ul>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>Hydrocortisone is first-choice replacement in pregnancy.</li>
+        <li>Isolated ACTH deficiency: fludrocortisone usually not needed.</li>
+        <li>Increase glucocorticoid later in pregnancy when clinically required.</li>
+        <li>Adrenal crisis = emergency → treat immediately.</li>
+        <li>Cushing: 2nd-trimester surgery preferred; metyrapone is main medical option.</li>
+        <li>Avoid mifepristone & routine dexamethasone replacement.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 28. OXYTOCIN-RELATED DISEASES ===== -->
+    <h2>👶 28. Oxytocin-Related Diseases</h2>
+    <div class="card">
+      <p><strong>Physiology:</strong> Estrogen ↑ oxytocin receptors in late pregnancy. Positive feedback in labor: cervical stretch → oxytocin release → stronger contractions → more stretch. Facilitates milk ejection by acting on myoepithelial cells. Synergizes with prostaglandins.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">👶 28.1 Labor Induction</div>
+      <p><strong>Indications:</strong> Post-term, PROM, maternal medical conditions (HTN, DM), fetal demise.</p>
+      <p><strong>Oxytocin dosing (IV):</strong></p>
+      <ul>
+        <li>Start 0.5–2 mIU/min</li>
+        <li>Increase 1–2 every 20–40 min</li>
+        <li>Max 20–40 (do not exceed without review)</li>
+      </ul>
+      <p><strong>Monitor:</strong> Contraction frequency/duration/intensity; FHR continuous; maternal vitals.</p>
+      <p><strong>Contraindications:</strong> Cephalopelvic disproportion; non-reassuring fetal status; previous uterine rupture; placenta previa (major); severe fetal distress.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📈 28.2 Labor Augmentation</div>
+      <p>Begin when contractions inadequate (&lt;3 in 10 min). Target 3–5 contractions in 10 min, each 40–60 sec.</p>
+      <p><strong>Risks:</strong> Tachysystole (&gt;5 in 10 min), fetal distress, uterine hypertonicity, uterine rupture (rare).</p>
+      <p><strong>Management of tachysystole:</strong> Stop oxytocin · left lateral · IV fluids · O₂ by mask · consider tocolytic (terbutaline).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🩸 28.3 Postpartum Hemorrhage (PPH)</div>
+      <p>Uterine atony is most common cause. Oxytocin is uterotonic of choice.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Route</th><th>Dose</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td>IV bolus</td><td>10 IU slow (over 1 min)</td><td>Treatment</td></tr>
+            <tr><td>IV infusion</td><td>20–40 IU in 500–1000 mL NS/LR</td><td>Treatment</td></tr>
+            <tr><td>IM</td><td>10 IU IM</td><td>Prevention (if IV unavailable)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Additional:</strong> Uterine massage; evaluate for retained placenta, laceration; fluids & blood products.</p>
+      <p><strong>Contraindications:</strong> None in life-threatening PPH.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🍼 28.4 Lactation Failure</div>
+      <p>Difficulty in milk ejection; engorgement with poor flow; separation from infant; stress/anxiety/fatigue.</p>
+      <ul>
+        <li>Intranasal: 24–40 IU (3–5 sprays) 1–2 min before breastfeeding</li>
+        <li>IM/IV: 3–5 IU short-term</li>
+      </ul>
+      <p><strong>Note:</strong> Not for increasing milk production — only for let-down reflex.</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>⚠️ Adverse effects</strong>
+      <p>Uterine hyperstimulation/tachysystole · fetal distress · hypotension · nausea/vomiting · water intoxication (hyponatremia).</p>
+    </div>
+
+    <!-- ===== 29. LH & FSH ===== -->
+    <h2>🥚 29. LH & FSH Related Diseases</h2>
+    <div class="card">
+      <p><strong>Physiology in pregnancy:</strong> Ovulation stops; new follicle recruitment is suppressed; corpus luteum is rescued by hCG in early pregnancy; E + P maintain suppression of pituitary gonadotropins. <strong>Active gonadotropin stimulation is generally NOT continued once pregnancy is confirmed.</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚖️ 29.1 PCOS & Ovulatory Dysfunction</div>
+      <p><strong>Before conception:</strong> Letrozole first-line; Clomiphene alternative; Metformin if insulin resistance.</p>
+      <p><strong>During pregnancy:</strong> Stop ovulation-induction drugs; continue only meds clearly indicated. Weight optimization, glucose monitoring, BP monitoring, early GDM screening.</p>
+      <p><strong>Risks:</strong> Miscarriage, GDM, hypertensive disorders.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔽 29.2 Hypogonadotropic Hypogonadism</div>
+      <p>Low LH/FSH, absent ovulation, infertility. Preconception: pulsatile GnRH or gonadotropins (FSH ± LH, hMG). Once pregnant: discontinue ovulation-induction therapy.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🕐 29.3 Premature Ovarian Insufficiency</div>
+      <p>High FSH, low estrogen, infertility. Fertility treatment often requires assisted reproduction. HRT is preconception care, not routine pregnancy therapy.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚡ 29.4 Ovarian Hyperstimulation Syndrome (OHSS) Risk</div>
+      <p>Triggered by exogenous FSH/hMG ± hCG. Warning signs: abdominal pain, ovarian enlargement, ascites, hemoconcentration.</p>
+      <p><strong>Management:</strong> Stop stimulation cycle; fluid balance; thrombosis risk assessment; urgent specialist review if severe. Pregnancy can worsen OHSS.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>LH/FSH are essential for ovulation but physiologically suppressed in pregnancy.</li>
+        <li>Most LH/FSH-directed drugs are fertility treatments, not continued in pregnancy.</li>
+        <li>PCOS is the most common clinical reason.</li>
+        <li>Letrozole is first-line ovulation induction in PCOS; clomiphene is alternative.</li>
+        <li>Once pregnant: stop ovulation-induction drugs.</li>
+        <li>Metformin, insulin, progesterone may continue if clinically indicated.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 30. PROLACTIN ===== -->
+    <h2>💧 30. Prolactin-Related Diseases</h2>
+    <div class="card">
+      <p><strong>Physiology:</strong> Estrogen stimulates lactotroph hyperplasia & ↑ prolactin. High progesterone during pregnancy limits full milk secretion until after delivery. After birth: ↓ progesterone + suckling → milk let-down & production.</p>
+      <p><strong>Clinical pearl:</strong> Serum prolactin rises normally in pregnancy → routine prolactin measurement NOT useful for tumor monitoring.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚪ 30.1 Microprolactinoma</div>
+      <p>Stop dopamine agonist once pregnancy confirmed. Do not use prolactin levels alone to guide management. Multidisciplinary care essential.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🚨 30.2 Symptomatic Tumor Enlargement</div>
+      <ul>
+        <li>Warning: progressive headache, visual field defect, cranial nerve symptoms.</li>
+        <li>Urgent MRI without gadolinium.</li>
+        <li>Visual field testing.</li>
+        <li>Restart bromocriptine.</li>
+        <li>Surgery only if refractory/severe compression.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🍼 30.3 Poor Lactation / Lactation Failure</div>
+      <p>Consider pituitary insufficiency, Sheehan syndrome, severe postpartum hemorrhage, retained placental hormone effects, or inadequate breastfeeding technique. Management: correct cause, lactation support, hydration, endocrinology review.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 30.4 Galactorrhea / Drug-Induced Hyperprolactinemia</div>
+      <p>Common culprits: antipsychotics, metoclopramide, domperidone, some antidepressants. Review medication necessity; <strong>do not stop psychiatric drugs abruptly</strong>. Treat underlying cause.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>Physiologic prolactin rise in pregnancy is normal.</li>
+        <li>Microprolactinoma: stop dopamine agonist once pregnant.</li>
+        <li>Macroprolactinoma or symptomatic growth: bromocriptine is usual first drug.</li>
+        <li>Do not use prolactin levels alone to guide management.</li>
+        <li>Multidisciplinary care essential.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 31. ADH (VASOPRESSIN) ===== -->
+    <h2>💦 31. ADH (Vasopressin) Related Diseases</h2>
+    <div class="card">
+      <p><strong>Physiology:</strong> Estrogen stimulates ADH release; ↑ plasma volume & ↓ plasma osmolality; ↑ reset osmostat (ADH released at lower osmolality); ↑ V2 receptor sensitivity. Result: tendency to water retention & dilutional hyponatremia, esp. late pregnancy.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💧 31.1 SIADH</div>
+      <p><strong>Causes:</strong> Preeclampsia/eclampsia; pulmonary disorders; CNS lesions; medications (SSRIs, carbamazepine); nausea, pain, stress.</p>
+      <p><strong>Features:</strong> ↓ Serum Na⁺; low serum osmolality; inappropriately concentrated urine; euvolemic.</p>
+      <p><strong>Management:</strong> Fluid restriction; salt tablets (NaCl 1–3 g/day); vasopressin antagonists (tolvaptan — avoid in pregnancy unless benefit &gt; risk); monitor Na⁺ q4–6h until stable.</p>
+      <p><strong>Avoid:</strong> Vaptans in 1st trimester; excessive IV fluids.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💦 31.2 Diabetes Insipidus</div>
+      <p><strong>Types:</strong> Central DI (↓ ADH); nephrogenic DI (↓ renal response); gestational DI (rare, transient).</p>
+      <p><strong>Features:</strong> Polyuria (&gt;3 L/day), polydipsia; dilute urine (↓ osmolality); hypernatremia if inadequate water intake.</p>
+      <p><strong>Preferred:</strong> Desmopressin (DDAVP) — drug of choice for central DI. Oral/nasal/SC/IV. Start low, titrate to symptoms & Na⁺.</p>
+      <p><strong>Monitoring:</strong> Serum Na⁺, urine osmolality, fluid balance.</p>
+      <p><strong>Notes:</strong> Avoid overcorrection → hyponatremia. Nephrogenic DI: treat cause; thiazides ± NSAIDs with caution. Ensure adequate water intake.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🌊 31.3 Dilutional Hyponatremia</div>
+      <p>Physiologic in late pregnancy (mild, Na⁺ 130–135 mEq/L).</p>
+      <ul>
+        <li>Mild: reassurance; limit excessive fluid intake.</li>
+        <li>Moderate/severe (&lt;130): fluid restriction + treat underlying cause.</li>
+        <li>Severe with symptoms: 3% hypertonic saline with caution.</li>
+        <li>Monitor Na⁺ q6–12h; avoid rapid correction (&gt;8–10 mEq/L/24h).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 31.4 Polyuria / Water Imbalance in Obstetric Conditions</div>
+      <p>Associated with preeclampsia, acute fatty liver of pregnancy, hyperemesis gravidarum. Management: treat underlying; monitor fluid balance; correct electrolytes.</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Avoid</strong>
+      <p>Vasopressin (high dose) · hypotonic IV fluids · excessive desmopressin · diuretics unless indicated · carbamazepine/phenytoin (SIADH-like effect).</p>
+    </div>
+
+    <!-- ===== 32. PANCREAS-RELATED DISEASES ===== -->
+    <h2>🍬 32. Pancreas-Related Diseases</h2>
+    <div class="card">
+      <p><strong>Physiology:</strong> Insulin resistance from placental hormones (hPL, progesterone, cortisol); ↑ β-cell workload; ↑ risk of hyperglycemia & pancreatitis. Exocrine secretion maintained.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🍬 32.1 Gestational Diabetes (GDM)</div>
+      <p>Glucose intolerance first recognized in pregnancy. ↑ macrosomia, preeclampsia, C-section, neonatal hypoglycemia.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Drug</th><th>Use in Pregnancy</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Insulin (preferred)</td><td>Safe & effective</td><td>Does not cross placenta</td></tr>
+            <tr><td>Metformin</td><td>Possible option</td><td>Crosses placenta; use if benefits &gt; risks</td></tr>
+            <tr><td>Glyburide</td><td>Not preferred</td><td>↑ neonatal hypoglycemia risk</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Monitoring:</strong> SMBG 4×/day; A1c each trimester (goal &lt;6.0–6.5%); fetal growth US at 28–32 wks.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💉 32.2 Pre-existing Diabetes (T1 or T2)</div>
+      <p>Higher risk: congenital anomalies, miscarriage, preeclampsia, stillbirth. Preconception control crucial.</p>
+      <ul>
+        <li>Intensive glycemic control; adjust therapy as pregnancy progresses.</li>
+        <li>Insulin first-line. Metformin consider in T2. Avoid other oral agents.</li>
+        <li>Glucose monitoring 7×/day; A1c each trimester.</li>
+        <li>Screen for retinopathy, nephropathy; fetal anomaly scan at 18–22 wks.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🩺 32.3 Acute Pancreatitis</div>
+      <p><strong>Causes:</strong> Gallstones (most common), hypertriglyceridemia, meds, idiopathic. 2nd/3rd tri most common.</p>
+      <p><strong>Management:</strong> Hospitalize; aggressive IV fluids; bowel rest; pain control (acetaminophen/opioids); treat underlying; early enteral nutrition when tolerated; antibiotics only if infection (cholangitis, necrosis).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🧪 32.4 Exocrine Pancreatic Insufficiency (EPI)</div>
+      <p>Causes: chronic pancreatitis, cystic fibrosis, fibrosis. Leads to malabsorption, weight loss, fat-soluble vitamin deficiency.</p>
+      <ul>
+        <li>Pancreatic enzyme replacement — first-line; considered safe; not systemically absorbed.</li>
+        <li>Vitamins (A, D, E, K) — supplement as needed.</li>
+        <li>PPIs (omeprazole/pantoprazole) to reduce acid inactivation of enzymes.</li>
+      </ul>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Avoid (Diabetes/Pancreas)</strong>
+      <p>Sulfonylureas (glyburide, glipizide) as routine · DPP-4 inhibitors · GLP-1 RA · ACE inhibitors · ARBs.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>Insulin is the gold standard for diabetes in pregnancy.</li>
+        <li>Metformin acceptable in selected cases.</li>
+        <li>Pancreatic enzyme replacement is safe in EPI.</li>
+        <li>Treat acute pancreatitis with fluids, analgesia, nutrition, cause control.</li>
+      </ul>
+    </div>
+
+        <!-- ===== 33. HYPERLIPIDEMIA ===== -->
+    <h2>💓 33. Hyperlipidemia in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Overview:</strong> Pregnancy ↑ lipid levels (esp. 2nd & 3rd tri). Most elevations are normal & transient. Drug therapy limited due to fetal risk.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Parameter</th><th>Typical change</th></tr></thead>
+          <tbody>
+            <tr><td>Total Cholesterol</td><td>↑ 25–50%</td></tr>
+            <tr><td>LDL-C</td><td>↑ 30–60%</td></tr>
+            <tr><td>HDL-C</td><td>↑ 10–20%</td></tr>
+            <tr><td>Triglycerides</td><td>↑ 100–400%</td></tr>
+            <tr><td>VLDL-C</td><td>↑ marked</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">Peak in 3rd tri; returns to baseline by 6–12 wks postpartum.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🥗 Lifestyle therapy (first-line)</div>
+      <p>Medical nutrition therapy (vegetables, fruits, whole grains, lean protein, omega-3; limit saturated/trans fats, refined carbs) · physical activity 150 min/wk · weight management · avoid alcohol & tobacco · address secondary causes (DM, hypothyroidism, nephrotic syndrome, cholestasis, meds).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚠️ Severe hypertriglyceridemia (TG ≥ 500 mg/dL)</div>
+      <p>Risk of pancreatitis when TG &gt;500–1000 mg/dL.</p>
+      <ul>
+        <li>Very-low-fat diet (&lt;15% calories).</li>
+        <li>Omega-3 fatty acids (safe).</li>
+        <li>Fibrate therapy only if benefits outweigh risks (prefer fenofibrate).</li>
+        <li>Monitor TG closely.</li>
+        <li><strong>Avoid statins, niacin, ezetimibe.</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">📉 LDL-C elevation</div>
+      <p>Mild–moderate: lifestyle only.</p>
+      <p>Severe (LDL ≥190 mg/dL or familial hypercholesterolemia): consider bile acid sequestrants if benefits &gt; risks. Lipoprotein apheresis may be considered in homozygous FH.</p>
+      <p class="muted"><strong>Statins are contraindicated during pregnancy.</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-title">🤱 Postpartum</div>
+      <p>Lipids return to baseline by 6–12 wks. Reassess & initiate appropriate pharmacotherapy (statins first-line postpartum). Breastfeeding: bile acid sequestrants safe; <strong>avoid statins</strong>.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Class</th><th>Examples</th><th>Pregnancy safety</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Statins</td><td>Atorvastatin, Rosuvastatin, Simvastatin</td><td>🔴 Contraindicated</td><td>Stop 1–2 months before conception</td></tr>
+          <tr><td>Fibrates</td><td>Fenofibrate, Gemfibrozil</td><td>🟡 Limited data</td><td>Consider for severe HTG; prefer fenofibrate</td></tr>
+          <tr><td>Bile acid sequestrants</td><td>Cholestyramine, Colesevelam</td><td>🟢 Safe</td><td>Not absorbed; may ↓ fat-soluble vitamin absorption</td></tr>
+          <tr><td>Omega-3</td><td>EPA/DHA fish oil</td><td>🟢 Safe</td><td>Useful for HTG; 2–4 g/day</td></tr>
+          <tr><td>Niacin</td><td>Vitamin B3</td><td>🔴 Contraindicated</td><td>Flushing, hepatotoxicity</td></tr>
+          <tr><td>Ezetimibe</td><td>—</td><td>🟡 Limited data</td><td>Insufficient safety; generally avoid</td></tr>
+          <tr><td>PCSK9 inhibitors</td><td>Evolocumab, Alirocumab</td><td>🔴 Avoid</td><td>Human data lacking</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== 34. URINARY SYSTEM ===== -->
+    <h2>🫘 34. Urinary System Related Diseases</h2>
+    <div class="card">
+      <p><strong>Overview:</strong> Pregnancy ↑ urinary stasis (progesterone relaxes smooth muscle; enlarging uterus compresses tract). Common: asymptomatic bacteriuria (ASB), acute cystitis, pyelonephritis, recurrent UTI. Untreated → pyelonephritis, sepsis, anemia, ARDS, preterm birth, LBW.</p>
+      <p><strong>Screening:</strong> Once early in prenatal care with urine culture. ASB = ≥10⁵ CFU/mL without symptoms.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔹 34.1 Asymptomatic Bacteriuria (ASB)</div>
+      <p>Treat all pregnant patients with ASB. Course: 4–7 days. Options based on culture: nitrofurantoin, cephalexin, amoxicillin if only susceptible. Follow-up culture 1–2 wks after treatment.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔹 34.2 Acute Cystitis</div>
+      <p>Treat 5–7 days. Preferred: nitrofurantoin, cephalexin, fosfomycin single dose for lower UTI. Avoid empiric amoxicillin/ampicillin (high resistance). Reassess if symptoms persist after 48 hrs.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔹 34.3 Pyelonephritis</div>
+      <p>Fever, flank pain, CVA tenderness, N/V → urgent treatment.</p>
+      <ul>
+        <li>Inpatient; IV fluids + IV antibiotics with gram-negative coverage.</li>
+        <li>Common: ceftriaxone or cefuroxime; step down to oral after improvement.</li>
+        <li>Total 14 days.</li>
+        <li><strong>Nitrofurantoin and fosfomycin NOT appropriate for pyelonephritis.</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🔹 34.4 Recurrent UTI</div>
+      <p>Suppressive: nitrofurantoin 100 mg nightly or cephalexin 250–500 mg nightly. Culture-guided follow-up.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Drug</th><th>Use</th><th>Pregnancy considerations</th></tr></thead>
+        <tbody>
+          <tr><td>Nitrofurantoin</td><td>Lower UTI (ASB, cystitis)</td><td>1st tri: reasonable if needed; 2nd/3rd: first-line; avoid 38–42 wks; avoid in G6PD</td></tr>
+          <tr><td>Cephalexin</td><td>ASB, cystitis</td><td>Extensive safety; well tolerated</td></tr>
+          <tr><td>Ceftriaxone / Cefuroxime (IV)</td><td>Pyelonephritis</td><td>Safe all trimesters; high renal tissue penetration</td></tr>
+          <tr><td>Amoxicillin</td><td>ASB/cystitis (if susceptible)</td><td>High resistance — culture-guided only</td></tr>
+          <tr><td>Fosfomycin</td><td>Uncomplicated cystitis</td><td>Single 3 g dose; NOT for pyelonephritis</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Avoid or Use with Caution</strong>
+      <p>Ampicillin/amoxicillin empiric (resistance) · Trimethoprim 1st tri (folate antagonism) · Sulfonamides near term · Fluoroquinolones · Tetracyclines · Aminoglycosides (specialist only).</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Screen early · treat bacteriuria · culture-guide therapy · lower UTI = oral; pyelonephritis = admission · protect both mother & fetus with prompt diagnosis & safe antibiotic selection.</p>
+    </div>
+
+    <!-- ===== 35. BACTERIAL INFECTIONS ===== -->
+    <h2>🦠 35. Bacterial Infections in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Why pregnancy ↑ risk:</strong> Urinary stasis & ureteral dilation → higher UTI risk; altered immunity; vaginal microbiome changes → bacterial vaginosis; untreated → pyelonephritis, PPROM, preterm labor, neonatal infection, maternal sepsis.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🩸 35.1 GBS Colonization</div>
+      <p>Screen at 36–37+6 wks. Intrapartum prophylaxis if GBS positive, GBS bacteriuria, or prior infant with invasive GBS.</p>
+      <p><strong>Preferred:</strong> Penicillin G IV 5 million units loading → 2.5–3 million units IV q4h until delivery.</p>
+      <p><strong>Alternative:</strong> Ampicillin IV; if severe PCN allergy → susceptibility-guided alternative.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🤰 35.2 Chorioamnionitis</div>
+      <p>Maternal fever, uterine tenderness, fetal tachycardia, foul fluid.</p>
+      <p><strong>Treatment:</strong> Ampicillin + gentamicin intrapartum; add clindamycin at cesarean delivery. Reduces maternal & neonatal complications.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 35.3 Chlamydia / Gonorrhea</div>
+      <p><strong>Chlamydia:</strong> Azithromycin 1 g PO once. Test of cure later in pregnancy; treat partner(s).</p>
+      <p><strong>Gonorrhea:</strong> Ceftriaxone 500 mg IM once. Add chlamydia treatment if not excluded. Treat partner(s).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 35.4 Bacterial Vaginosis</div>
+      <p>Metronidazole 500 mg PO BID × 7 days OR Clindamycin 300 mg PO BID × 7 days. <strong>Avoid tinidazole.</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-title">🥛 35.5 Listeriosis</div>
+      <p>Fever, flu-like illness, fetal risk, contaminated food exposure.</p>
+      <p><strong>Treatment:</strong> Ampicillin IV or high-dose; gentamicin may be added in severe cases.</p>
+      <p><strong>Prevention:</strong> Avoid unpasteurized dairy & high-risk refrigerated foods.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🌡️ 35.6 Syphilis</div>
+      <p>Penicillin is the only proven therapy to prevent congenital syphilis.</p>
+      <p><strong>Treatment:</strong> Benzathine penicillin G according to stage.</p>
+      <p><strong>Penicillin allergy:</strong> Desensitize, then treat with penicillin.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✅ Preferred antibiotics</strong>
+      <p>Penicillins · Cephalosporins · Fosfomycin · Azithromycin · Clindamycin · Metronidazole</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Avoid</strong>
+      <p>Tetracyclines · Fluoroquinolones · Chloramphenicol near term · Tinidazole in pregnancy</p>
+    </div>
+
+    <!-- ===== 36. FUNGAL INFECTIONS ===== -->
+    <h2>🍄 36. Fungal Infections in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Physiologic changes:</strong> ↑ estrogen & progesterone → ↑ vaginal glycogen → ↑ Candida · ↓ cell-mediated immunity (Th1) → ↑ fungal risk · ↑ oropharyngeal candidiasis risk · ↑ Vd of lipophilic drugs.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Infection</th><th>First-line</th><th>Alternatives / Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Vulvovaginal Candidiasis</td><td>Clotrimazole 1% cream 5 g QHS × 7 days OR Miconazole 2% cream 5 g QHS × 7 days</td><td>Nystatin 100,000 IU vaginal tablets QHS × 14 days; Terconazole 0.4% (avoid 0.8% in 1st tri). Avoid single-dose oral fluconazole in 1st tri.</td></tr>
+          <tr><td>Oral Candidiasis</td><td>Nystatin oral suspension 100,000 IU/mL, 5 mL swish & swallow QID × 7–14 days</td><td>Clotrimazole troches 10 mg 5×/day; Miconazole oral gel 20 mg/g QID</td></tr>
+          <tr><td>Cutaneous Candidiasis</td><td>Clotrimazole 1% cream BID × 7–14 days</td><td>Miconazole 2% cream BID; keep area dry</td></tr>
+          <tr><td>Tinea</td><td>Clotrimazole 1% cream BID × 2–4 wks</td><td>Terbinafine 1% cream QD; Miconazole 2% cream BID</td></tr>
+          <tr><td>Invasive Candidiasis</td><td>Echinocandins — Caspofungin 70 mg IV load → 50 mg daily; Micafungin 100 mg IV daily</td><td>Liposomal Amphotericin B 3–5 mg/kg IV daily; specialist consult</td></tr>
+          <tr><td>Cryptococcosis (immunocompromised)</td><td>Amphotericin B deoxycholate + Flucytosine → fluconazole 400–800 mg/day</td><td>Lipid Ampho B if toxicity risk high; multidisciplinary care</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Drug</th><th>Safety</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Topical azoles (Clotrimazole, Miconazole)</td><td>🟢 Safe</td><td>Preferred for superficial infections all trimesters</td></tr>
+          <tr><td>Fluconazole single dose</td><td>🟡 Avoid 1st tri</td><td>Possible congenital anomalies; use topical instead</td></tr>
+          <tr><td>Fluconazole prolonged high dose</td><td>🔴 Avoid</td><td>Craniofacial, skeletal defects</td></tr>
+          <tr><td>Amphotericin B (lipid or deoxycholate)</td><td>🟢 Safe</td><td>Drug of choice for severe systemic fungal infections</td></tr>
+          <tr><td>Echinocandins</td><td>🟡 Limited data</td><td>Use when benefits outweigh risks</td></tr>
+          <tr><td>Flucytosine</td><td>🟡 Limited</td><td>Marrow toxicity; only with Ampho B for severe cryptococcosis</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Topical azoles = first-line & safest · Avoid oral fluconazole in 1st tri · Amphotericin B safest systemic agent for severe infections · Treat only when confirmed/strongly suspected · Optimize maternal health to protect fetal outcomes.</p>
+    </div>
+
+    <!-- ===== 37. VIRAL INFECTIONS ===== -->
+    <h2>🦠 37. Viral Infections in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Core principles:</strong> Treat significant maternal viral illness promptly (maternal deterioration also harms fetus). Use safest effective drug, correct dose, shortest effective duration. Review GA, organ function, drug interactions.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Infection</th><th>First-line / Preferred</th><th>Key pearls</th><th>Avoid / caution</th></tr></thead>
+        <tbody>
+          <tr><td>A. Influenza</td><td>Oseltamivir 75 mg BID × 5 days — start ASAP (don't wait for test)</td><td>Preferred antiviral in any trimester</td><td>Baloxavir (insufficient data)</td></tr>
+          <tr><td>B. COVID-19</td><td>Nirmatrelvir/ritonavir (Paxlovid) for eligible mild-moderate outpatient; remdesivir when severe/hospitalized</td><td>Review major CYP3A interactions (ritonavir)</td><td>Molnupiravir generally avoided</td></tr>
+          <tr><td>C. HSV</td><td>Acyclovir or valacyclovir for primary/recurrent; IV acyclovir for severe</td><td>Suppressive from 36 wks: acyclovir 400 mg TID OR valacyclovir 500 mg BID</td><td>Delivery planning if active lesions</td></tr>
+          <tr><td>D. Varicella-Zoster</td><td>VarIZIG for significant exposure; oral acyclovir/valacyclovir for maternal infection; IV acyclovir for pneumonia/disseminated</td><td>Treat promptly if significant disease</td><td>Live varicella vaccine contraindicated</td></tr>
+          <tr><td>E. Chronic Hepatitis B</td><td>Tenofovir disoproxil fumarate (TDF) when HBV DNA high, ~28–32 wks</td><td>Newborn: HBIG + Hep B vaccine</td><td>Monitor renal function</td></tr>
+          <tr><td>F. Hepatitis C</td><td>Defer antiviral to postpartum</td><td>Supportive + specialist follow-up</td><td>Ribavirin contraindicated; DAAs not routine</td></tr>
+          <tr><td>G. HIV</td><td>Continue or initiate full suppressive combination ART ASAP</td><td>Do not stop ART; regimen based on resistance, prior therapy, HBV coinfection</td><td>Expert consultation strongly recommended</td></tr>
+          <tr><td>H. CMV</td><td>No routine proven antiviral for immunocompetent pregnant patients</td><td>Hygiene prevention & counseling</td><td>Valacyclovir not routine outside research</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>Maternal stabilization comes first.</li>
+        <li>Do not delay oseltamivir for suspected influenza.</li>
+        <li>Paxlovid is the preferred outpatient COVID therapy when eligible.</li>
+        <li>Acyclovir & valacyclovir are key anti-HSV agents in pregnancy.</li>
+        <li>Tenofovir helps reduce HBV vertical transmission.</li>
+        <li><strong>Avoid</strong> ribavirin, molnupiravir, baloxavir, live varicella vaccine.</li>
+      </ul>
+    </div>
+
+    <!-- ===== 38. PARASITIC INFECTIONS ===== -->
+    <h2>🐛 38. Parasitic Infections in Pregnancy</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Infection</th><th>Preferred treatment</th><th>Alternatives</th><th>Trimester use & notes</th></tr></thead>
+        <tbody>
+          <tr><td>Malaria (uncomplicated)</td><td>Chloroquine 25 mg base/kg total over 3 days (if sensitive); ACT (Artemether–Lumefantrine) per weight for 3 days (if resistant)</td><td>Quinine + Clindamycin (1st tri); Mefloquine (2nd/3rd tri)</td><td>All trimesters. Severe malaria: IV Artesunate. <strong>Avoid primaquine</strong> in pregnancy.</td></tr>
+          <tr><td>Toxoplasmosis</td><td>Spiramycin 1 g PO q8h</td><td>Pyrimethamine + Sulfadiazine + Folinic acid after 18 wks if fetal infection confirmed</td><td>Spiramycin reduces vertical transmission; combination for proven fetal infection (2nd/3rd tri)</td></tr>
+          <tr><td>Leishmaniasis</td><td>Liposomal Amphotericin B 3–5 mg/kg IV on alternate days (total 15–20 doses)</td><td>—</td><td>2nd/3rd tri preferred. <strong>Avoid antimonial drugs.</strong></td></tr>
+          <tr><td>Schistosomiasis</td><td>Praziquantel 40 mg/kg PO single dose (or 20 mg/kg BID × 1 day)</td><td>—</td><td>2nd/3rd tri preferred; avoid 1st tri unless benefit &gt; risk</td></tr>
+          <tr><td>Helminth infections</td><td>Albendazole 400 mg PO single dose (after 1st tri); Mebendazole 100 mg PO BID × 3 days</td><td>Pyrantel pamoate 11 mg/kg single dose — safe all trimesters</td><td>2nd/3rd tri preferred; avoid albendazole in 1st tri unless necessary</td></tr>
+          <tr><td>Giardiasis</td><td>Metronidazole 250 mg PO TID × 5–7 days</td><td>Tinidazole 2 g single dose (avoid 1st tri)</td><td>2nd/3rd tri preferred; avoid prolonged high-dose</td></tr>
+          <tr><td>Amoebiasis</td><td>Metronidazole 750 mg PO TID × 5–10 days → Paromomycin 500 mg PO TID × 7 days</td><td>Diloxanide furoate 500 mg TID (intestinal only)</td><td>All trimesters; metronidazole safe short course</td></tr>
+          <tr><td>Trichinellosis</td><td>Albendazole 400 mg PO BID × 8–14 days</td><td>Mebendazole 200 mg TID × 10 days</td><td>2nd/3rd tri preferred; corticosteroids for severe symptoms</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Treat parasitic infections in pregnancy to prevent maternal & fetal complications · use pregnancy-safe drugs at right time & dose · Spiramycin (toxoplasmosis) & liposomal amphotericin B (leishmaniasis) are safest · avoid teratogenic drugs in 1st tri · prevention is best strategy.</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Drugs to Avoid</strong>
+      <p>Primaquine (malaria) · pentavalent antimonials (early pregnancy) · high-dose/prolonged metronidazole · unnecessary albendazole/mebendazole in 1st tri.</p>
+    </div>
+
+    <!-- ===== 39. ANALGESICS ===== -->
+    <h2>💊 39. Analgesics in Pregnancy</h2>
+    <div class="card">
+      <p><strong>General principles:</strong> Treat the cause when possible · non-pharmacologic first (rest, heat/ice, PT, relaxation) · lowest effective dose × shortest duration · monotherapy · avoid self-medication & duplicate combination products · consider GA & comorbidities.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 Non-opioid analgesics</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Drug</th><th>Trimester use</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Acetaminophen (paracetamol)</td><td>🟢 All — first-line mild-moderate</td><td>Max 3–4 g/day adults; avoid overdose & combination products</td></tr>
+            <tr><td>NSAIDs (ibuprofen, naproxen, diclofenac)</td><td>🟡 Avoid 1st tri; 🔴 avoid after 20 wks</td><td>Ductus arteriosus closure, oligohydramnios</td></tr>
+            <tr><td>Aspirin (low-dose 81 mg)</td><td>🟢 All</td><td>Safe for preeclampsia prevention</td></tr>
+            <tr><td>Topical (lidocaine, diclofenac gel)</td><td>🟢 All</td><td>Limited systemic absorption</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 Management by pain type</div>
+      <ul>
+        <li><strong>Headache:</strong> Acetaminophen ± caffeine (low dose); hydration; treat triggers.</li>
+        <li><strong>Musculoskeletal:</strong> Acetaminophen, PT, heat/ice, topical agents.</li>
+        <li><strong>Dental:</strong> Acetaminophen; lidocaine; dental procedure in 2nd tri if needed.</li>
+        <li><strong>Post-op:</strong> Acetaminophen + short-course opioids if needed (avoid codeine/tramadol).</li>
+      </ul>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Acetaminophen is first-line · avoid NSAIDs after 20 wks · low-dose aspirin safe for preeclampsia prevention · topical agents preferred where possible · use the lowest effective dose for the shortest duration.</p>
+    </div>
+
+    <!-- ===== 40. OPIOID ANALGESICS ===== -->
+    <h2>💊 40. Opioid Analgesics in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Overview:</strong> Potent analgesics for moderate-severe pain. Use lowest effective dose × shortest duration. Consider non-opioid & non-pharmacologic therapies first. Abrupt discontinuation in chronic users → withdrawal.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Opioid</th><th>Cat.</th><th>Placental transfer</th><th>Maternal</th><th>Fetal/Neonatal</th></tr></thead>
+        <tbody>
+          <tr><td>Morphine</td><td>C</td><td>Moderate</td><td>Well studied</td><td>Neonatal resp depression; withdrawal with chronic use</td></tr>
+          <tr><td>Oxycodone</td><td>B</td><td>Moderate</td><td>Effective oral; sedation, nausea, constipation</td><td>Resp depression; withdrawal</td></tr>
+          <tr><td>Hydrocodone</td><td>C</td><td>Moderate</td><td>Often combined with APAP</td><td>Resp depression; withdrawal</td></tr>
+          <tr><td>Hydromorphone</td><td>C</td><td>Moderate</td><td>Potent; sedation, nausea</td><td>Resp depression; withdrawal</td></tr>
+          <tr><td>Fentanyl</td><td>C</td><td>High</td><td>IV/patch/transmucosal</td><td>Resp depression; withdrawal</td></tr>
+          <tr><td>Tramadol</td><td>C</td><td>High</td><td>Lower μ-agonism; serotonin syndrome risk</td><td>Resp depression; withdrawal</td></tr>
+          <tr><td>Codeine</td><td>C/D</td><td>High</td><td>Prodrug (CYP2D6); variable</td><td>Resp depression (ultra-rapid metabolizers); withdrawal</td></tr>
+          <tr><td>Methadone</td><td>C</td><td>High</td><td>OUD treatment; long t½</td><td>NAS common</td></tr>
+          <tr><td>Buprenorphine</td><td>C</td><td>High</td><td>Partial agonist; ceiling effect</td><td>NAS risk (less severe than methadone)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box warning">
+      <strong>⚠️ Avoid or Use with Caution</strong>
+      <p>Avoid chronic high-dose opioid use · avoid codeine & tramadol in late pregnancy & breastfeeding · avoid combos with BZDs/alcohol/sedatives · caution in asthma, sleep apnea, severe hepatic impairment.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">👶 Neonatal Abstinence Syndrome (NAS)</div>
+      <p>Onset: 24–72 h (short-acting); up to 5–7 days (methadone). Symptoms: tremors, irritability, high-pitched cry, poor feeding, vomiting, diarrhea, sweating, yawning, seizures. Management: supportive care first; morphine/methadone if severe. Breastfeeding encouraged if stable on prescribed therapy & no relapse.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Untreated severe pain harms mother & fetus · non-opioid first; opioids when necessary · lowest effective dose × shortest duration · avoid codeine & tramadol late pregnancy · plan for delivery & monitor neonate for NAS.</p>
+    </div>
+
+    <!-- ===== 41. AUTACOIDS ===== -->
+    <h2>⚛️ 41. Autacoids in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Key concepts:</strong> Produced on demand, short half-life; paracrine/autocrine; important for vascular adaptation, labor, fetal circulation.</p>
+      <p><strong>Major classes:</strong> Prostaglandins · Leukotrienes · Platelet-Activating Factor (PAF) · Nitric Oxide (NO) · Histamine · Serotonin (5-HT).</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Autacoid</th><th>Physiologic effect in pregnancy</th><th>Clinical relevance</th></tr></thead>
+        <tbody>
+          <tr><td>Prostaglandins</td><td>Cervical ripening; uterine contraction; ductus arteriosus maintenance; renal vasodilation</td><td>Labor initiation; NSAIDs in 3rd tri → ductus closure, oligohydramnios</td></tr>
+          <tr><td>Leukotrienes</td><td>Bronchoconstriction; vascular permeability; chemotaxis</td><td>CysLT antagonists (montelukast) safer for asthma control</td></tr>
+          <tr><td>Thromboxane A2</td><td>Platelet aggregation; vasoconstriction</td><td>Low-dose aspirin (inhibits TXA2) for high-risk preeclampsia</td></tr>
+          <tr><td>Nitric Oxide</td><td>Potent vasodilation; inhibits platelet aggregation; supports uteroplacental flow</td><td>NO donors (nitroglycerin) for specific maternal indications</td></tr>
+          <tr><td>Histamine</td><td>Vasodilation; ↑ permeability; bronchoconstriction</td><td>H1-antihistamines (loratadine, cetirizine) preferred</td></tr>
+          <tr><td>Serotonin (5-HT)</td><td>Modulates uterine tone; nausea/vomiting</td><td>5-HT3 antagonists (ondansetron) for severe N/V</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Drug class</th><th>Examples</th><th>Pregnancy considerations</th></tr></thead>
+        <tbody>
+          <tr><td>NSAIDs</td><td>Ibuprofen, naproxen, indomethacin</td><td>🔴 Avoid 3rd tri (ductus closure, renal, oligohydramnios); indomethacin short-term for fetal indications only</td></tr>
+          <tr><td>Aspirin (low dose)</td><td>81 mg/day</td><td>🟢 Safe; preeclampsia prevention</td></tr>
+          <tr><td>PG analogs</td><td>Misoprostol, Dinoprostone, Carboprost</td><td>Labor induction, cervical ripening, PPH</td></tr>
+          <tr><td>LT antagonists</td><td>Montelukast, Zafirlukast</td><td>Generally safe for asthma</td></tr>
+          <tr><td>5-LOX inhibitor</td><td>Zileuton</td><td>Limited data</td></tr>
+          <tr><td>Antihistamines</td><td>Loratadine, Cetirizine, Diphenhydramine</td><td>2nd-gen preferred; 1st-gen if needed (sedation caution)</td></tr>
+          <tr><td>5-HT3 antagonists</td><td>Ondansetron</td><td>When non-pharm measures fail; data reassuring</td></tr>
+          <tr><td>NO donors</td><td>Nitroglycerin, Nitroprusside</td><td>When necessary; monitor maternal BP & fetal status</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Understand autacoid roles in pregnancy · know which drugs modify autacoid pathways & trimester-specific risks · lowest effective dose × shortest duration · individualize therapy & monitor maternal/fetal outcomes.</p>
+    </div>
+
+    <!-- ===== 42. MIGRAINE ===== -->
+    <h2>🤕 42. Migraine in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Overview:</strong> Migraine often improves during pregnancy (esp. 2nd/3rd tri) due to stable estrogen, but can persist or worsen. Treat promptly; rule out secondary causes (preeclampsia, stroke, venous sinus thrombosis).</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🛠️ Non-drug first steps</div>
+      <ul>
+        <li>Identify & avoid triggers (sleep, diet, stress, hydration).</li>
+        <li>Dark, quiet room; cold compress; rest.</li>
+        <li>Regular sleep & meals; hydration; moderate caffeine.</li>
+        <li>Relaxation, biofeedback, acupuncture, CBT.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 Acute treatment (preferred / commonly used)</div>
+      <ul>
+        <li><strong>First-line:</strong> Acetaminophen (max 3–4 g/day).</li>
+        <li>Add caffeine (low dose) as adjunct in some formulations.</li>
+        <li><strong>Refractory/severe:</strong> Triptans — sumatriptan preferred (most pregnancy data); use if benefits outweigh risks.</li>
+        <li>Antiemetics: metoclopramide, prochlorperazine; ondansetron if refractory.</li>
+        <li>Opioids: reserve for refractory severe pain; avoid chronic use.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🟡 NSAIDs — trimester guidance</div>
+      <ul>
+        <li>1st tri: avoid if possible (miscarriage signal).</li>
+        <li>2nd tri: acceptable short-term.</li>
+        <li>3rd tri: <strong>avoid</strong> (ductus arteriosus closure, oligohydramnios, labor interference).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🛡️ Preventive therapy for frequent migraine</div>
+      <p>Consider if attacks are frequent, disabling, or prolonged.</p>
+      <ul>
+        <li>Beta-blockers: propranolol, metoprolol (preferred).</li>
+        <li>Topiramate: <strong>avoid</strong> (oral cleft risk).</li>
+        <li>Valproate: <strong>avoid</strong> (neural tube defects, cognitive impairment).</li>
+        <li>Amitriptyline/nortriptyline: options if indicated.</li>
+        <li>Magnesium: may be considered (consult specialist).</li>
+      </ul>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Drugs to Avoid or Generally Not Preferred</strong>
+      <p>Ergotamines (ergotamine, dihydroergotamine) · Valproate · Topiramate · High-dose or chronic NSAIDs · Opioid chronic use · Combination analgesics with high caffeine or butalbital.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Acetaminophen first-line · sumatriptan preferred triptan if needed · avoid NSAIDs in 3rd tri · propranolol/metoprolol preferred preventives · avoid valproate & topiramate · individualize therapy & monitor.</p>
+    </div>
+
+    <!-- ===== 43. RHEUMATIC DISORDERS ===== -->
+    <h2>🦴 43. Rheumatic Disorders in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Overview:</strong> Common in women of childbearing age. Disease control essential — uncontrolled inflammation ↑ miscarriage, preeclampsia, preterm birth, LBW.</p>
+      <p><strong>Physiologic changes:</strong> ↑ plasma volume, CO, GFR · ↓ albumin · ↑ hepatic metabolism (some drugs) · immune shift Th2 → may improve RA in 2nd/3rd tri but flares common postpartum.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Drug</th><th>Pregnancy safety</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Acetaminophen</td><td>🟢 Safe</td><td>First-line analgesic</td></tr>
+          <tr><td>Corticosteroids (prednisone, prednisolone)</td><td>🟢 Generally safe</td><td>Lowest effective dose; stress dose if long-term</td></tr>
+          <tr><td>Hydroxychloroquine (HCQ)</td><td>🟢 Safe</td><td>Continue in SLE</td></tr>
+          <tr><td>Sulfasalazine (SSZ)</td><td>🟢 Safe + folate</td><td>Folic acid supplementation</td></tr>
+          <tr><td>Azathioprine (AZA)</td><td>🟢 Generally safe</td><td>Monitor CBC, LFTs</td></tr>
+          <tr><td>Cyclosporine (CsA)</td><td>🟢 Generally safe</td><td>Monitor BP, renal</td></tr>
+          <tr><td>Tacrolimus</td><td>🟢 Generally safe</td><td>Monitor levels, renal</td></tr>
+          <tr><td>Biologics (certolizumab, etanercept, infliximab, adalimumab)</td><td>🟢 Relatively safe</td><td>Prefer certolizumab (minimal placental transfer)</td></tr>
+          <tr><td>NSAIDs</td><td>🟡 Caution</td><td>Avoid 1st tri & after 32 wks</td></tr>
+          <tr><td>Methotrexate (MTX)</td><td>🔴 Contraindicated</td><td>Stop ≥3 months before conception</td></tr>
+          <tr><td>Leflunomide (LEF)</td><td>🔴 Contraindicated</td><td>Washout with cholestyramine</td></tr>
+          <tr><td>Mycophenolate mofetil (MMF)</td><td>🔴 Contraindicated</td><td>Stop ≥6 weeks before conception</td></tr>
+          <tr><td>Cyclophosphamide (CYC)</td><td>🔴 Contraindicated</td><td>Reserve for life-threatening disease</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🦠 Live vaccines to infants of mothers on biologics</strong>
+      <p>Avoid live vaccines to infants (especially with infliximab/adalimumab) — placental transfer of biologics continues into 2nd/3rd tri.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Control disease before & during pregnancy · use pregnancy-compatible medications · avoid teratogenic drugs — plan ahead · close monitoring improves maternal & fetal outcomes · rheumatology + OB + pharmacist care.</p>
+    </div>
+
+    <!-- ===== 44. LOCAL & GENERAL ANESTHETICS ===== -->
+    <h2>💉 44. Local & General Anesthetics in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Physiologic changes:</strong> Airway edema → difficult intubation · ↓ FRC & ↑ O₂ consumption → rapid desaturation · ↑ CO & plasma volume · delayed gastric emptying → aspiration risk · ↓ MAC requirement by ~25–40% · ↑ sensitivity to local anesthetics · aortocaval compression in late pregnancy.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Drug</th><th>Uses</th><th>Maternal notes</th><th>Fetal notes</th></tr></thead>
+        <tbody>
+          <tr><td>Lidocaine</td><td>Infiltration, epidural, spinal</td><td>Well studied; watch CNS/cardiac toxicity high dose</td><td>Small placental transfer; no harm at clinical doses</td></tr>
+          <tr><td>Bupivacaine</td><td>Epidural, spinal</td><td>Common obstetrics; cardiotoxic if intravascular</td><td>Extensive experience; safe</td></tr>
+          <tr><td>Ropivacaine</td><td>Epidural labor analgesia</td><td>Less cardiotoxicity; less motor block</td><td>Limited but reassuring</td></tr>
+          <tr><td>Chloroprocaine</td><td>Epidural top-up</td><td>Rapid onset, short duration</td><td>Extensive obstetric use</td></tr>
+          <tr><td>Prilocaine/Mepivacaine</td><td>Infiltration/epidural</td><td>Prilocaine — methemoglobinemia risk</td><td>Monitor for methemoglobinemia high dose</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>GA drug</th><th>Role</th><th>Considerations</th></tr></thead>
+        <tbody>
+          <tr><td>Propofol</td><td>IV induction/sedation</td><td>Rapid onset/recovery; hypotension; minimal fetal effect</td></tr>
+          <tr><td>Sevoflurane</td><td>Inhalational maintenance</td><td>Preferred volatile; low placental transfer</td></tr>
+          <tr><td>Isoflurane</td><td>Maintenance alternative</td><td>Similar volatile considerations</td></tr>
+          <tr><td>Nitrous oxide</td><td>Adjuvant analgesia/sedation</td><td>Avoid — closes air spaces; theoretical B12 effect with prolonged exposure</td></tr>
+          <tr><td>Ketamine</td><td>Induction/adjunct</td><td>Preserves BP; emergence reactions at high doses</td></tr>
+          <tr><td>Fentanyl/remifentanil</td><td>Adjunct analgesia</td><td>Crosses placenta; neonatal resp depression near delivery</td></tr>
+          <tr><td>Succinylcholine</td><td>RSI</td><td>Rapid onset/short duration; bradycardia/hyperkalemia possible</td></tr>
+          <tr><td>Rocuronium</td><td>NM blockade</td><td>Reverse with sugammadex if needed</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Preferred strategies</strong>
+      <p>Labor analgesia: epidural, spinal, combined spinal-epidural · Cesarean: spinal or epidural; GA if urgent or neuraxial contraindicated · Non-obstetric surgery: 2nd tri often preferred for elective procedures · Maintain maternal O₂, normocapnia, normotension, left uterine displacement.</p>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 What to Avoid</strong>
+      <p>Maternal hypoxia/hypotension/hyperventilation/acidosis · aortocaval compression · local anesthetic systemic toxicity (LAST) · high-dose BZDs & long opioid exposure near delivery · prolonged nitrous oxide exposure.</p>
+    </div>
+
+    <!-- ===== 45. AUTOIMMUNE DISEASES ===== -->
+    <h2>🛡️ 45. Autoimmune Diseases in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Overview:</strong> Affect women of childbearing age more commonly. Pregnancy can influence disease activity; active disease ↑ adverse maternal & fetal outcomes. Goal: achieve remission/low activity before conception; use safest effective meds; monitor closely.</p>
+      <p><strong>Principles:</strong> Plan pregnancy when stable (≥6 months if possible) · continue essential meds · lowest effective dose · prefer drugs with established safety · avoid teratogens · coordinate rheumatology, OB, MFM, pharmacist.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Disorder</th><th>Key features</th><th>Pregnancy considerations</th></tr></thead>
+        <tbody>
+          <tr><td>Rheumatoid Arthritis (RA)</td><td>Symmetric polyarthritis; morning stiffness</td><td>Flares in ~40% 1st tri & postpartum; ↑ preeclampsia, preterm, SGA</td></tr>
+          <tr><td>Systemic Lupus Erythematosus (SLE)</td><td>Multisystem; renal, cutaneous, hematologic</td><td>Quiescence ≥6 months pre-conception preferred; ↑ flares, preeclampsia, preterm, fetal heart block (anti-Ro/SSA, anti-La/SSB)</td></tr>
+          <tr><td>Ankylosing Spondylitis (AS)</td><td>Inflammatory back pain; sacroiliitis</td><td>Often improves 2nd–3rd tri; postpartum flare possible</td></tr>
+          <tr><td>Psoriatic Arthritis (PsA)</td><td>Arthritis + psoriasis; dactylitis</td><td>Variable course; nail/skin flares postpartum</td></tr>
+          <tr><td>Gout</td><td>Hyperuricemia; recurrent flares</td><td>Often improves; postpartum flare possible</td></tr>
+          <tr><td>Systemic Sclerosis (SSc)</td><td>Skin thickening; Raynaud; ILD; renal crisis</td><td>↑ preeclampsia, IUGR, preterm; avoid ACEi (teratogenic)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">💊 Preferred medications (all with specialist supervision)</div>
+      <ul>
+        <li><strong>Safe / preferred:</strong> Acetaminophen · Corticosteroids (lowest effective dose) · Hydroxychloroquine · Sulfasalazine + folate · Azathioprine · Cyclosporine · Tacrolimus · Biologics (prefer certolizumab).</li>
+        <li><strong>Use with caution:</strong> NSAIDs (avoid 1st tri & after 32 wks).</li>
+        <li><strong>Contraindicated:</strong> Methotrexate · Leflunomide · Mycophenolate mofetil · Cyclophosphamide.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🛠️ Non-pharmacologic & preconception care</div>
+      <ul>
+        <li>Regular low-impact exercise · physical therapy · adequate rest · heat/cold · nutrition (Ca, Vit D, folate).</li>
+        <li>Achieve remission ≥6 months pre-conception; review & adjust meds; optimize comorbidities; folic acid 400–800 mcg/day (4–5 mg if prior MTX/AED).</li>
+      </ul>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Do not stop effective therapy without medical advice · maternal well-being = better pregnancy outcomes · minimize fetal drug exposure while preventing maternal flares · individualize therapy for each patient.</p>
+    </div>
+
+    <!-- ===== 46. PSYCHIATRIC DISORDERS ===== -->
+    <h2>🧠 46. Psychiatric Disorders in Pregnancy</h2>
+    <div class="card">
+      <p><strong>Overview:</strong> Common & undertreated — also carries maternal & fetal risk. Balance relapse prevention against teratogenicity, neonatal adaptation, breastfeeding exposure. Nonpharmacologic therapy important (CBT, psychotherapy, sleep hygiene, support).</p>
+      <p><strong>General principles:</strong> Preconception review · continue essential meds if relapse risk high · avoid polypharmacy · lowest effective dose · avoid abrupt discontinuation · monitor maternal symptoms, fetal growth, postpartum relapse risk.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Disorder</th><th>Preferred / commonly used</th><th>Use with caution</th><th>Avoid / major concerns</th></tr></thead>
+        <tbody>
+          <tr><td>Depression</td><td>SSRIs — sertraline, citalopram, escitalopram, fluoxetine; SNRIs — venlafaxine, duloxetine; Bupropion when indicated; psychotherapy for mild</td><td>Bupropion</td><td>Paroxetine (higher concern for cardiac malformations)</td></tr>
+          <tr><td>Anxiety disorders</td><td>SSRIs for persistent anxiety/panic/OCD; CBT & psychotherapy</td><td>Hydroxyzine</td><td>Benzodiazepines — use only when necessary; sedation, floppy infant, withdrawal, possible cleft risk with older data</td></tr>
+          <tr><td>Bipolar disorder</td><td>Lamotrigine for bipolar depression/maintenance; Selected atypicals — quetiapine, olanzapine, sometimes haloperidol</td><td>Lithium — selected high-risk with informed consent & monitoring</td><td>Valproate strongly avoid (teratogenic, neurodevelopmental); Carbamazepine avoid</td></tr>
+          <tr><td>Schizophrenia/severe agitation</td><td>Haloperidol; atypicals — quetiapine, olanzapine, risperidone</td><td>Clozapine (specialized use)</td><td>Polypharmacy & high-dose sedative combos unless necessary</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚫 Drugs to Avoid / Generally Discouraged</strong>
+      <p>Valproate (major teratogenicity; adverse neurodevelopment) · Carbamazepine · Paroxetine (when alternatives available) · chronic/high-dose benzodiazepines if avoidable · unnecessary combination therapy.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">👶 Fetal & neonatal considerations</div>
+      <ul>
+        <li>Congenital malformation risk depends on drug & timing.</li>
+        <li>Preterm birth/LBW may relate to illness severity & some medication exposure.</li>
+        <li>Neonatal adaptation syndrome (withdrawal, sedation).</li>
+        <li>Monitor newborn if exposed late in pregnancy.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🤱 Breastfeeding considerations</div>
+      <ul>
+        <li>Sertraline often preferred.</li>
+        <li>Paroxetine: acceptable alternative but check compatibility.</li>
+        <li>Quetiapine & olanzapine often compatible with monitoring.</li>
+        <li>Lamotrigine may be used; lithium in breastfeeding complex — specialist-guided only.</li>
+        <li>Watch infant for sedation, poor feeding, irritability.</li>
+      </ul>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Stable mother supports a safer pregnancy · untreated psychiatric disease can be more dangerous than medication · prefer monotherapy, lowest effective dose, individualized risk–benefit · severe bipolar or psychosis often needs continued pharmacotherapy · postpartum relapse risk is high — plan ahead.</p>
+    </div>
+
+    <!-- ===== 47. ANTIEPILEPTICS, ANTIDEPRESSANTS, ANXIOLYTICS & ANTIPSYCHOTICS ===== -->
+    <h2>💊 47. Antiepileptics, Antidepressants, Anxiolytics & Antipsychotics</h2>
+    <div class="card">
+      <p><strong>General principles:</strong> Treat maternal illness effectively — uncontrolled conditions harm mother & fetus. Lowest effective dose of a single agent when possible. Avoid polytherapy. Prefer drugs with more safety data. Preconception counseling. Folic acid 0.4–4 mg/day. Monitor drug levels when available.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">⚡ I. Antiepileptics</div>
+      <p class="muted">Uncontrolled seizures ↑ trauma, hypoxia, preterm birth, adverse neurodevelopment.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Drug</th><th>Major risks</th><th>Preferred status</th><th>Comments</th></tr></thead>
+          <tbody>
+            <tr><td>Lamotrigine (LTG)</td><td>Low MCM risk</td><td>🟢 Preferred</td><td>Monotherapy when appropriate; monitor levels</td></tr>
+            <tr><td>Levetiracetam (LEV)</td><td>Low MCM risk</td><td>🟢 Good option</td><td>Monitor levels</td></tr>
+            <tr><td>Oxcarbazepine (OXC)</td><td>Low-moderate risk</td><td>🟡 Consider when needed</td><td></td></tr>
+            <tr><td>Carbamazepine (CBZ)</td><td>NTDs & craniofacial anomalies</td><td>🟡 Use only if benefits &gt; risks</td><td></td></tr>
+            <tr><td>Phenytoin (PHT)</td><td>Fetal hydantoin syndrome; NTDs</td><td>🔴 Avoid if possible</td><td></td></tr>
+            <tr><td>Valproate (VPA)</td><td>NTDs, cognitive impairment, autism</td><td>🔴 Avoid in women of childbearing potential</td><td></td></tr>
+            <tr><td>Topiramate (TPM)</td><td>Oral clefts & growth restriction</td><td>🔴 Avoid if possible</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Management tips</h4>
+      <ul>
+        <li>Monotherapy preferred.</li>
+        <li>Monitor serum levels (esp. LTG, LEV, OXC, VPA).</li>
+        <li>High-dose folic acid 4 mg/day before conception & through 1st tri.</li>
+        <li>Vitamin K 10 mg/day in last month for enzyme-inducing drugs (CBZ, PHT) to prevent neonatal bleeding.</li>
+        <li>Breastfeeding: LTG, LEV, CBZ compatible — monitor infant.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">😊 II. Antidepressants</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Class/Drug</th><th>Major risks</th><th>Preferred status</th><th>Comments</th></tr></thead>
+          <tbody>
+            <tr><td>Sertraline (SSRI)</td><td>Low risk; possible PNA</td><td>🟢 Preferred</td><td>Preferred SSRI</td></tr>
+            <tr><td>Citalopram / Escitalopram</td><td>Low risk; possible PNA</td><td>🟢 Preferred</td><td>Avoid high doses (citalopram &gt;20 mg)</td></tr>
+            <tr><td>Fluoxetine</td><td>Low-moderate risk; long t½</td><td>🟡 Use if previously effective</td><td></td></tr>
+            <tr><td>Paroxetine</td><td>↑ cardiac defect risk (Ebstein anomaly)</td><td>🔴 Avoid 1st tri</td><td></td></tr>
+            <tr><td>Venlafaxine, Duloxetine</td><td>Low risk; possible PNA & HTN</td><td>🟡 Use if benefits &gt; risks</td><td></td></tr>
+            <tr><td>Amitriptyline, Nortriptyline</td><td>Low risk; anticholinergic effects</td><td>🟡 Options if indicated</td><td></td></tr>
+            <tr><td>Phenelzine (MAOI)</td><td>Hypertensive crisis with tyramine</td><td>🔴 Avoid unless no alternatives</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Management tips</h4>
+      <ul>
+        <li>Continue effective medication; avoid abrupt discontinuation.</li>
+        <li>Use lowest effective dose.</li>
+        <li>Monitor for PNA — irritability, tremors, feeding/respiratory difficulty.</li>
+        <li>Monitor maternal mood throughout pregnancy & postpartum.</li>
+        <li>Breastfeeding: most SSRIs (sertraline, paroxetine) preferred.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">💤 III. Anxiolytics & Antipsychotics</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Drug</th><th>Major risks</th><th>Preferred status</th></tr></thead>
+          <tbody>
+            <tr><td>Buspirone</td><td>Limited data, no known major risks</td><td>🟡 May be considered if needed</td></tr>
+            <tr><td>Hydroxyzine</td><td>Limited data; possible neonatal sedation</td><td>🟡 Short-term</td></tr>
+            <tr><td>Benzodiazepines (diazepam, lorazepam)</td><td>Cleft palate (slight), neonatal sedation, withdrawal</td><td>🔴 Avoid 1st tri; lowest dose short-term if essential</td></tr>
+            <tr><td>Haloperidol</td><td>Extensive data; low risk</td><td>🟢 Preferred antipsychotic</td></tr>
+            <tr><td>Quetiapine</td><td>Low risk; limited PNA</td><td>🟢 Commonly used</td></tr>
+            <tr><td>Risperidone</td><td>Low risk; possible prolactin ↑</td><td>🟡 Use if indicated</td></tr>
+            <tr><td>Olanzapine</td><td>Low risk; metabolic side effects</td><td>🟡 Monitor glucose</td></tr>
+            <tr><td>Clozapine</td><td>Agranulocytosis, seizures</td><td>🔴 Reserve for treatment-resistant cases</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Management tips</h4>
+      <ul>
+        <li>Lowest effective dose.</li>
+        <li>Monitor weight, glucose, lipids (esp. atypicals).</li>
+        <li>Watch for extrapyramidal symptoms.</li>
+        <li>Neonatal monitoring for sedation or withdrawal.</li>
+        <li>Breastfeeding: most antipsychotics compatible (except clozapine — use caution).</li>
+      </ul>
+    </div>
+    <div class="highlight-box warning">
+      <strong>🚩 Red flags — seek urgent care</strong>
+      <p>Seizure recurrence · severe depression or suicidal ideation · psychosis or severe agitation · mania or behavioral changes · severe adverse drug reactions.</p>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <p>Treat the mother — protect both · monotherapy, lowest effective dose · avoid valproate & paroxetine if possible · monitor levels, fetal growth, neonatal status · plan peripartum & postpartum care.</p>
+    </div>
+
+    <!-- ===== 48. CLINICAL TRIALS IN PREGNANT WOMEN ===== -->
+    <h2>🧪 48. Conducting Clinical Trials in Pregnant Women</h2>
+    <div class="card">
+      <div class="card-title">🤔 Why include pregnant women?</div>
+      <ul>
+        <li>Pregnancy alters PK/PD → affects efficacy & safety.</li>
+        <li>Exclusion → therapeutic uncertainty.</li>
+        <li>Ethical obligation to generate data.</li>
+        <li>Regulators now encourage careful inclusion.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">⚖️ Ethical principles</div>
+      <ul>
+        <li><strong>Respect for persons:</strong> Voluntary participation; autonomy.</li>
+        <li><strong>Beneficence:</strong> Maximize benefit for mother/fetus.</li>
+        <li><strong>Nonmaleficence:</strong> Minimize risk via design & monitoring.</li>
+        <li><strong>Justice:</strong> Avoid unfair exclusion; ensure equitable access.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">🧠 Key design considerations</div>
+      <ul>
+        <li>Rigorous risk–benefit & scientific justification.</li>
+        <li>Preclinical reproductive toxicity data required.</li>
+        <li>Pregnancy-specific dosing & monitoring plans.</li>
+        <li>Independent Data Safety Monitoring Board.</li>
+        <li>Adaptive designs & stopping rules.</li>
+        <li>Lactation considerations when relevant.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">📋 Regulatory framework</div>
+      <ul>
+        <li><strong>FDA:</strong> Encourages inclusion when appropriate; no categorical exclusion.</li>
+        <li><strong>ICH:</strong> E8(R1) General Considerations; E11(R1) Pediatric Trials.</li>
+        <li><strong>CIOMS:</strong> Ethical Considerations for Research in Pregnancy.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">📊 Pregnancy exposure registries</div>
+      <p><strong>What:</strong> Observational studies following pregnant individuals exposed to medications (therapeutic or accidental).</p>
+      <p><strong>Purpose:</strong> Detect rare/long-term outcomes; complement trials & postmarketing data; inform labeling & guidelines.</p>
+      <p><strong>Types:</strong></p>
+      <ul>
+        <li><strong>Prospective:</strong> Enroll during pregnancy & follow outcomes — e.g., OTIS, MotherToBaby.</li>
+        <li><strong>Retrospective:</strong> Use existing data — e.g., Medicaid databases, claims data.</li>
+        <li><strong>Condition-specific:</strong> Antiepileptic Pregnancy Registry, SSRIs in Pregnancy Registry.</li>
+      </ul>
+      <p><strong>Best practices:</strong> Standardized collection & definitions; large diverse populations; active follow-up; data privacy; transparent reporting.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🤝 Informed consent & shared decision-making</div>
+      <ul>
+        <li>Consider cultural, spiritual, social factors.</li>
+        <li>Address potential postpartum mental health implications.</li>
+        <li>Include partner/family when appropriate & desired.</li>
+        <li>Revisit decisions as pregnancy progresses or new data emerge.</li>
+      </ul>
+    </div>
+    <div class="highlight-box success">
+      <strong>✓ Key take-home messages</strong>
+      <ul>
+        <li>Pregnant individuals should not be routinely excluded from research.</li>
+        <li>Well-designed trials & registries are critical to reduce therapeutic uncertainty.</li>
+        <li>Informed consent & shared decision-making empower patients & improve outcomes.</li>
+        <li>Ethical & regulatory frameworks aim to protect while enabling progress.</li>
+      </ul>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Principle</th><th>Application</th></tr></thead>
+        <tbody>
+          <tr><td>Protection</td><td>Safeguard maternal & fetal health</td></tr>
+          <tr><td>Respect</td><td>Honor autonomy & informed choice</td></tr>
+          <tr><td>Beneficence</td><td>Promote best possible outcomes</td></tr>
+          <tr><td>Justice</td><td>Ensure fair access to research & therapies</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footnote">
+      <p><strong>Clinical Pharmacology in Pregnancy</strong> — For educational purposes only. Always verify current guidelines, gestational age, maternal comorbidities, and fetal risks before prescribing.</p>
+      <p style="margin-top:6px;">Better Outcomes for Mother & Child.</p>
+    </div>
+
+
+  </div>
+</aside>
+
 <!-- ============ HEADER ============ -->
 <header class="sticky top-0 z-50 glass-header border-b border-slate-200 dark:border-slate-800">
   <div class="max-w-6xl mx-auto px-3 py-3 flex items-center justify-between gap-2">
     <div class="flex items-center gap-2 sm:gap-3 min-w-0">
       <button onclick="openSidebar()" class="p-2 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition flex-shrink-0" title="Subjects menu">☰</button>
+      <button onclick="openPregSidebar()" class="p-2 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition flex-shrink-0" title="Pregnancy Pharmacology">💊</button>
       <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-sky-500/20 flex-shrink-0">🩺</div>
       <div class="min-w-0">
         <h1 class="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2 truncate">
@@ -335,6 +2757,32 @@
         <button type="button" id="modalDeleteBtn" onclick="deleteFromModal()" class="hidden py-2.5 px-4 rounded-xl bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 font-bold text-sm transition">Delete</button>
       </div>
     </form>
+  </div>
+</div>
+
+<!-- ============ PREGNANCY HTML EDITOR MODAL ============ -->
+<div id="pregEditOverlay" class="fixed inset-0 bg-black/60 z-[90] hidden items-center justify-center p-2 sm:p-4">
+  <div class="bg-white dark:bg-slate-900 rounded-2xl w-full max-w-5xl max-h-[95dvh] flex flex-col shadow-2xl">
+    <div class="border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between flex-shrink-0">
+      <h3 class="font-extrabold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+        ✏️ Edit Pregnancy Pharmacology Content
+      </h3>
+      <div class="flex items-center gap-2">
+        <button onclick="pregEditorResetToDefault()" class="text-[11px] font-bold px-2 py-1 rounded-lg border border-rose-300 dark:border-rose-800 text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition" title="Reset to original content">↺ Reset</button>
+        <button onclick="closePregEditor()" class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl leading-none">✕</button>
+      </div>
+    </div>
+    <div class="px-4 py-2 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-400 flex-shrink-0">
+      Edit raw HTML. Keep existing class names (<code class="px-1 rounded bg-slate-200 dark:bg-slate-800 font-mono">card</code>, <code class="px-1 rounded bg-slate-200 dark:bg-slate-800 font-mono">card-title</code>, <code class="px-1 rounded bg-slate-200 dark:bg-slate-800 font-mono">table-wrap</code>, <code class="px-1 rounded bg-slate-200 dark:bg-slate-800 font-mono">highlight-box</code>, <code class="px-1 rounded bg-slate-200 dark:bg-slate-800 font-mono">badge</code>) for consistent styling. Changes are stored in your browser.
+    </div>
+    <textarea id="pregEditTextarea" spellcheck="false" class="flex-1 w-full p-3 border-0 outline-none bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 resize-none" style="min-height: 0;"></textarea>
+    <div class="border-t border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between gap-2 flex-shrink-0">
+      <span id="pregEditStatus" class="text-[11px] text-slate-500 dark:text-slate-400">Ready</span>
+      <div class="flex items-center gap-2">
+        <button onclick="closePregEditor()" class="text-xs font-bold px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition">Cancel</button>
+        <button onclick="savePregEditor()" class="text-xs font-bold px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white transition">💾 Save</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1978,6 +4426,7 @@ function initApp() {
   loadNotes();
   loadHighlights();
   loadBookmarks();
+  loadPregContent();
   if (localStorage.getItem(VIEWMODE_KEY) === 'flip') isFlipView = true;
   applyViewMode();
   updateBookmarkCount();
@@ -2043,7 +4492,108 @@ function updateActiveSubjectChip(){
 }
 function openSidebar(){ document.getElementById('subjectSidebar').classList.remove('-translate-x-full'); document.getElementById('sidebarOverlay').classList.remove('hidden'); }
 function closeSidebar(){ document.getElementById('subjectSidebar').classList.add('-translate-x-full'); document.getElementById('sidebarOverlay').classList.add('hidden'); }
+function openPregSidebar(){
+  document.getElementById('pregSidebar').classList.remove('translate-x-full');
+  document.getElementById('pregOverlay').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closePregSidebar(){
+  document.getElementById('pregSidebar').classList.add('translate-x-full');
+  document.getElementById('pregOverlay').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+// ============================================================
+// PREGNANCY SIDEBAR HTML EDITOR (persists to localStorage)
+// ============================================================
+const PREG_HTML_KEY = 'pregvault_content_html';
+const PREG_HTML_DEFAULT = null; // captured on first run
+let pregEditorOriginal = '';
 
+function pregContentEl(){
+  return document.getElementById('pregContentBody');
+}
+
+function loadPregContent(){
+  const body = pregContentEl();
+  if (!body) return;
+  // Capture the shipped default ONCE, so "Reset" works forever
+  if (!PREG_HTML_DEFAULT) {
+    try {
+      const shipped = localStorage.getItem(PREG_HTML_KEY + '_default');
+      if (shipped) {
+        // Already captured in a previous session; leave the live content alone
+      } else {
+        // First ever run: current DOM is the shipped default
+        localStorage.setItem(PREG_HTML_KEY + '_default', body.innerHTML);
+      }
+    } catch(e){}
+  }
+  const saved = localStorage.getItem(PREG_HTML_KEY);
+  if (saved) {
+    body.innerHTML = saved;
+  }
+}
+
+function savePregContent(html){
+  try {
+    localStorage.setItem(PREG_HTML_KEY, html);
+  } catch(e) {
+    showToast('⚠️ Could not save — storage full');
+  }
+}
+
+function openPregEditor(){
+  const body = pregContentEl();
+  if (!body) return;
+  pregEditorOriginal = body.innerHTML;
+  const ta = document.getElementById('pregEditTextarea');
+  ta.value = pregEditorOriginal;
+  document.getElementById('pregEditStatus').textContent = `Editing · ${(pregEditorOriginal.length/1024).toFixed(1)} KB`;
+  document.getElementById('pregEditOverlay').classList.remove('hidden');
+  document.getElementById('pregEditOverlay').classList.add('flex');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => ta.focus(), 50);
+}
+
+function closePregEditor(){
+  document.getElementById('pregEditOverlay').classList.add('hidden');
+  document.getElementById('pregEditOverlay').classList.remove('flex');
+  document.body.style.overflow = '';
+}
+
+function savePregEditor(){
+  const ta = document.getElementById('pregEditTextarea');
+  const html = ta.value;
+  // Basic sanity check — refuse to save obviously broken content
+  if (!html.trim()) {
+    if (!confirm('Content is empty. Save anyway?')) return;
+  }
+  const openTags = (html.match(/<div\b/gi)||[]).length;
+  const closeTags = (html.match(/<\/div>/gi)||[]).length;
+  if (openTags !== closeTags) {
+    if (!confirm(`Tag mismatch detected (${openTags} <div> vs ${closeTags} </div>). Save anyway? Layout may break.`)) return;
+  }
+  savePregContent(html);
+  pregContentEl().innerHTML = html;
+  showToast('✓ Pregnancy content saved');
+  closePregEditor();
+}
+
+function pregEditorResetToDefault(){
+  if (!confirm('Reset pregnancy content to the original shipped version? This cannot be undone.')) return;
+  const def = localStorage.getItem(PREG_HTML_KEY + '_default');
+  if (!def) {
+    showToast('⚠️ No default snapshot found');
+    return;
+  }
+  localStorage.removeItem(PREG_HTML_KEY);
+  pregContentEl().innerHTML = def;
+  document.getElementById('pregEditTextarea').value = def;
+  document.getElementById('pregEditStatus').textContent = 'Reset to default ✓';
+  showToast('↺ Reset to original');
+}
+
+// Call loadPregContent() on init
 // ============================================================
 // CHIPS
 // ============================================================
@@ -2640,7 +5190,15 @@ function saveNoteForm(e){
 // BACKUP / RESET / MISC
 // ============================================================
 function exportBackup(){
-  const payload = { notes: notesData, highlights, bookmarks: bookmarkedIds, exportedAt: new Date().toISOString(), version: 2 };
+  const payload = {
+    notes: notesData,
+    highlights,
+    bookmarks: bookmarkedIds,
+    pregHtml: localStorage.getItem(PREG_HTML_KEY) || null,
+    pregHtmlDefault: localStorage.getItem(PREG_HTML_KEY + '_default') || null,
+    exportedAt: new Date().toISOString(),
+    version: 2
+  };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -2659,6 +5217,13 @@ function importBackup(event){
       notesData = payload.notes.map(n => ({ ...n, subject: n.subject || computeSubject(n) }));
       highlights = payload.highlights || {};
       bookmarkedIds = payload.bookmarks || [];
+            if (payload.pregHtml) {
+        localStorage.setItem(PREG_HTML_KEY, payload.pregHtml);
+      }
+      if (payload.pregHtmlDefault) {
+        localStorage.setItem(PREG_HTML_KEY + '_default', payload.pregHtmlDefault);
+      }
+      loadPregContent();
       saveNotes(); saveHighlights(); saveBookmarks();
       activeSubject = 'All'; activeCategory = 'ALL'; activeSystem = 'All';
       buildSubjectSidebar(); buildSystemChips(); updateActiveSubjectChip(); updateBookmarkCount(); renderCards();
@@ -2672,6 +5237,11 @@ function resetAllData(){
   if (!confirm('Really sure? Cannot be undone.')) return;
   notesData = MASTER_DATA.map(item => ({ ...item, subject: computeSubject(item) }));
   highlights = {}; bookmarkedIds = [];
+    const def = localStorage.getItem(PREG_HTML_KEY + '_default');
+  if (def) {
+    localStorage.removeItem(PREG_HTML_KEY);
+    if (pregContentEl()) pregContentEl().innerHTML = def;
+  }
   saveNotes(); saveHighlights(); saveBookmarks();
   activeSubject = 'All'; activeCategory = 'ALL'; activeSystem = 'All';
   buildSubjectSidebar(); buildSystemChips(); updateActiveSubjectChip(); updateBookmarkCount(); renderCards();

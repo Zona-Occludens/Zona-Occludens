@@ -1182,10 +1182,10 @@ MASTER_DATA.push(
 
 // --- SECTION 9: COMPLEMENT-KININ-COAGULATION CROSSTALK ---
 MASTER_DATA.push(
-  { id: "c1", category: "PATH", sys: "Immunology", subject: "Pathology", name: "C1 Inhibitor (C1-INH)", pts: ["Master Regulator", "Inhibits Classical complement (C1r, C1s)", "Inhibits Contact/kinin system (kallikrein, Factor XIIa)", "Inhibits Coagulation (Factor XIa)"], mnemonic: "C1-INH = Master" },
-  { id: "c2", category: "PATH", sys: "Immunology", subject: "Pathology", name: "Contact-Activation Hub", pts: ["Factor XIIa (Hageman factor) → activates prekallikrein → kallikrein → cleaves HMWK → releases bradykinin (kinin system) AND activates Factor XI (coagulation)"], mnemonic: "Factor XIIa = Hub" },
-  { id: "c3", category: "PATH", sys: "Immunology", subject: "Pathology", name: "Hereditary Angioedema (HAE) vs ACE-I Angioedema", pts: ["HAE: C1-INH deficiency → unchecked kallikrein/XIIa → bradykinin", "ACE-I: ACE fails to degrade bradykinin", "Both: Antihistamines/epinephrine ineffective", "HAE treatment: C1-INH concentrate, icatibant, ecallantide", "ACE-I treatment: Stop ACE-I"], mnemonic: "HAE vs ACE-I" },
-  { id: "c4", category: "PATH", sys: "Immunology", subject: "Pathology", name: "Thromboinflammation (Sepsis/DIC)", pts: ["Thrombin, plasmin, Factor Xa directly cleave C3 and C5 → generate C3a/C5a independent of classical/alternative pathways", "C3a/C5a = anaphylatoxins (mast cell degranulation, vascular permeability)", "C3b/C4b = opsonins", "C5b-9 = Membrane Attack Complex (MAC) → lysis"], mnemonic: "Thromboinflammation" },
+  { id: "comp1", category: "PATH", sys: "Immunology", subject: "Pathology", name: "C1 Inhibitor (C1-INH)", pts: ["Master Regulator", "Inhibits Classical complement (C1r, C1s)", "Inhibits Contact/kinin system (kallikrein, Factor XIIa)", "Inhibits Coagulation (Factor XIa)"], mnemonic: "C1-INH = Master" },
+  { id: "comp2", category: "PATH", sys: "Immunology", subject: "Pathology", name: "Contact-Activation Hub", pts: ["Factor XIIa (Hageman factor) → activates prekallikrein → kallikrein → cleaves HMWK → releases bradykinin (kinin system) AND activates Factor XI (coagulation)"], mnemonic: "Factor XIIa = Hub" },
+  { id: "comp3", category: "PATH", sys: "Immunology", subject: "Pathology", name: "Hereditary Angioedema (HAE) vs ACE-I Angioedema", pts: ["HAE: C1-INH deficiency → unchecked kallikrein/XIIa → bradykinin", "ACE-I: ACE fails to degrade bradykinin", "Both: Antihistamines/epinephrine ineffective", "HAE treatment: C1-INH concentrate, icatibant, ecallantide", "ACE-I treatment: Stop ACE-I"], mnemonic: "HAE vs ACE-I" },
+  { id: "comp4", category: "PATH", sys: "Immunology", subject: "Pathology", name: "Thromboinflammation (Sepsis/DIC)", pts: ["Thrombin, plasmin, Factor Xa directly cleave C3 and C5 → generate C3a/C5a independent of classical/alternative pathways", "C3a/C5a = anaphylatoxins (mast cell degranulation, vascular permeability)", "C3b/C4b = opsonins", "C5b-9 = Membrane Attack Complex (MAC) → lysis"], mnemonic: "Thromboinflammation" },
 );
 
 // --- SECTION 10: MOLECULAR / GENETIC & TARGETED-THERAPY MARKERS ---
@@ -1851,7 +1851,7 @@ let isHighlightMode = false;
 let isFlipView = false;
 let bookmarkedIds = [];
 let editingId = null;
-let renderLimit = 60;
+let renderLimit = 300;
 const PAGE_SIZE = 60;
 let modalDirty = false;
 
@@ -1887,12 +1887,15 @@ window.addEventListener('message', (e) => {
   if (!d || d.source !== 'zona') return;
 
   if (d.type === 'hydrate' && d.payload) {
-    const p = d.payload;
-    if (Array.isArray(p.notes) && p.notes.length > 0) {
-      notesData = p.notes.map(n => ({ ...n, subject: n.subject || computeSubject(n) }));
-    } else {
-      notesData = MASTER_DATA.map(item => ({ ...item, subject: computeSubject(item) }));
-    }
+  const p = d.payload;
+  // Always prefer local MASTER_DATA when it's larger — the source of truth is the file itself
+  const localMaster = MASTER_DATA.map(item => ({ ...item, subject: computeSubject(item) }));
+  if (Array.isArray(p.notes) && p.notes.length > localMaster.length) {
+    notesData = p.notes.map(n => ({ ...n, subject: n.subject || computeSubject(n) }));
+  } else {
+    notesData = localMaster;
+  }
+  
     highlights = p.highlights || {};
     bookmarkedIds = p.bookmarks || [];
 
@@ -1946,7 +1949,15 @@ const testModeLabel = document.getElementById('testModeLabel');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
 const noteForm = document.getElementById('noteForm');
 
+const DATA_VERSION = 2; // bump this number every time you edit MASTER_DATA
+const VERSION_KEY = 'medvault_data_version';
+
 function loadNotes(){
+  const savedVersion = Number(localStorage.getItem(VERSION_KEY) || 0);
+  if (savedVersion < DATA_VERSION) {
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.setItem(VERSION_KEY, String(DATA_VERSION));
+  }
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) {
     try { notesData = JSON.parse(saved); return; } catch(e){ }

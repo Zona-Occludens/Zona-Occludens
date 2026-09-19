@@ -2678,7 +2678,7 @@
     <button onclick="setCategoryFilter('BIOC')" id="cat-BIOC" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 transition whitespace-nowrap">🧪 Biochem</button>
     <button onclick="setCategoryFilter('MICRO')" id="cat-MICRO" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 transition whitespace-nowrap">🦠 Micro</button>
     <button onclick="setCategoryFilter('FORMULA')" id="cat-FORMULA" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 transition whitespace-nowrap">📐 Formulas</button>
-    <button onclick="setCategoryFilter('PLAN')" id="cat-PLAN" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-fuchsia-600 dark:text-fuchsia-400 transition whitespace-nowrap">📅 52-Day</button>
+    <button onclick="setCategoryFilter('PYQ')" id="cat-PYQ" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-violet-600 dark:text-violet-400 transition whitespace-nowrap">📋 PYQs</button>
     <button onclick="setCategoryFilter('CANCER')" id="cat-CANCER" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-rose-600 dark:text-rose-400 transition whitespace-nowrap">💊 Cancer Drugs</button>
     <button onclick="setCategoryFilter('UPDATE')" id="cat-UPDATE" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-orange-600 dark:text-orange-400 transition whitespace-nowrap">🚨 Updates</button>
     <button onclick="setCategoryFilter('MILESTONE')" id="cat-MILESTONE" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-teal-600 dark:text-teal-400 transition whitespace-nowrap">👶 Milestones</button>
@@ -2688,6 +2688,7 @@
   </div>
 
   <div class="flex gap-1.5 overflow-x-auto pb-2 text-xs no-scrollbar" id="systemChips"></div>
+  <div class="flex gap-1.5 overflow-x-auto pb-2 text-xs no-scrollbar" id="pyqYearChips"></div>
 </div>
 
 <main class="max-w-6xl mx-auto px-2.5 sm:px-3 py-3">
@@ -3534,60 +3535,22 @@ const MASTER_DATA = [
 { id:"f19", category:"FORMULA", sys:"Peds", name:"Maintenance Fluids (Holliday-Segar)", pts:["100 mL/kg for first 10 kg","50 mL/kg for next 10 kg","20 mL/kg for remaining kg"], mnemonic:"4-2-1 rule", causes:"Pediatric fluids", pearl:"4 mL/kg/hr first 10 kg, 2 for next, 1 for rest." },
 { id:"f20", category:"FORMULA", sys:"Peds", name:"Weight Estimation (Children)", pts:["(Age + 4) × 2","For 1-10 years","Approximation"], mnemonic:"(Age + 4) × 2", causes:"Pediatric dosing", pearl:"Rough estimate only." },
 
-// ==================== 52-DAY PLAN (NEW) ====================
-{ id:"pl1", category:"PLAN", sys:"Day 01", name:"Median nerve lesions", alt:"Day 01 · Anatomy · NEET PG 2023", pts:["MCQ ID: ANA0953067","Subject: Anatomy"], mnemonic:"Day 01", causes:"NEET PG 2023", pearl:"Focus: Median nerve lesions and their clinical presentation." },
-{ id:"pl2", category:"PLAN", sys:"Day 02", name:"Inguinal Hernia (Direct vs Indirect)", alt:"Day 02 · Anatomy · NEET PG 2023 · INICET 2023", pts:["MCQ ID: ANA0424189","Subject: Anatomy"], mnemonic:"Day 02", causes:"NEET PG 2023 · INICET 2023", pearl:"Focus: Differentiation between direct and indirect inguinal hernias." },
-{ id:"pl3", category:"PLAN", sys:"Day 03", name:"Nephron structure", alt:"Day 03 · Anatomy · NEET PG 2023", pts:["MCQ ID: ANA0513093","Subject: Anatomy"], mnemonic:"Day 03", causes:"NEET PG 2023", pearl:"Focus: Nephron anatomy and structure." },
-{ id:"pl4", category:"PLAN", sys:"Day 04", name:"Congenital heart diseases (PDA, VSD, ASD, TOF)", alt:"Day 04 · Anatomy · NEET PG 2023", pts:["MCQ ID: ANA0438163","Subject: Anatomy"], mnemonic:"Day 04", causes:"NEET PG 2023", pearl:"Focus: Congenital heart defects." },
-{ id:"pl5", category:"PLAN", sys:"Day 05", name:"Sciatica (L5/S1, SLR)", alt:"Day 05 · Anatomy · NEET PG 2023", pts:["MCQ ID: ANA0144765","Subject: Anatomy"], mnemonic:"Day 05", causes:"NEET PG 2023", pearl:"Focus: Sciatica and SLR test." },
-{ id:"pl6", category:"PLAN", sys:"Day 06", name:"Potassium regulation", alt:"Day 06 · Physiology · NEET PG 2023, 2024", pts:["MCQ ID: PHY0221380","Subject: Physiology"], mnemonic:"Day 06", causes:"NEET PG 2023, 2024", pearl:"Focus: Potassium homeostasis." },
-{ id:"pl7", category:"PLAN", sys:"Day 07", name:"High-altitude physiology", alt:"Day 07 · Physiology · NEET PG 2025", pts:["MCQ ID: PHY0818963","Subject: Physiology"], mnemonic:"Day 07", causes:"NEET PG 2025", pearl:"Focus: High-altitude adaptations." },
-{ id:"pl8", category:"PLAN", sys:"Day 08", name:"Resting membrane potential", alt:"Day 08 · Physiology · NEET PG 2024", pts:["MCQ ID: PHY0067462","Subject: Physiology"], mnemonic:"Day 08", causes:"NEET PG 2024", pearl:"Focus: RMP basics." },
-{ id:"pl9", category:"PLAN", sys:"Day 09", name:"Ionic changes & RMP", alt:"Day 09 · Physiology · NEET PG 2023", pts:["MCQ ID: PHY0173745","Subject: Physiology"], mnemonic:"Day 09", causes:"NEET PG 2023", pearl:"Focus: Ionic changes affecting RMP." },
-{ id:"pl10", category:"PLAN", sys:"Day 10", name:"Cardiac action potential", alt:"Day 10 · Physiology · NEET PG 2023", pts:["MCQ ID: PHY0264550","Subject: Physiology"], mnemonic:"Day 10", causes:"NEET PG 2023", pearl:"Focus: Cardiac action potential phases." },
-{ id:"pl11", category:"PLAN", sys:"Day 11", name:"Galactose metabolism", alt:"Day 11 · Biochemistry · NEET PG 2024", pts:["MCQ ID: BCM022040","Subject: Biochemistry"], mnemonic:"Day 11", causes:"NEET PG 2024", pearl:"Focus: Galactose metabolism disorders." },
-{ id:"pl12", category:"PLAN", sys:"Day 12", name:"Drug overdose antidotes", alt:"Day 12 · Biochemistry · NEET PG 2024", pts:["MCQ ID: BCM0645526","Subject: Biochemistry"], mnemonic:"Day 12", causes:"NEET PG 2024", pearl:"Focus: Common antidotes." },
-{ id:"pl13", category:"PLAN", sys:"Day 13", name:"Muscle tissue disorders", alt:"Day 13 · Biochemistry · NEET PG 2024", pts:["MCQ ID: BCM0009289","Subject: Biochemistry"], mnemonic:"Day 13", causes:"NEET PG 2024", pearl:"Focus: Muscle metabolism disorders." },
-{ id:"pl14", category:"PLAN", sys:"Day 14", name:"Metabolic syndrome", alt:"Day 14 · Biochemistry · NEET PG 2023", pts:["MCQ ID: BCM0351579","Subject: Biochemistry"], mnemonic:"Day 14", causes:"NEET PG 2023", pearl:"Focus: Metabolic syndrome criteria." },
-{ id:"pl15", category:"PLAN", sys:"Day 15", name:"Amino acid disorders", alt:"Day 15 · Biochemistry · NEET PG 2023", pts:["MCQ ID: BCM0739714","Subject: Biochemistry"], mnemonic:"Day 15", causes:"NEET PG 2023", pearl:"Focus: Aminoacidopathies." },
-{ id:"pl16", category:"PLAN", sys:"Day 16", name:"Loading vs Maintenance dose", alt:"Day 16 · Pharmacology · NEET PG 2024", pts:["MCQ ID: PHA0728984","Subject: Pharmacology"], mnemonic:"Day 16", causes:"NEET PG 2024", pearl:"Focus: Pharmacokinetic dosing." },
-{ id:"pl17", category:"PLAN", sys:"Day 17", name:"Clinical trial phases", alt:"Day 17 · Pharmacology · NEET PG 2024", pts:["MCQ ID: PHA0777441","Subject: Pharmacology"], mnemonic:"Day 17", causes:"NEET PG 2024", pearl:"Focus: Phase I-IV trials." },
-{ id:"pl18", category:"PLAN", sys:"Day 18", name:"Urge incontinence/OAB", alt:"Day 18 · Pharmacology · NEET PG 2024", pts:["MCQ ID: PHA0658965","Subject: Pharmacology"], mnemonic:"Day 18", causes:"NEET PG 2024", pearl:"Focus: Overactive bladder management." },
-{ id:"pl19", category:"PLAN", sys:"Day 19", name:"Asthma stepwise management", alt:"Day 19 · Pharmacology · NEET PG 2025", pts:["MCQ ID: PHA0285118","Subject: Pharmacology"], mnemonic:"Day 19", causes:"NEET PG 2025", pearl:"Focus: GINA asthma steps." },
-{ id:"pl20", category:"PLAN", sys:"Day 20", name:"PAH in scleroderma → Bosentan", alt:"Day 20 · Pharmacology · NEET PG 2024", pts:["MCQ ID: PHA0135754","Subject: Pharmacology"], mnemonic:"Day 20", causes:"NEET PG 2024", pearl:"Focus: Bosentan in PAH." },
-{ id:"pl21", category:"PLAN", sys:"Day 21", name:"Lysosomal storage disorders", alt:"Day 21 · Pathology · NEET PG 2024", pts:["MCQ ID: PAT0215704","Subject: Pathology"], mnemonic:"Day 21", causes:"NEET PG 2024", pearl:"Focus: Lysosomal storage diseases." },
-{ id:"pl22", category:"PLAN", sys:"Day 22", name:"Measles vaccine & exanthems", alt:"Day 22 · Pathology · NEET PG 2023", pts:["MCQ ID: PAT0811097","Subject: Pathology"], mnemonic:"Day 22", causes:"NEET PG 2023", pearl:"Focus: Measles exanthem." },
-{ id:"pl23", category:"PLAN", sys:"Day 23", name:"Pituitary tumors", alt:"Day 23 · Pathology · NEET PG 2025", pts:["MCQ ID: PAT0000039","Subject: Pathology"], mnemonic:"Day 23", causes:"NEET PG 2025", pearl:"Focus: Pituitary adenomas." },
-{ id:"pl24", category:"PLAN", sys:"Day 24", name:"Occupational lung diseases", alt:"Day 24 · Pathology · NEET PG 2023", pts:["MCQ ID: PAT0668604","Subject: Pathology"], mnemonic:"Day 24", causes:"NEET PG 2023", pearl:"Focus: Pneumoconioses." },
-{ id:"pl25", category:"PLAN", sys:"Day 25", name:"Programmed cell death", alt:"Day 25 · Pathology · NEET PG 2025", pts:["MCQ ID: PAT0030315","Subject: Pathology"], mnemonic:"Day 25", causes:"NEET PG 2025", pearl:"Focus: Apoptosis pathways." },
-{ id:"pl26", category:"PLAN", sys:"Day 26", name:"Parasites & malignancies", alt:"Day 26 · Microbiology · NEET PG 2023", pts:["MCQ ID: MIC0402853","Subject: Microbiology"], mnemonic:"Day 26", causes:"NEET PG 2023", pearl:"Focus: Parasites causing cancer." },
-{ id:"pl27", category:"PLAN", sys:"Day 27", name:"Filariasis", alt:"Day 27 · Microbiology · NEET PG 2023", pts:["MCQ ID: MIC0034394","Subject: Microbiology"], mnemonic:"Day 27", causes:"NEET PG 2023", pearl:"Focus: Lymphatic filariasis." },
-{ id:"pl28", category:"PLAN", sys:"Day 28", name:"Opportunistic fungi in HIV", alt:"Day 28 · Microbiology · NEET PG 2023", pts:["MCQ ID: MIC0250975","Subject: Microbiology"], mnemonic:"Day 28", causes:"NEET PG 2023", pearl:"Focus: HIV-associated fungal infections." },
-{ id:"pl29", category:"PLAN", sys:"Day 29", name:"Pediatric meningitis", alt:"Day 29 · Microbiology · NEET PG 2023", pts:["MCQ ID: MIC0505269","Subject: Microbiology"], mnemonic:"Day 29", causes:"NEET PG 2023", pearl:"Focus: Pediatric meningitis pathogens." },
-{ id:"pl30", category:"PLAN", sys:"Day 30", name:"Plasmodium differentiation", alt:"Day 30 · Microbiology · NEET PG 2023", pts:["MCQ ID: MIC0251907","Subject: Microbiology"], mnemonic:"Day 30", causes:"NEET PG 2023", pearl:"Focus: Malaria species differentiation." },
-{ id:"pl31", category:"PLAN", sys:"Day 31", name:"Postmortem phenomena", alt:"Day 31 · Forensic Med. · NEET PG 2025", pts:["MCQ ID: FMT0127949","Subject: Forensic Medicine"], mnemonic:"Day 31", causes:"NEET PG 2025", pearl:"Focus: Postmortem changes." },
-{ id:"pl32", category:"PLAN", sys:"Day 32", name:"POCSO Act 2012", alt:"Day 32 · Forensic Med. · NEET PG 2025", pts:["MCQ ID: FMT0357420","Subject: Forensic Medicine"], mnemonic:"Day 32", causes:"NEET PG 2025", pearl:"Focus: POCSO Act provisions." },
-{ id:"pl33", category:"PLAN", sys:"Day 33", name:"Heat stroke vs exhaustion", alt:"Day 33 · Forensic Med. · NEET PG 2023", pts:["MCQ ID: PHA0299617","Subject: Forensic Medicine"], mnemonic:"Day 33", causes:"NEET PG 2023", pearl:"Focus: Hyperthermia differentiation." },
-{ id:"pl34", category:"PLAN", sys:"Day 34", name:"DALY, YLL, YLD", alt:"Day 34 · PSM · NEET PG 2023", pts:["MCQ ID: PSM0931069","Subject: PSM"], mnemonic:"Day 34", causes:"NEET PG 2023", pearl:"Focus: Disability-adjusted life years." },
-{ id:"pl35", category:"PLAN", sys:"Day 35", name:"National cancer control", alt:"Day 35 · PSM · NEET PG 2023", pts:["MCQ ID: PSM0394542","Subject: PSM"], mnemonic:"Day 35", causes:"NEET PG 2023", pearl:"Focus: National cancer control programme." },
-{ id:"pl36", category:"PLAN", sys:"Day 36", name:"Vitamin deficiency", alt:"Day 36 · PSM · NEET PG 2023", pts:["MCQ ID: PSM0483322","Subject: PSM"], mnemonic:"Day 36", causes:"NEET PG 2023", pearl:"Focus: Vitamin deficiencies in public health." },
-{ id:"pl37", category:"PLAN", sys:"Day 37", name:"Epidemiology concepts", alt:"Day 37 · PSM · NEET PG 2023", pts:["MCQ ID: PSM0774187","Subject: PSM"], mnemonic:"Day 37", causes:"NEET PG 2023", pearl:"Focus: Incidence, prevalence, etc." },
-{ id:"pl38", category:"PLAN", sys:"Day 38", name:"Varicella immunization", alt:"Day 38 · PSM · NEET PG 2023", pts:["MCQ ID: PSM0658789","Subject: PSM"], mnemonic:"Day 38", causes:"NEET PG 2023", pearl:"Focus: Varicella vaccine." },
-{ id:"pl39", category:"PLAN", sys:"Day 39", name:"National Immunization Schedule", alt:"Day 39 · PSM · NEET PG 2023", pts:["MCQ ID: PSM0238009","Subject: PSM"], mnemonic:"Day 39", causes:"NEET PG 2023", pearl:"Focus: India NIS." },
-{ id:"pl40", category:"PLAN", sys:"Day 40", name:"Healthcare workers (ASHA, ANM)", alt:"Day 40 · PSM · NEET PG 2023", pts:["MCQ ID: PSM0768370","Subject: PSM"], mnemonic:"Day 40", causes:"NEET PG 2023", pearl:"Focus: Health system cadres." },
-{ id:"pl41", category:"PLAN", sys:"Day 41", name:"Vitamin loss in rice milling", alt:"Day 41 · PSM · NEET PG 2023", pts:["MCQ ID: PSM0682819","Subject: PSM"], mnemonic:"Day 41", causes:"NEET PG 2023", pearl:"Focus: Rice fortification." },
-{ id:"pl42", category:"PLAN", sys:"Day 42", name:"RDA definition", alt:"Day 42 · PSM · NEET PG 2023", pts:["MCQ ID: PSM0384832","Subject: PSM"], mnemonic:"Day 42", causes:"NEET PG 2023", pearl:"Focus: Recommended Dietary Allowance." },
-{ id:"pl43", category:"PLAN", sys:"Day 43", name:"Embryology of ear", alt:"Day 43 · ENT · NEET PG 2024", pts:["MCQ ID: ENT0897693","Subject: ENT"], mnemonic:"Day 43", causes:"NEET PG 2024", pearl:"Focus: Ear embryology." },
-{ id:"pl44", category:"PLAN", sys:"Day 44", name:"Tympanic membrane perforation", alt:"Day 44 · ENT · NEET PG 2025", pts:["MCQ ID: ENT0599695","Subject: ENT"], mnemonic:"Day 44", causes:"NEET PG 2025", pearl:"Focus: TM perforations." },
-{ id:"pl45", category:"PLAN", sys:"Day 45", name:"Hearing loss in children", alt:"Day 45 · ENT · NEET PG 2023", pts:["MCQ ID: ENT0635675","Subject: ENT"], mnemonic:"Day 45", causes:"NEET PG 2023", pearl:"Focus: Pediatric hearing loss." },
-{ id:"pl46", category:"PLAN", sys:"Day 46", name:"Nasal polypoidal masses", alt:"Day 46 · ENT · NEET PG 2023", pts:["MCQ ID: ENT0914636","Subject: ENT"], mnemonic:"Day 46", causes:"NEET PG 2023", pearl:"Focus: Nasal polyps." },
-{ id:"pl47", category:"PLAN", sys:"Day 47", name:"Conjunctival & limbal lesions", alt:"Day 47 · Ophthalmology · NEET PG 2023", pts:["MCQ ID: OPT0866355","Subject: Ophthalmology"], mnemonic:"Day 47", causes:"NEET PG 2023", pearl:"Focus: Conjunctival lesions." },
-{ id:"pl48", category:"PLAN", sys:"Day 48", name:"Congenital ocular conditions", alt:"Day 48 · Ophthalmology · NEET PG 2023", pts:["MCQ ID: OPT0332177","Subject: Ophthalmology"], mnemonic:"Day 48", causes:"NEET PG 2023", pearl:"Focus: Congenital eye diseases." },
-{ id:"pl49", category:"PLAN", sys:"Day 49", name:"Visual field defects", alt:"Day 49 · Ophthalmology · NEET PG 2023", pts:["MCQ ID: OPT0398252","Subject: Ophthalmology"], mnemonic:"Day 49", causes:"NEET PG 2023", pearl:"Focus: Visual field defects." },
-{ id:"pl50", category:"PLAN", sys:"Day 50", name:"Corneal rings & metal deposition", alt:"Day 50 · Ophthalmology · NEET PG 2023", pts:["MCQ ID: OPT0879760","Subject: Ophthalmology"], mnemonic:"Day 50", causes:"NEET PG 2023", pearl:"Focus: Kayser-Fleischer rings." },
-{ id:"pl51", category:"PLAN", sys:"Day 51", name:"Aortic arch derivatives", alt:"Day 51 · General Medicine · NEET PG 2023", pts:["MCQ ID: GMX0811137","Subject: General Medicine"], mnemonic:"Day 51", causes:"NEET PG 2023", pearl:"Focus: Aortic arch embryology." },
-{ id:"pl52", category:"PLAN", sys:"Day 52", name:"Neurodegenerative diseases", alt:"Day 52 · General Medicine · NEET PG 2023", pts:["MCQ ID: GMX0772629","Subject: General Medicine"], mnemonic:"Day 52", causes:"NEET PG 2023", pearl:"Focus: Neurodegeneration." },
+// ==================== PYQs (Previous Year Questions) ====================
+// Each item uses category:"PYQ" and a subject-based sys tag.
+// The "alt" field carries a clean topic descriptor (no exam-year text).
 
+{ id:"pyq1", category:"PYQ", sys:"Anatomy", name:"Median nerve lesions", alt:"Thenar wasting · Ape-hand · Carpal tunnel", pts:["High-yield: thenar wasting, ape-hand, carpal tunnel","LOAF muscles affected (Lateral two Lumbricals, Opponens pollicis, Abductor pollicis brevis, Flexor pollicis brevis)"], mnemonic:"LOAF muscles", causes:"Compression / laceration", pearl:"Recurrent branch of median nerve is most vulnerable in carpal tunnel." },
+{ id:"pyq2", category:"PYQ", sys:"Anatomy", name:"Inguinal Hernia (Direct vs Indirect)", alt:"Direct vs Indirect inguinal hernia", pts:["Indirect: lateral to inferior epigastric, through deep ring","Direct: medial to inferior epigastric, through Hesselbach triangle","Indirect is the most common type overall (congenital)"], mnemonic:"Indirect = In the ring; Direct = Defect in floor", causes:"Weakness of abdominal wall", pearl:"Indirect hernia passes through the deep inguinal ring; direct hernia bulges through Hesselbach's triangle." },
+{ id:"pyq3", category:"PYQ", sys:"Physiology", name:"Potassium regulation", alt:"K+ homeostasis & shifts", pts:["Insulin, β2-agonists, aldosterone shift K+ intracellularly","Acidosis, cell lysis, exercise shift K+ extracellularly","ECG: peaked T → wide QRS → sine wave in hyperkalemia"], mnemonic:"Insulin IN, Acid OUT", causes:"Imbalance in renal excretion vs shifts", pearl:"Correct K+ before giving any antiarrhythmic in suspected hyperkalemia." },
+{ id:"pyq4", category:"PYQ", sys:"Biochemistry", name:"Galactose metabolism", alt:"Galactosemia · GALT deficiency", pts:["Classic galactosemia: GALT deficiency","Galactokinase deficiency: only cataracts","Galactose-1-phosphate accumulates → liver/kidney/brain damage"], mnemonic:"GALT = Galactosemia", causes:"Enzyme deficiency", pearl:"Newborn screen: positive for galactosemia → stop breast milk, start soy formula." },
+{ id:"pyq5", category:"PYQ", sys:"Pharmacology", name:"Loading vs Maintenance dose", alt:"Pharmacokinetic dosing principles", pts:["Loading dose = Vd × target concentration / F","Maintenance dose = Cl × steady-state concentration / F","Loading dose depends on Vd, not on clearance"], mnemonic:"Load = Vd, Maintain = Cl", causes:"Kinetics principles", pearl:"If Vd is large (e.g., digoxin), loading is essential to achieve rapid therapeutic levels." },
+{ id:"pyq6", category:"PYQ", sys:"Pathology", name:"Lysosomal storage disorders", alt:"Tay-Sachs · Gaucher · Niemann-Pick", pts:["Tay-Sachs: hexosaminidase A, cherry-red spot","Gaucher: glucocerebrosidase, crumpled paper cytoplasm","Most are autosomal recessive except Fabry and Hunter (X-linked)"], mnemonic:"TGN = Tay, Gaucher, Niemann-Pick", causes:"Enzyme deficiency", pearl:"Enzyme replacement therapy is available for Gaucher (imiglucerase) and Fabry (agalsidase)." },
+{ id:"pyq7", category:"PYQ", sys:"Microbiology", name:"Filariasis", alt:"Wuchereria bancrofti · Lymphatic filariasis", pts:["Wuchereria bancrofti — nocturnal periodicity","DEC + Albendazole + Ivermectin (triple therapy)","Elephantiasis is due to lymphatic obstruction"], mnemonic:"DEC + Alb + Iver", causes:"Wuchereria bancrofti", pearl:"Blood smear for microfilariae must be collected at night (nocturnal periodicity)." },
+{ id:"pyq8", category:"PYQ", sys:"Forensic Medicine", name:"Postmortem phenomena", alt:"Livor · Rigor · Algor mortis", pts:["Livor mortis: 1–4 hrs, fixes at 6–8 hrs","Rigor mortis: starts 2–4 hrs, passes off in 12 hrs (head→toe)","Rigor mortis is due to ATP depletion in muscle"], mnemonic:"Liver Rigor Algor", causes:"Cessation of circulation", pearl:"Rigor mortis passes off in the same order it appeared (head → toe) but disappears in the same sequence." },
+{ id:"pyq9", category:"PYQ", sys:"Community Medicine", name:"DALY, YLL, YLD", alt:"Burden of disease metrics", pts:["DALY = YLL + YLD","1 DALY = one lost year of healthy life","DALY used for cost-effectiveness and disease burden"], mnemonic:"DALY = YLL + YLD", causes:"Burden of disease metric", pearl:"One DALY = one lost year of healthy life. Used for cost-effectiveness comparisons." },
+{ id:"pyq10", category:"PYQ", sys:"ENT", name:"Tympanic membrane perforation", alt:"Safe vs Unsafe perforation", pts:["Safe (central) vs unsafe (marginal/attic) perforation","Attic perforation → cholesteatoma risk","Central perforation is safe; marginal is unsafe"], mnemonic:"Attic = Attic cholesteatoma", causes:"Infection / trauma", pearl:"Attic (epitympanic) perforation is unsafe — risk of cholesteatoma and intracranial spread." },
+{ id:"pyq11", category:"PYQ", sys:"Ophthalmology", name:"Visual field defects", alt:"Chiasmal & retrochiasmal lesions", pts:["Bitemporal hemianopia: optic chiasm (pituitary tumor)","Homonymous hemianopia: retrochiasmal (stroke)","Optic nerve lesion = monocular blindness"], mnemonic:"Chiasm = Bitemporal", causes:"Lesion location", pearl:"Pituitary adenoma → bitemporal hemianopia (compression of decussating nasal fibers)." },
+{ id:"pyq12", category:"PYQ", sys:"General Medicine", name:"Neurodegenerative diseases", alt:"Alzheimer · Parkinson", pts:["Alzheimer: amyloid plaques + tau tangles","Parkinson: Lewy bodies (α-synuclein)","Donepezil is DOC for Alzheimer's"], mnemonic:"AD = Amyloid; PD = Lewy", causes:"Protein misfolding", pearl:"Donepezil (AChE inhibitor) is DOC for Alzheimer's; Levodopa + Carbidopa for Parkinson's." }
 ];
 
 // ============================================================
@@ -4594,6 +4557,131 @@ MASTER_DATA.push(
     pearl:"Shake test for freeze-sensitive vaccines; VVM for heat-sensitive ones. OPV can be stored frozen for long periods." },
 );
 
+// ---- IAP (ACVIP) SCHEDULE ----
+MASTER_DATA.push(
+  { id:"vax_iap_birth", category:"VAX", sys:"IAP · Birth", subject:"Community Medicine", name:"IAP Schedule — Birth", alt:"ACVIP · Ghai",
+    pts:["BCG — intradermal, left upper arm","OPV-0 — oral, within 15 days","Hepatitis B-1 — IM, anterolateral thigh, within 24 hr","HBsAg+ mother: HBIG 0.5 mL (other thigh) within 12 hr + vaccine"],
+    mnemonic:"B-O-H = BCG, OPV-0, Hep B", causes:"Identical to UIP birth doses",
+    pearl:"Baby of HBsAg+ mother: vaccine + HBIG at different sites, ideally within 12 hr. Birth dose prevents perinatal transmission." },
+  { id:"vax_iap_6w", category:"VAX", sys:"IAP · 6 wk", subject:"Community Medicine", name:"IAP Schedule — 6 weeks", alt:"Primary series dose 1",
+    pts:["DTwP/DTaP-1 — IM, anterolateral thigh","IPV-1 — full dose 0.5 mL IM (not fractional)","Hib-1 — IM","Rotavirus-1 — oral","PCV-1 — IM (different thigh)","Hep B-2 — IM (or use hexavalent = DTwP + HepB + Hib + IPV)"],
+    mnemonic:"6-10-14 = D-I-H-R-P (DTP · IPV · Hib · Rota · PCV)", causes:"Primary series",
+    pearl:"Hexavalent cuts injections. DTaP has fewer reactions than DTwP; IAP accepts both. IAP uses full-dose IPV IM, while UIP uses fIPV 0.1 mL intradermal." },
+  { id:"vax_iap_10_14w", category:"VAX", sys:"IAP · 10 & 14 wk", subject:"Community Medicine", name:"IAP Schedule — 10 & 14 weeks", alt:"Primary series doses 2 and 3",
+    pts:["10 wk: DTwP-2, IPV-2, Hib-2, Rota-2, PCV-2","14 wk: DTwP-3, IPV-3, Hib-3, Rota-3 (3-dose brands only), PCV-3","Minimum interval between doses: 4 weeks","Rotavirus: dose 1 by 15 wk, last dose by 8 months"],
+    mnemonic:"Same 5 again: D-I-H-R-P", causes:"Completes primary series",
+    pearl:"Rotarix (RV1) = 2 doses (6, 10 wk). RotaTeq, Rotavac, Rotasiil = 3 doses. Hep B is not repeated here unless monovalent." },
+  { id:"vax_iap_6m", category:"VAX", sys:"IAP · 6 mo", subject:"Community Medicine", name:"IAP Schedule — 6 months", alt:"OPV · Hep B-3 · Influenza",
+    pts:["OPV-1 — oral","Hep B-3 — IM (if monovalent schedule)","Influenza (inactivated) — first dose from 6 mo, then annually","First-time <9 yr: 2 doses, 4 weeks apart","Dose: 0.25 mL (6–35 mo), 0.5 mL (≥3 yr), IM"],
+    mnemonic:"6 mo = O-H-F (OPV, HepB-3, Flu)", causes:"Seasonal flu prevention",
+    pearl:"VERIFY: OPV dose timing has been revised repeatedly (bOPV/IPV transition), so check the current ACVIP table. Flu vaccine strain composition changes yearly." },
+  { id:"vax_iap_9m", category:"VAX", sys:"IAP · 9 mo", subject:"Community Medicine", name:"IAP Schedule — 9 months", alt:"MMR-1 · OPV-2 · TCV",
+    pts:["MMR-1 — 0.5 mL SC, right upper arm","OPV-2 — oral","Typhoid conjugate vaccine (TCV) — 0.5 mL IM, from 9 mo (licensed from 6 mo)","TCV booster at 2 yr per ACVIP (verify)"],
+    mnemonic:"9 = M-O-T (MMR, OPV-2, TCV)", causes:"Measles + typhoid protection",
+    pearl:"IAP uses MMR, while UIP uses MR. If MR was given at 9 mo under UIP, MMR at 15 mo still counts as the next dose. Vi-PS is the older typhoid vaccine (≥2 yr, every 3 yr)." },
+  { id:"vax_iap_12_18m", category:"VAX", sys:"IAP · 12–18 mo", subject:"Community Medicine", name:"IAP Schedule — 12 to 18 months", alt:"Hep A · MMR-2 · Varicella · Boosters",
+    pts:["12 mo: Hep A-1 (inactivated 0.5 mL IM)","12–15 mo: PCV booster","15 mo: MMR-2 + Varicella-1 (both live, SC)","15–18 mo: DTwP-B1, IPV-B1, Hib-B1","18 mo: Hep A-2 (6 mo after dose 1)","Live attenuated Hep A (H2 strain): single dose ≥12 mo"],
+    mnemonic:"12 = Hep A · 15 = M-V · 15–18 = Boosters (D-I-H)", causes:"Second-year boosters",
+    pearl:"MMR and varicella are both live: same day at different sites, or ≥4 weeks apart. Hib is not needed after 5 yr (except high-risk)." },
+  { id:"vax_iap_4_6y", category:"VAX", sys:"IAP · 4–6 yr", subject:"Community Medicine", name:"IAP Schedule — 4 to 6 years", alt:"School-entry boosters",
+    pts:["DTwP/DTaP-B2 — IM, deltoid","OPV-3 — oral","Varicella-2 — SC, ≥3 months after dose 1","If Vi-PS typhoid used: revaccinate every 3 yr"],
+    mnemonic:"4–6 = D-O-V (DTP-B2, OPV-3, Varicella-2)", causes:"Waning immunity",
+    pearl:"Whole-cell DTP is not given from 7 yr onwards. Adolescents get Tdap/Td instead." },
+  { id:"vax_iap_adol", category:"VAX", sys:"IAP · 9–18 yr", subject:"Community Medicine", name:"IAP Schedule — Adolescents", alt:"Tdap · HPV",
+    pts:["Tdap ×1 at 10–12 yr (0.5 mL IM, deltoid), then Td every 10 yr","HPV 9–14 yr: 2 doses at 0 and 6 months","HPV ≥15 yr or immunocompromised: 3 doses at 0, 1–2, 6 months","HPV brands: Gardasil-4 (6,11,16,18), Cervarix (16,18), Gardasil-9","Tdap in every pregnancy: 27–36 wk"],
+    mnemonic:"HPV: 2 doses if 9–14, 3 if 15+ · Tdap at 10", causes:"Adolescent boosters + cervical cancer prevention",
+    pearl:"HPV vaccine is a VLP (non-infectious) vaccine, so it is safe with other vaccines. Your UIP campaign card mentions single-dose Gardasil-4 at 14 yr, while IAP still lists the 2-dose schedule." },
+  { id:"vax_iap_vs_uip", category:"VAX", sys:"IAP · Comparison", subject:"Community Medicine", name:"IAP vs UIP — Key Differences", alt:"High-yield comparison",
+    pts:["Polio: IAP full-dose IPV ×3 + booster; UIP fIPV 0.1 mL ID","PCV: IAP 3+1 (6, 10, 14 wk + booster); UIP 2+1","Hep B: IAP 4 doses (birth, 6 wk, 6 mo…); UIP birth + Pentavalent","Measles: IAP MMR at 9 & 15 mo; UIP MR at 9–12 & 16–24 mo","Only in IAP: Hep A, Varicella, TCV, HPV, Influenza","UIP: Td replaced TT in 2018"],
+    mnemonic:"IAP adds A-V-T-H-I (Hep A, Varicella, Typhoid, HPV, Influenza)", causes:"UIP = MoHFW (free); IAP = paediatricians' recommendation",
+    pearl:"MCQ tip: 'as per National Immunization Schedule/UIP' means the MoHFW schedule. 'As per IAP' means the ACVIP schedule." },
+);
+// ---- CATCH-UP & SAFETY ----
+MASTER_DATA.push(
+  { id:"vax_cu_rules", category:"VAX", sys:"Catch-up", subject:"Community Medicine", name:"Catch-up: Golden Rules", alt:"IAP / Ghai",
+    pts:["Never restart a series — count all valid past doses","No maximum interval, only minimum intervals","Give all due vaccines in one visit (different sites)","Two live parenteral vaccines: same day or ≥4 wk apart","Inactivated vaccines: no interval restriction with any other vaccine","Most vaccines: minimum interval 4 weeks","Dose given before minimum age or interval is invalid — repeat"],
+    mnemonic:"Count, don't restart", causes:"Missed or delayed vaccination",
+    pearl:"Minimum age: DTP/IPV/Hib/PCV/Rota 6 wk; MMR from 9 mo (a measles dose before 9 mo doesn't count); varicella/Hep A 12 mo. Rota: dose 1 by 15 wk, all doses by 8 mo." },
+  { id:"vax_cu_lt7", category:"VAX", sys:"Catch-up", subject:"Community Medicine", name:"Catch-up: Children 1–7 years", alt:"Unvaccinated / incompletely vaccinated",
+    pts:["DTwP: 3 doses (0, 1, 6–12 mo) + boosters","Hep B: 3 doses at 0, 1, 6 mo","IPV: 3 doses, ≥4 wk apart","Hib: 12–14 mo → 2 doses 8 wk apart; 15–59 mo → 1 dose; not needed ≥5 yr","PCV: 12–23 mo → 2 doses ≥8 wk apart; 2–5 yr → 1 dose","MMR: 2 doses ≥4 wk apart · Varicella: 2 doses ≥3 mo apart","Hep A: 2 doses ≥6 mo apart · TCV: single dose","BCG: IAP up to 5 yr; UIP up to 1 yr"],
+    mnemonic:"0-1-6 for DTP & Hep B; two doses for MMR, Varicella, Hep A", causes:"Catch-up schedule",
+    pearl:"VERIFY: IPV/PCV counts vary by starting age; check the current IAP catch-up table." },
+  { id:"vax_cu_ge7", category:"VAX", sys:"Catch-up", subject:"Community Medicine", name:"Catch-up: Children ≥7 years", alt:"Adolescents",
+    pts:["Tdap ×1, then Td at 1 mo and 6–12 mo (3 doses total)","Hep B: 0, 1, 6 mo","MMR: 2 doses ≥4 wk apart","Varicella: <13 yr → 2 doses ≥3 mo apart; ≥13 yr → 2 doses ≥4 wk apart","Hep A: 2 doses 6 mo apart","HPV: 9–14 yr → 2 doses; ≥15 yr → 3 doses","TCV: single dose","Hib, PCV, Rota: not routine (high-risk only)"],
+    mnemonic:"≥7 yr: Tdap-Td-Td · HPV 2 vs 3", causes:"Catch-up schedule",
+    pearl:"Never give DTwP at ≥7 yr. Use Tdap/Td, because whole-cell pertussis is not recommended in older children." },
+  { id:"vax_cu_contra", category:"VAX", sys:"Safety", subject:"Community Medicine", name:"Contraindications vs False Contraindications", alt:"Vaccination safety",
+    pts:["TRUE: anaphylaxis to a vaccine or its component","TRUE: live vaccines in severe immunodeficiency / pregnancy","TRUE: DTwP/Pentavalent → encephalopathy within 7 days of a previous dose","TRUE: Rotavirus → SCID, prior intussusception","FALSE: mild fever/URTI, diarrhoea, prematurity, malnutrition, antibiotics, breastfeeding, family history of seizures","Diarrhoea: OPV may be given but not counted; repeat later"],
+    mnemonic:"Only anaphylaxis, immunodeficiency, encephalopathy", causes:"Missed opportunities",
+    pearl:"After immunoglobulin or blood products, delay MMR/varicella by 3–11 months (dose-dependent)." },
+  { id:"vax_aefi", category:"VAX", sys:"Safety", subject:"Community Medicine", name:"AEFI — WHO Classification", alt:"Adverse Events Following Immunization",
+    pts:["Vaccine product-related reaction","Vaccine quality defect-related reaction","Immunization error-related (programmatic) — most common in UIP","Immunization anxiety-related reaction","Coincidental event"],
+    mnemonic:"P-Q-E-A-C = Product, Quality, Error, Anxiety, Coincidental", causes:"AEFI surveillance",
+    pearl:"Anaphylaxis: epinephrine 0.01 mg/kg IM (1:1000), anterolateral thigh. Report serious AEFI (death, hospitalisation, disability, cluster) immediately." },
+);
+
+// ============================================================
+// VACCINATION — UIP / NIS (category: VAX)
+// ============================================================
+MASTER_DATA.push(
+  { id:"vax_bcg", category:"VAX", sys:"UIP · Birth", subject:"Community Medicine", name:"BCG", alt:"Live attenuated · Freeze-dried",
+    pts:["When: Birth (up to 1 yr)","Dose: 0.1 mL (0.05 mL if <1 month) — Intradermal","Site: Left upper arm","Reconstituted vial: discard after 4 hr","Side effects: papule at 2–3 wk → ulcer → scar by 12 wk; axillary lymphadenitis (BCG-itis)"],
+    mnemonic:"BCG = Birth, Cutaneous (ID), Green-light scar", causes:"Live attenuated M. bovis",
+    pearl:"Scar = successful take. No repeat dose if no scar. Not protective against adult pulmonary TB, but prevents miliary TB/TBM in children." },
+  { id:"vax_hepb0", category:"VAX", sys:"UIP · Birth", subject:"Community Medicine", name:"Hepatitis B (Birth dose)", alt:"Recombinant HBsAg",
+    pts:["When: Within 24 hrs of birth","Dose: 0.5 mL — IM","Site: Left anterolateral thigh","Later doses: through Pentavalent at 6, 10, 14 wk"],
+    mnemonic:"Hep B = 24 hr", causes:"Prevents perinatal transmission",
+    pearl:"Birth dose is the key step to stop vertical transmission. Never gluteal — poor immunogenicity." },
+  { id:"vax_opv", category:"VAX", sys:"UIP · Birth → 2 yr", subject:"Community Medicine", name:"OPV (bOPV)", alt:"Oral polio vaccine",
+    pts:["When: 0 dose (within 15 days), 6, 10, 14 wk; booster 16–24 mo","Dose: 2 drops — Oral","Site: Oral","Side effect: VAPP (rare); check VVM before use"],
+    mnemonic:"OPV: 0-6-10-14 + booster", causes:"Live attenuated Sabin",
+    pearl:"OPV-0 = zero dose. Heat-sensitive: VVM stage 3–4 = discard. VAPP risk highest with 1st dose." },
+  { id:"vax_penta", category:"VAX", sys:"UIP · 6–14 wk", subject:"Community Medicine", name:"Pentavalent (DPT + HepB + Hib)", alt:"Freeze-sensitive",
+    pts:["When: 6, 10, 14 wk","Dose: 0.5 mL — IM","Site: Left anterolateral mid-thigh","Side effects: fever, local pain/swelling; rare: persistent crying >3 hr, seizure, HHE","Contraindication: encephalopathy within 7 days of previous dose"],
+    mnemonic:"Penta = 5 in 1: D-P-T-HepB-Hib", causes:"Whole-cell pertussis causes most reactions",
+    pearl:"Do the shake test if freezing is suspected. Never give in the gluteal region. Hib prevents meningitis and epiglottitis." },
+  { id:"vax_rota", category:"VAX", sys:"UIP · 6–14 wk", subject:"Community Medicine", name:"Rotavirus vaccine", alt:"Oral live attenuated",
+    pts:["When: 6, 10, 14 wk","Dose: 5 drops — Oral","Side effect: intussusception (small risk)","Live vaccine"],
+    mnemonic:"Rota = 3 doses, 3 drops-ish (5 drops)", causes:"Rotavirus diarrhoea prevention",
+    pearl:"Intussusception risk highest in the 1st week after dose 1. Contraindicated in prior intussusception and SCID." },
+  { id:"vax_fipv", category:"VAX", sys:"UIP · 6 wk → 9 mo", subject:"Community Medicine", name:"fIPV (Fractional IPV)", alt:"Injectable polio · intradermal",
+    pts:["When: 6 wk, 14 wk (+ 3rd dose at 9–12 mo)","Dose: 0.1 mL — Intradermal (1/5th of full dose)","Site: Right upper arm","Inactivated: no VAPP"],
+    mnemonic:"fIPV: Fractional, Fifth of dose, Right arm", causes:"Inactivated Salk-type",
+    pearl:"Fractional dose is used to stretch supply and gives comparable immunity. Needs an intradermal wheal." },
+  { id:"vax_pcv", category:"VAX", sys:"UIP · 6 wk → 9 mo", subject:"Community Medicine", name:"PCV (Pneumococcal conjugate)", alt:"PCV13 / PCV10",
+    pts:["When: 6 wk, 14 wk; booster at 9 mo","Dose: 0.5 mL — IM","Site: Right anterolateral thigh","Side effects: fever, local reaction"],
+    mnemonic:"PCV = 2 + 1 (two primary + one booster)", causes:"S. pneumoniae",
+    pearl:"2+1 schedule. Conjugate vaccines induce T-cell dependent immunity even in <2 yr." },
+  { id:"vax_mr", category:"VAX", sys:"UIP · 9 mo → 2 yr", subject:"Community Medicine", name:"MR (Measles-Rubella)", alt:"Live attenuated",
+    pts:["When: 9–12 mo (MR-1); 16–24 mo (MR-2)","Dose: 0.5 mL — Subcutaneous","Site: Right upper arm","Reconstituted vial: discard after 4 hr","Side effects: fever/rash 6–12 days after; toxic shock syndrome if contaminated vial"],
+    mnemonic:"MR = 9 and 16 · Right arm · SC", causes:"Live attenuated",
+    pearl:"Toxic shock syndrome = reused or contaminated reconstituted vial. Fever and rash appear in the 2nd week." },
+  { id:"vax_je", category:"VAX", sys:"UIP · 9 mo → 2 yr", subject:"Community Medicine", name:"JE (SA 14-14-2)", alt:"Live attenuated · endemic districts",
+    pts:["When: 9–12 mo (JE-1); 16–24 mo (JE-2)","Dose: 0.5 mL — Subcutaneous","Site: Left upper arm","Only in endemic districts"],
+    mnemonic:"JE = Left arm (with BCG); MR = Right arm", causes:"Culex-borne flavivirus",
+    pearl:"Vaccine strain: SA 14-14-2 (live attenuated, Chinese). Amplifier host: pig; reservoir: Ardeid birds." },
+  { id:"vax_dpt_b", category:"VAX", sys:"UIP · 16 mo → 6 yr", subject:"Community Medicine", name:"DPT Boosters", alt:"DPT-B1 and DPT-B2",
+    pts:["When: 16–24 mo (B1); 5–6 yr (B2)","Dose: 0.5 mL — IM","Site: Thigh in toddlers, deltoid at 5–6 yr","Side effects: fever, local swelling; Arthus-type reaction with repeated boosters"],
+    mnemonic:"DPT-B: 16-24 mo and 5-6 yr", causes:"Waning pertussis and diphtheria immunity",
+    pearl:"Pentavalent is not used after 1 yr. From 5 yr onwards, DPT is replaced by Td at 10 and 16 yr." },
+  { id:"vax_td", category:"VAX", sys:"UIP · Adolescents & Pregnancy", subject:"Community Medicine", name:"Td (Tetanus-diphtheria)", alt:"Replaced TT in 2018",
+    pts:["When: 10 yr and 16 yr","Pregnancy: Td-1 early, Td-2 ≥4 wk later; only 1 booster if vaccinated in last 3 yr","Dose: 0.5 mL — IM","Site: Upper arm"],
+    mnemonic:"Td: 10 and 16 (adolescent), Td-1 + Td-2 (pregnancy)", causes:"Maternal and neonatal tetanus elimination",
+    pearl:"Td replaced TT to add diphtheria cover. Give in the deltoid. Freeze-sensitive." },
+  { id:"vax_vita", category:"VAX", sys:"UIP · Supplement", subject:"Community Medicine", name:"Vitamin A (not a vaccine)", alt:"Given with immunization visits",
+    pts:["9 mo: 1 lakh IU (with MR-1)","16–18 mo: 2 lakh IU, then every 6 months up to 5 yr","Route: Oral","Side effects of overdose: bulging fontanelle, vomiting"],
+    mnemonic:"1 lakh at 9, then 2 lakh every 6 months", causes:"Prevents xerophthalmia",
+    pearl:"Total 9 doses. The first is given with MR-1." },
+  { id:"vax_site", category:"VAX", sys:"UIP · Quick Maps", subject:"Community Medicine", name:"Site Map of UIP Vaccines", alt:"Where to give what",
+    pts:["Left upper arm: BCG, JE","Right upper arm: fIPV, MR","Left anterolateral thigh: Hep B birth, Pentavalent","Right anterolateral thigh: PCV","Oral: OPV, Rotavirus"],
+    mnemonic:"B-J Left arm, F-M Right arm; Penta Left thigh, PCV Right thigh", causes:"Standardised sites allow easy attribution of adverse events",
+    pearl:"Never inject in the gluteus. Use separate limbs or ≥1 inch apart when two IM vaccines are given together." },
+  { id:"vax_cold", category:"VAX", sys:"UIP · Quick Maps", subject:"Community Medicine", name:"Freeze-sensitive vs Heat-sensitive", alt:"Cold chain",
+    pts:["Freeze-sensitive (alum-adsorbed / inactivated): Hep B, Pentavalent, DPT, Td, PCV, IPV — shake test","Heat-sensitive: OPV, BCG, MR, JE — use VVM","Storage: 2–8 °C in ILR; deep freezer for OPV storage","Never freeze: diluent"],
+    mnemonic:"Alum = Avoid freezing", causes:"Cold-chain principles",
+    pearl:"Shake test for freeze-sensitive vaccines; VVM for heat-sensitive ones. OPV can be stored frozen for long periods." },
+);
+
 // ============================================================
 // SUBJECTS & MAPPING
 // ============================================================
@@ -4629,14 +4717,14 @@ const SYS_SUBJECT_MAP = {
   "Genetics":"Pathology",
   "Surgery":"General Surgery"
 };
-for (let i = 1; i <= 52; i++) SYS_SUBJECT_MAP[`Day ${i.toString().padStart(2,'0')}`] = "General Medicine";
+
 
 const CATEGORY_SUBJECT_OVERRIDE = {
   DRUG: "Pharmacology", DOC: "Pharmacology", ANAT: "Anatomy", BIOC: "Biochemistry",
   MICRO: "Microbiology", PATH: "Pathology", CANCER: "Pharmacology",
   UPDATE: "Community Medicine", MILESTONE: "Pediatrics", TRIAD: "General Medicine",
   MNEM: "General Medicine", CLIN: "General Medicine", FORMULA: "General Medicine",
-  PLAN: "General Medicine", NOTE: "General Medicine", VAX: "Community Medicine",
+  PYQ: "General Medicine", NOTE: "General Medicine", VAX: "Community Medicine",
 };
 
 function normalizeItem(item){
@@ -4699,6 +4787,8 @@ let editingId = null;
 let renderLimit = 300;
 const PAGE_SIZE = 60;
 let modalDirty = false;
+let activePyqYear = 'All';
+function setPyqYearFilter(y){ activePyqYear = y; buildSystemChips(); renderCards(); }
 
 // ============================================================
 // ZONA OCCLUDENS IFRAME BRIDGE
@@ -4794,7 +4884,7 @@ const testModeLabel = document.getElementById('testModeLabel');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
 const noteForm = document.getElementById('noteForm');
 
-const DATA_VERSION = 4; // bump this number every time you edit MASTER_DATA
+const DATA_VERSION = 12; // bump this number every time you edit MASTER_DATA
 const VERSION_KEY = 'medvault_data_version';
 
 function loadNotes(){
@@ -5008,10 +5098,24 @@ function buildSystemChips(){
     const count = sys === 'All' ? scoped.length : scoped.filter(i => i.sys === sys).length;
     return `<button onclick="setSystemFilter('${sys.replace(/'/g,"\\'")}')" class="px-2.5 py-1 rounded-full border text-xs font-semibold transition whitespace-nowrap ${isSelected ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 border-slate-900 dark:border-white' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-slate-400'}">${escapeHtml(sys)} (${count})</button>`;
   }).join('');
+  // PYQ year chips (only show when PYQ category is active)
+const pyqContainer = document.getElementById('pyqYearChips');
+if (pyqContainer) {
+  if (activeCategory === 'PYQ') {
+    const years = ['All', ...new Set(notesData.filter(n => n.category === 'PYQ' && n.alt).map(n => n.alt))];
+    pyqContainer.innerHTML = years.map(y =>
+      `<button onclick="setPyqYearFilter('${y.replace(/'/g,"\\'")}')" class="px-2.5 py-1 rounded-full border text-xs font-semibold transition whitespace-nowrap ${y === activePyqYear ? 'bg-violet-600 text-white border-violet-600' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-700'}">${escapeHtml(y)}</button>`
+    ).join('');
+    pyqContainer.classList.remove('hidden');
+  } else {
+    pyqContainer.innerHTML = '';
+    pyqContainer.classList.add('hidden');
+  }
+}
 }
 function setSystemFilter(sys){ activeSystem = sys; renderLimit = PAGE_SIZE; buildSystemChips(); renderCards(); }
 function setCategoryFilter(cat){
-  activeCategory = cat; renderLimit = PAGE_SIZE;
+  activeCategory = cat; activePyqYear = 'All'; renderLimit = PAGE_SIZE;
   document.querySelectorAll('.cat-btn').forEach(btn => {
     btn.classList.remove('bg-sky-600','text-white','border-sky-600');
     btn.classList.add('bg-white','dark:bg-slate-800','text-slate-700','dark:text-slate-300','border-slate-300','dark:border-slate-700');
@@ -5030,6 +5134,7 @@ function getFilteredData(){
     else if (activeCategory !== 'ALL' && item.category !== activeCategory) return false;
     if (activeSubject !== 'All' && item.subject !== activeSubject) return false;
     if (activeSystem !== 'All' && item.sys !== activeSystem) return false;
+    if (activeCategory === 'PYQ' && activePyqYear !== 'All' && item.alt !== activePyqYear) return false;
     if (searchQuery) {
       const q = searchQuery;
       const nameMatch = item.name.toLowerCase().includes(q);
@@ -5161,15 +5266,16 @@ function renderMilestoneCard(){
         <div>
           <span class="inline-block px-2 py-0.5 rounded-md text-[10px] font-extrabold bg-indigo-600 text-white mb-1 mr-1">Pediatrics</span>
           <span class="inline-block px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300">MILESTONE</span>
-          <h3 class="text-base font-extrabold text-slate-900 dark:text-white">Gross Motor Development</h3>
-          <p class="text-xs italic text-slate-500 dark:text-slate-400 font-medium">17 Animated Milestones · Timeline · Reference Table</p>
+          <h3 class="text-base font-extrabold text-slate-900 dark:text-white">Developmental Milestones</h3>
+          <p class="text-xs italic text-slate-500 dark:text-slate-400 font-medium">OP Ghai Reference Table</p>
         </div>
       </div>
       <div class="gm-wrapper" id="gmWrapperRoot">
         <div class="gm-header">
-          <h2>Gross Motor Development</h2>
+          <h2 id="gmTitle">Gross Motor Development</h2>
           <span class="gm-subtitle">Prone Position • Ventral Suspension • Milestone Timeline</span>
         </div>
+        <div class="gm-timeline-nav" id="gmDomainNav"></div>
         <div class="gm-timeline-nav" id="gmTimelineNav"></div>
         <div class="gm-visual-viewport">
           <canvas id="gmCanvas" width="450" height="180"></canvas>
@@ -5181,11 +5287,11 @@ function renderMilestoneCard(){
             <div class="card-body" id="gmMilestone">Loading...</div>
           </div>
           <div class="gm-card prone" id="gmProneCard">
-            <div class="card-badge">Prone Position</div>
+            <div class="card-badge" id="gmProneLbl">Prone Position</div>
             <div class="card-body" id="gmProne">—</div>
           </div>
           <div class="gm-card ventral" id="gmVentralCard">
-            <div class="card-badge">Ventral Suspension</div>
+            <div class="card-badge" id="gmVentralLbl">Ventral Suspension</div>
             <div class="card-body" id="gmVentral">—</div>
           </div>
         </div>
@@ -5233,7 +5339,7 @@ function getCategoryBadgeColor(cat) {
     case 'BIOC': return 'bg-lime-100 text-lime-800 dark:bg-lime-950 dark:text-lime-300';
     case 'MICRO': return 'bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300';
     case 'FORMULA': return 'bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300';
-    case 'PLAN': return 'bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-950 dark:text-fuchsia-300';
+    case 'PYQ': return 'bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300';
     case 'CANCER': return 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300';
     case 'UPDATE': return 'bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-300';
     case 'MILESTONE': return 'bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300';
@@ -5407,52 +5513,331 @@ const GM_MILESTONES = {
 let gmSelectedId = "2w";
 let gmRafId = null;
 
+let gmDomain = 'gross';
+const DOMAINS = {
+  gross: { label:'🏃 Gross', title:'Gross Motor Development', data: GM_MILESTONES }
+};
+const gmData = () => DOMAINS[gmDomain].data;
+
+// ---- shared drawing helpers ----
+const GMH = {
+  ground:(c,y)=>{ c.fillStyle=GM_GROUND; c.fillRect(40,y||150,370,4); },
+  head:(c,x,y,r)=>{ c.fillStyle=GM_SKIN; c.beginPath(); c.arc(x,y,r||13,0,Math.PI*2); c.fill(); },
+  face:(c,x,y,r,mood)=>{
+    GMH.head(c,x,y,r); c.fillStyle="#2d3748";
+    c.beginPath(); c.arc(x-r*0.35,y-r*0.15,r*0.08,0,7); c.fill();
+    c.beginPath(); c.arc(x+r*0.35,y-r*0.15,r*0.08,0,7); c.fill();
+    c.strokeStyle="#2d3748"; c.lineWidth=2; c.lineCap="round"; c.beginPath();
+    if(mood==='smile') c.arc(x,y+r*0.05,r*0.45,0.15*Math.PI,0.85*Math.PI);
+    else if(mood==='frown') c.arc(x,y+r*0.65,r*0.35,1.15*Math.PI,1.85*Math.PI);
+    else if(mood==='open') c.ellipse(x,y+r*0.4,r*0.18,r*0.22,0,0,7);
+    else { c.moveTo(x-r*0.3,y+r*0.45); c.lineTo(x+r*0.3,y+r*0.45); }
+    c.stroke(); },
+  kid:(c,x,base,mood,s)=>{ s=s||1; c.fillStyle=GM_SKIN;
+    c.fillRect(x-8*s,base-70*s,16*s,34*s); c.fillRect(x-8*s,base-36*s,7*s,36*s); c.fillRect(x+1*s,base-36*s,7*s,36*s);
+    GMH.face(c,x,base-86*s,14*s,mood); },
+  bubble:(c,txt,x,y)=>{ c.font="bold 13px sans-serif"; const w=c.measureText(txt).width+22;
+    c.fillStyle="#fff"; c.fillRect(x,y,w,28); c.strokeStyle="#4a5568"; c.lineWidth=1.5; c.strokeRect(x,y,w,28);
+    c.fillStyle="#2d3748"; c.fillText(txt,x+11,y+19); },
+  label:(c,txt)=>{ c.fillStyle="#4a5568"; c.font="11px sans-serif"; c.textAlign="center"; c.fillText(txt,225,176); c.textAlign="left"; }
+};
+
+function gmBuildTimeline(){
+  const nav = document.getElementById('gmTimelineNav');
+  nav.innerHTML = '';
+  const d = gmData();
+  Object.keys(d).forEach(id => {
+    const b = document.createElement('button');
+    b.className = 'gm-btn'; b.textContent = d[id].name; b.setAttribute('data-id', id);
+    b.addEventListener('click', e => { e.preventDefault(); gmUpdateDisplay(id); });
+    nav.appendChild(b);
+  });
+}
+
+function gmSetDomain(key, keep){
+  gmDomain = key;
+  if (!keep || !(gmSelectedId in gmData())) gmSelectedId = Object.keys(gmData())[0];
+  const gross = key === 'gross';
+  document.getElementById('gmTitle').textContent = DOMAINS[key].title;
+  document.querySelectorAll('#gmDomainNav .gm-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-key') === key));
+  document.getElementById('gmProneLbl').textContent = gross ? 'Prone Position' : 'Mnemonic';
+  document.getElementById('gmVentralLbl').textContent = gross ? 'Ventral Suspension' : '🚩 Red Flag';
+  document.getElementById('gmToggleRef').style.display = gross ? '' : 'none';
+  if (!gross) document.getElementById('gmReference').classList.remove('open');
+  gmBuildTimeline();
+  gmUpdateDisplay(gmSelectedId);
+}
+
 function initGrossMotor(){
-  const navContainer = document.getElementById('gmTimelineNav');
-  if (!navContainer) return;
-  navContainer.innerHTML = '';
-  Object.keys(GM_MILESTONES).forEach(id => {
-    const button = document.createElement('button');
-    button.className = 'gm-btn';
-    button.textContent = GM_MILESTONES[id].name;
-    button.setAttribute('data-id', id);
-    button.addEventListener('click', (evt) => { evt.preventDefault(); gmUpdateDisplay(id); });
-    navContainer.appendChild(button);
+  const domNav = document.getElementById('gmDomainNav');
+  if (!domNav) return;
+  domNav.innerHTML = '';
+  Object.keys(DOMAINS).forEach(key => {
+    const b = document.createElement('button');
+    b.className = 'gm-btn'; b.textContent = DOMAINS[key].label; b.setAttribute('data-key', key);
+    b.addEventListener('click', e => { e.preventDefault(); gmSetDomain(key, false); });
+    domNav.appendChild(b);
   });
   document.getElementById('gmToggleRef').addEventListener('click', (evt) => {
     evt.preventDefault();
-    const refPanel = document.getElementById('gmReference');
-    const toggleBtn = document.getElementById('gmToggleRef');
-    const open = refPanel.classList.toggle('open');
-    toggleBtn.textContent = open ? "Hide Quick-Reference Table ▴" : "Show Quick-Reference Table ▾";
+    const open = document.getElementById('gmReference').classList.toggle('open');
+    document.getElementById('gmToggleRef').textContent = open ? "Hide Quick-Reference Table ▴" : "Show Quick-Reference Table ▾";
   });
-  gmUpdateDisplay(gmSelectedId);
-  const canvasEl = document.getElementById('gmCanvas');
-  const ctx2d = canvasEl.getContext('2d');
+  gmSetDomain(gmDomain, true);
+  const ctx2d = document.getElementById('gmCanvas').getContext('2d');
   if (gmRafId) cancelAnimationFrame(gmRafId);
   const loop = (ts) => {
-    const item = GM_MILESTONES[gmSelectedId];
-    if (item && item.animate) item.animate(ctx2d, ts);
+    const it = gmData()[gmSelectedId];
+    if (it && it.animate) it.animate(ctx2d, ts);
     gmRafId = requestAnimationFrame(loop);
   };
   gmRafId = requestAnimationFrame(loop);
 }
 
 function gmUpdateDisplay(id){
-  gmSelectedId = id;
-  const item = GM_MILESTONES[id];
+  const item = gmData()[id];
   if (!item) return;
+  gmSelectedId = id;
+  const gross = gmDomain === 'gross';
+  const a = gross ? item.prone : item.mnem;
+  const b = gross ? item.ventral : item.flag;
   document.getElementById('gmAgeTag').textContent = item.age;
   document.getElementById('gmMilestone').textContent = item.milestone;
   document.getElementById('gmHyPill').style.display = item.hy ? 'inline-block' : 'none';
-  const proneCard = document.getElementById('gmProneCard');
-  const ventralCard = document.getElementById('gmVentralCard');
-  if (item.prone) { document.getElementById('gmProne').textContent = item.prone; proneCard.setAttribute('data-empty', 'false'); }
-  else proneCard.setAttribute('data-empty', 'true');
-  if (item.ventral) { document.getElementById('gmVentral').textContent = item.ventral; ventralCard.setAttribute('data-empty', 'false'); }
-  else ventralCard.setAttribute('data-empty', 'true');
-  document.querySelectorAll('.gm-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-id') === id));
+  document.getElementById('gmProne').textContent = a || '—';
+  document.getElementById('gmVentral').textContent = b || '—';
+  document.getElementById('gmProneCard').setAttribute('data-empty', a ? 'false' : 'true');
+  document.getElementById('gmVentralCard').setAttribute('data-empty', b ? 'false' : 'true');
+  document.querySelectorAll('#gmTimelineNav .gm-btn').forEach(x => x.classList.toggle('active', x.getAttribute('data-id') === id));
 }
+
+Object.assign(GMH, {
+  pincer:(c,t,mature)=>{ c.clearRect(0,0,450,180);
+    const gap=6+((Math.sin(t*0.004)+1)/2)*22; c.lineCap="round"; c.lineWidth=12; c.strokeStyle=GM_SKIN;
+    const ex = mature?222:252;
+    c.beginPath(); c.moveTo(120,150); c.lineTo(ex,110+gap); c.stroke();
+    c.beginPath(); c.moveTo(120,70);  c.lineTo(ex,110-gap); c.stroke();
+    c.fillStyle="#e53e3e"; c.beginPath(); c.arc(228,110,5,0,7); c.fill();
+    GMH.label(c, mature?"Neat pincer (tip to tip)":"Inferior pincer (pad to side)"); },
+  tower:(c,t,n)=>{ c.clearRect(0,0,450,180); GMH.ground(c,150);
+    const s=Math.min(24,Math.floor(120/n)); const ph=(t*0.0008)%(n+2);
+    for(let i=0;i<n;i++){ if(ph<i) break; const y=150-s*(i+1);
+      c.fillStyle=i%2?"#3182ce":"#e53e3e"; c.fillRect(225-s/2,y,s,s);
+      c.strokeStyle="#fff"; c.lineWidth=1; c.strokeRect(225-s/2,y,s,s); }
+    GMH.label(c,"Tower of "+n+" cubes"); },
+  draw:(c,t,shape)=>{ c.clearRect(0,0,450,180); c.strokeStyle="#2b6cb0"; c.lineWidth=5; c.lineCap="round";
+    const P=Math.min(1,((t*0.0006)%1.5));
+    if(shape==='circle'){ c.beginPath(); c.arc(225,90,48,-Math.PI/2,-Math.PI/2+P*Math.PI*2); c.stroke(); GMH.label(c,"Copies a circle"); return; }
+    const S={line:[[[225,35],[225,145]]], cross:[[[225,35],[225,145]],[[170,90],[280,90]]],
+      square:[[[175,40],[275,40],[275,140],[175,140],[175,40]]], triangle:[[[225,35],[285,140],[165,140],[225,35]]],
+      diamond:[[[225,25],[285,90],[225,155],[165,90],[225,25]]]}[shape];
+    const segs=[]; let total=0;
+    S.forEach(st=>{ for(let i=0;i<st.length-1;i++){ const l=Math.hypot(st[i+1][0]-st[i][0],st[i+1][1]-st[i][1]); segs.push([st[i],st[i+1],l,i===0]); total+=l; } });
+    let rem=P*total; c.beginPath();
+    for(const [a,b,l,first] of segs){ if(first) c.moveTo(a[0],a[1]); if(rem<=0) break;
+      const f=Math.min(1,rem/l); c.lineTo(a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f); rem-=l; }
+    c.stroke(); GMH.label(c,"Copies a "+shape); }
+});
+
+const FM_MILESTONES = {
+ "3m": { name:"3 Mo", age:"3 Months", hy:true,
+   milestone:"Hands mostly open; hand regard (watches own hands); grasp reflex has faded.",
+   mnem:"3 = Hands open + Regard", flag:"Persistent fisting / cortical thumb beyond 3–4 mo",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.face(c,225,95,42,'smile'); const a=Math.sin(t*0.003);
+     GMH.head(c,300+a*8,115-a*18,11); GMH.head(c,150-a*8,115-a*18,11); GMH.label(c,"Hand regard"); }},
+ "5m": { name:"5 Mo", age:"5 Months", hy:true,
+   milestone:"Bidextrous reach: reaches for objects with both hands; palmar grasp.",
+   mnem:"5 = Both hands (bidextrous)", flag:"No reaching for objects by 5–6 mo",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); const p=(Math.sin(t*0.003)+1)/2;
+     c.fillStyle="#e53e3e"; c.beginPath(); c.arc(225,100,12,0,7); c.fill();
+     GMH.head(c,140+p*60,100,14); GMH.head(c,310-p*60,100,14); GMH.label(c,"Bidextrous reach"); }},
+ "6m": { name:"6 Mo", age:"6 Months", hy:true,
+   milestone:"Unidextrous reach (one hand); transfers objects hand to hand.",
+   mnem:"6 = Switch hands (transfer)", flag:"No transfer or persistent hand preference before 12 mo → suspect hemiparesis",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); const p=(t*0.0006)%1;
+     GMH.head(c,150,100,14); GMH.head(c,300,100,14);
+     c.fillStyle="#e53e3e"; c.beginPath(); c.arc(150+p*150,100,9,0,7); c.fill(); GMH.label(c,"Transfers hand to hand"); }},
+ "8m": { name:"8 Mo", age:"8 Months", hy:false,
+   milestone:"Raking grasp: rakes a small pellet towards the palm using all fingers.",
+   mnem:"8 = Rake (fingers together)", flag:"No use of hands to explore objects by 8–9 mo",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.ground(c,150); const hx=300-((t*0.0005)%1)*140;
+     GMH.head(c,hx+25,110,18); c.strokeStyle=GM_SKIN; c.lineWidth=5; c.lineCap="round";
+     for(let i=0;i<4;i++){ c.beginPath(); c.moveTo(hx+18+i*7,122); c.lineTo(hx+12+i*7,145); c.stroke(); }
+     c.fillStyle="#e53e3e"; c.beginPath(); c.arc(hx+8,146,4,0,7); c.fill(); GMH.label(c,"Raking grasp"); }},
+ "9m": { name:"9 Mo", age:"9 Months", hy:true,
+   milestone:"Immature (inferior) pincer: picks a pellet between thumb and the side of the index finger; pokes with the index finger.",
+   mnem:"9 = Inferior pincer (pads, not tips)", flag:"Cannot pick small objects by 10–12 mo",
+   animate:(c,t)=>GMH.pincer(c,t,false) },
+ "12m": { name:"12 Mo", age:"12 Months", hy:true,
+   milestone:"Mature (neat) pincer grasp, tip to tip; releases an object into a container on request.",
+   mnem:"12 = Neat pincer (tips)", flag:"No pincer by 12–15 mo; hand preference before 12–18 mo → hemiparesis",
+   animate:(c,t)=>GMH.pincer(c,t,true) },
+ "15m": { name:"15 Mo", age:"15 Months", hy:true,
+   milestone:"Tower of 2 cubes; scribbles spontaneously; drinks from a cup and uses a spoon with spillage.",
+   mnem:"15 = 2 cubes + Scribble", flag:"Cannot build any tower by 18 mo",
+   animate:(c,t)=>GMH.tower(c,t,2) },
+ "18m": { name:"18 Mo", age:"18 Months", hy:true,
+   milestone:"Tower of 3 cubes; imitates a vertical stroke; turns 2–3 pages of a book at a time.",
+   mnem:"18 = 3 cubes", flag:"No tower of 2–3 cubes by 2 yr",
+   animate:(c,t)=>GMH.tower(c,t,3) },
+ "2y-t": { name:"2 Yr·Tower", age:"2 Years — Cubes", hy:true,
+   milestone:"Tower of 6 cubes; turns pages one at a time.",
+   mnem:"2 yr = 6 cubes (2×3)", flag:"Cannot stack cubes by 2 yr",
+   animate:(c,t)=>GMH.tower(c,t,6) },
+ "2y-l": { name:"2 Yr·Line", age:"2 Years — Drawing", hy:true,
+   milestone:"Copies a vertical line (imitates strokes).",
+   mnem:"2 = | (vertical line)", flag:"No scribbling or imitation of strokes by 2 yr",
+   animate:(c,t)=>GMH.draw(c,t,'line') },
+ "3y-t": { name:"3 Yr·Tower", age:"3 Years — Cubes", hy:true,
+   milestone:"Tower of 9 cubes; makes a bridge with 3 cubes.",
+   mnem:"3 yr = 9 cubes (3×3), bridge = 3 cubes", flag:"Cannot build a tower of 6 by 3 yr",
+   animate:(c,t)=>GMH.tower(c,t,9) },
+ "3y-c": { name:"3 Yr·Circle", age:"3 Years — Drawing", hy:true,
+   milestone:"Copies a circle.",
+   mnem:"3 = ○ (circle)", flag:"Cannot copy a circle by 4 yr",
+   animate:(c,t)=>GMH.draw(c,t,'circle') },
+ "4y": { name:"4 Yr", age:"4 Years", hy:true,
+   milestone:"Copies a cross (+); draws a man with 3 parts.",
+   mnem:"4 = + (cross). Shapes: | ○ + □ △ ◇ = 2, 3, 4, 4½, 5, 7", flag:"Cannot copy a cross by 5 yr",
+   animate:(c,t)=>GMH.draw(c,t,'cross') },
+ "4h": { name:"4½ Yr", age:"4½ Years", hy:true,
+   milestone:"Copies a square.",
+   mnem:"4½ = □ (square)", flag:"Cannot copy a square by 5–6 yr",
+   animate:(c,t)=>GMH.draw(c,t,'square') },
+ "5y": { name:"5 Yr", age:"5 Years", hy:true,
+   milestone:"Copies a triangle; builds a gate with 5 cubes; draws a man with 6 parts.",
+   mnem:"5 = △ (triangle), gate = 5 cubes, man = 6 parts", flag:"Cannot copy a triangle by 6 yr",
+   animate:(c,t)=>GMH.draw(c,t,'triangle') },
+ "7y": { name:"7 Yr", age:"7 Years", hy:true,
+   milestone:"Copies a diamond (◇).",
+   mnem:"7 = ◇ (diamond)", flag:"Cannot copy a diamond by 8 yr",
+   animate:(c,t)=>GMH.draw(c,t,'diamond') }
+};
+DOMAINS.fine = { label:'✋ Fine', title:'Fine Motor & Adaptive (Ghai)', data: FM_MILESTONES };
+
+GMH.talk = (txt) => (c,t) => {
+  c.clearRect(0,0,450,180); GMH.ground(c,160);
+  GMH.kid(c,140,160,Math.sin(t*0.012)>0?'open':'smile',0.9);
+  const shown = txt.slice(0, Math.floor((t*0.008)%(txt.length+8)));
+  if (shown) GMH.bubble(c,shown,185,40);
+};
+
+const LG_MILESTONES = {
+ "3m": { name:"2–3 Mo", age:"2–3 Months", hy:true,
+   milestone:"Cooing (aah, ooh); startles and turns to sound.",
+   mnem:"Coo at 2–3", flag:"No response to sound by 3 mo → hearing screen",
+   animate:GMH.talk("aah... ooh...") },
+ "4m": { name:"4 Mo", age:"4 Months", hy:true,
+   milestone:"Laughs aloud; squeals; turns head towards a voice.",
+   mnem:"4 = Laugh aloud", flag:"No laughing or squealing by 5–6 mo",
+   animate:GMH.talk("ha ha ha!") },
+ "6m": { name:"6 Mo", age:"6 Months", hy:true,
+   milestone:"Monosyllables (ba, da, ka); responds to name; localises sound.",
+   mnem:"6 = Mono (ba, da, ka)", flag:"No babbling by 9–10 mo",
+   animate:GMH.talk("ba... da... ka...") },
+ "9m": { name:"9 Mo", age:"9 Months", hy:true,
+   milestone:"Bisyllables (non-specific mama, dada); understands 'no'.",
+   mnem:"9 = Bi (ma-ma, da-da, non-specific)", flag:"No bisyllabic babble by 10–12 mo",
+   animate:GMH.talk("ma-ma da-da") },
+ "12m": { name:"12 Mo", age:"12 Months", hy:true,
+   milestone:"Specific 'mama/dada'; first word with meaning (1–2 words); follows a simple command with a gesture.",
+   mnem:"12 = First word", flag:"No single words by 16 mo",
+   animate:GMH.talk("Mama!") },
+ "15m": { name:"15 Mo", age:"15 Months", hy:false,
+   milestone:"Jargon (jabbers with intonation); 4–6 words; points to indicate wants.",
+   mnem:"15 = Jargon + 4–6 words", flag:"No pointing / no words by 18 mo",
+   animate:GMH.talk("gibber gibber ball") },
+ "18m": { name:"18 Mo", age:"18 Months", hy:true,
+   milestone:"About 10 words; identifies 3 body parts; follows simple commands.",
+   mnem:"18 = 10 words", flag:"Fewer than 6 words at 18–24 mo",
+   animate:GMH.talk("more! ball! milk!") },
+ "2y": { name:"2 Yr", age:"2 Years", hy:true,
+   milestone:"2-word phrases (telegraphic); about 50 words; uses 'I', 'me', 'you'.",
+   mnem:"2 yr = 2 words, ~50 vocabulary", flag:"No 2-word phrases by 24 mo",
+   animate:GMH.talk("Mama milk") },
+ "3y": { name:"3 Yr", age:"3 Years", hy:true,
+   milestone:"Sentences of 3–4 words; knows own name, age and sex; vocabulary about 250 words.",
+   mnem:"3 yr = Sentences + Name/Age/Sex", flag:"Speech mostly unintelligible to strangers at 3 yr",
+   animate:GMH.talk("I am Ravi. I am 3.") },
+ "4y": { name:"4 Yr", age:"4 Years", hy:true,
+   milestone:"Tells a story; counts to 4; knows colours; speech mostly intelligible.",
+   mnem:"4 = Story-teller", flag:"Cannot form sentences or follow 3-step commands",
+   animate:GMH.talk("Once a lion...") },
+ "5y": { name:"5 Yr", age:"5 Years", hy:true,
+   milestone:"Fluent speech; asks the meaning of words; counts to 10.",
+   mnem:"5 = Asks meanings ('Why?')", flag:"Persistent stuttering or unclear speech",
+   animate:GMH.talk("Why is sky blue?") }
+};
+DOMAINS.language = { label:'🗣️ Language', title:'Language Development (Ghai)', data: LG_MILESTONES };
+
+const SC_MILESTONES = {
+ "6w": { name:"6–8 Wk", age:"6–8 Weeks", hy:true,
+   milestone:"Social smile: smiles in response to a face or voice.",
+   mnem:"6 wk = Social smile", flag:"No social smile by 2–3 mo",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.face(c,225,95,45,Math.sin(t*0.004)>-0.3?'smile':'neutral'); GMH.label(c,"Social smile"); }},
+ "3m": { name:"3 Mo", age:"3 Months", hy:false,
+   milestone:"Recognises mother; excited at the sight of a feed; smiles spontaneously.",
+   mnem:"3 = Knows Mother", flag:"No eye contact or tracking by 3 mo",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.face(c,130,110,34,'smile'); GMH.kid(c,330,165,'smile',1.5); GMH.label(c,"Recognises mother"); }},
+ "7m": { name:"6–8 Mo", age:"6–8 Months", hy:true,
+   milestone:"Stranger anxiety begins; distinguishes familiar from unfamiliar faces.",
+   mnem:"6–8 = Stranger anxiety", flag:"Absent response to familiar people by 9–12 mo",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.face(c,130+Math.sin(t*0.02)*2,110,34,'frown'); GMH.kid(c,330,165,'neutral',1.5); GMH.label(c,"Stranger anxiety"); }},
+ "9m": { name:"9 Mo", age:"9 Months", hy:true,
+   milestone:"Plays peek-a-boo; separation anxiety appears.",
+   mnem:"9 = Peek-a-boo", flag:"No peek-a-boo or interactive play by 12 mo",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); const cover=Math.sin(t*0.004)>0;
+     GMH.face(c,225,95,45,cover?'neutral':'smile');
+     if(cover){ c.fillStyle="#f6ad55"; c.beginPath(); c.arc(203,90,20,0,7); c.fill(); c.beginPath(); c.arc(247,90,20,0,7); c.fill(); }
+     GMH.label(c,"Peek-a-boo"); }},
+ "10m": { name:"10 Mo", age:"9–10 Months", hy:true,
+   milestone:"Waves bye-bye; claps; responds to own name.",
+   mnem:"10 = Bye-bye wave", flag:"No waving or pointing by 12 mo",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.ground(c,160); GMH.kid(c,225,160,'smile',1);
+     const a=-1.1+Math.sin(t*0.01)*0.5; const sx=233, sy=92, ex=sx+30*Math.cos(a), ey=sy+30*Math.sin(a);
+     c.strokeStyle=GM_SKIN; c.lineWidth=6; c.lineCap="round"; c.beginPath(); c.moveTo(sx,sy); c.lineTo(ex,ey); c.stroke();
+     GMH.head(c,ex,ey,6); GMH.label(c,"Waves bye-bye"); }},
+ "12m": { name:"12 Mo", age:"12 Months", hy:true,
+   milestone:"Imitates actions; plays ball with an adult; comes when called.",
+   mnem:"12 = Imitates + Ball play", flag:"No imitation, pointing or eye contact by 12–18 mo",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.ground(c,160); GMH.kid(c,110,160,'smile',0.9); GMH.kid(c,340,160,'smile',0.9);
+     const p=(Math.sin(t*0.003)+1)/2; c.fillStyle="#3182ce"; c.beginPath(); c.arc(140+p*170,130-Math.sin(p*Math.PI)*35,8,0,7); c.fill();
+     GMH.label(c,"Plays ball"); }},
+ "15m": { name:"15–18 Mo", age:"15–18 Months", hy:false,
+   milestone:"Feeds self with a spoon (spillage); mimics household chores; begins bowel control.",
+   mnem:"15–18 = Spoon + Mimic chores", flag:"No pretend or imitative play by 2 yr",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.ground(c,160); GMH.kid(c,225,160,(Math.sin(t*0.006)>0.5)?'open':'smile',1);
+     const p=(Math.sin(t*0.006)+1)/2; const hx=250-p*12, hy=118-p*36;
+     c.strokeStyle=GM_SKIN; c.lineWidth=6; c.lineCap="round"; c.beginPath(); c.moveTo(233,98); c.lineTo(hx,hy); c.stroke();
+     c.strokeStyle="#a0aec0"; c.lineWidth=3; c.beginPath(); c.moveTo(hx,hy); c.lineTo(hx-10,hy-8); c.stroke();
+     GMH.label(c,"Feeds self with spoon"); }},
+ "2y": { name:"2 Yr", age:"2 Years", hy:true,
+   milestone:"Parallel play: plays alongside, not with, other children; says 'I'; daytime bowel/bladder control emerging.",
+   mnem:"2 = Parallel play", flag:"Loss of previously acquired skills at any age",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.ground(c,160); GMH.kid(c,150,160,'smile',0.9); GMH.kid(c,300,160,'smile',0.9);
+     const b=Math.sin(t*0.005)*4; c.fillStyle="#e53e3e"; c.fillRect(185,146+b,14,14); c.fillStyle="#3182ce"; c.fillRect(335,146-b,14,14);
+     GMH.label(c,"Parallel play"); }},
+ "3y": { name:"3 Yr", age:"3 Years", hy:true,
+   milestone:"Associative play: plays in a group with shared activity but no organised goal; knows gender; dresses with supervision.",
+   mnem:"3 = Associative (group, no rules)", flag:"No interest in other children at 3 yr",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.ground(c,160);
+     [120,225,330].forEach((x,i)=>{ GMH.kid(c,x,160,'smile',0.8); c.fillStyle=["#e53e3e","#3182ce","#38a169"][i]; c.fillRect(x+12,148+Math.sin(t*0.005+i)*3,12,12); });
+     GMH.label(c,"Associative play"); }},
+ "4y": { name:"4 Yr", age:"4 Years", hy:true,
+   milestone:"Cooperative play: organised play with shared rules and roles; imaginary friends; toilet trained.",
+   mnem:"4 = Cooperative (team play)", flag:"No pretend play or peer play by 4 yr",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.ground(c,160); GMH.kid(c,150,160,'smile',0.9); GMH.kid(c,300,160,'smile',0.9);
+     const n=1+Math.floor((t*0.0006)%6); for(let i=0;i<n;i++){ c.fillStyle=i%2?"#3182ce":"#e53e3e"; c.fillRect(217,146-i*14,16,14); }
+     GMH.label(c,"Cooperative play"); }},
+ "5y": { name:"5 Yr", age:"5 Years", hy:true,
+   milestone:"Competitive games; dresses and undresses without help; dry at night; has friends.",
+   mnem:"5 = Competitive games + Self-dressing", flag:"Persistent enuresis with other delays",
+   animate:(c,t)=>{ c.clearRect(0,0,450,180); GMH.ground(c,160);
+     GMH.kid(c,60+((t*0.05)%300),135,'smile',0.6); GMH.kid(c,60+((t*0.04)%300),160,'smile',0.6);
+     GMH.label(c,"Competitive race"); }}
+};
+DOMAINS.social = { label:'😊 Social', title:'Social & Emotional (Ghai)', data: SC_MILESTONES };
+
 
 // Hook into renderCards to launch animation when milestone visible
 const originalRender = renderCards;

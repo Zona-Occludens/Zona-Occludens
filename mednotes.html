@@ -2747,7 +2747,7 @@
         <input id="formMnemonic" type="text" class="w-full mt-1 px-2 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white">
       </div>
       <div>
-        <label class="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400">Etiology / Cause</label>
+        <label class="text-[10px] font-bold uppercase text-slate-500 dark:text-slate-400">ADD-ON / Cause</label>
         <input id="formCauses" type="text" class="w-full mt-1 px-2 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white">
       </div>
       <div>
@@ -4682,6 +4682,227 @@ MASTER_DATA.push(
     pearl:"Shake test for freeze-sensitive vaccines; VVM for heat-sensitive ones. OPV can be stored frozen for long periods." },
 );
 
+// --- PRIMITIVE REFLEXES (Pediatrics · Neuro exam) ---
+MASTER_DATA.push(
+  { id:"refl_moro", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Moro Reflex", alt:"Startle reflex",
+    pts:["Appears: Birth","Disappears: 3–4 months (up to 6 mo)","Elicited by sudden head drop/loud noise → symmetric arm extension-abduction then flexion-adduction"],
+    mnemonic:"Moro: gone by 4 (More-o than 4 months = abnormal)",
+    causes:"Brainstem-mediated startle response",
+    pearl:"Absent at birth → suspect birth injury (Erb's palsy, clavicle fracture) or CNS depression. Persists beyond 6 mo → suggests cerebral palsy. Asymmetric Moro → suspect fracture/palsy on the weak side." },
+
+  { id:"refl_rooting", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Rooting Reflex", alt:null,
+    pts:["Appears: Birth","Disappears: 3–4 months","Stroke cheek/corner of mouth → head turns towards stimulus, mouth opens"],
+    mnemonic:"Root to feed till 4",
+    causes:"Facilitates breastfeeding/latch",
+    pearl:"Weak or absent rooting → poor feeding, consider hypotonia or prematurity." },
+
+  { id:"refl_sucking", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Sucking Reflex", alt:null,
+    pts:["Appears: Birth (present from ~28 wk gestation)","Disappears: ~4 months (becomes voluntary)","Object placed in mouth → rhythmic sucking"],
+    mnemonic:"Suck till 4, then it's your choice",
+    causes:"Brainstem reflex, matures to voluntary control",
+    pearl:"Poor coordination of suck-swallow-breathe in preterm <34 wk is why NG/gavage feeding is needed." },
+
+  { id:"refl_palmar", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Palmar Grasp Reflex", alt:null,
+    pts:["Appears: Birth","Disappears: 3–4 months (up to 6 mo)","Finger placed in palm → strong grasp"],
+    mnemonic:"Palm grips till 4 (or 6)",
+    causes:"Voluntary grasp (palmar grasp of hand-eye coordination) replaces it",
+    pearl:"Persistence beyond 6 mo delays voluntary reach/grasp — seen in cerebral palsy." },
+
+  { id:"refl_plantar_grasp", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Plantar Grasp Reflex", alt:null,
+    pts:["Appears: Birth","Disappears: 9–10 months","Pressure on sole below toes → toes curl/flex"],
+    mnemonic:"Plantar holds till stand-ready (9–10 mo)",
+    causes:"Must disappear before independent standing/walking",
+    pearl:"Persistence beyond 10–12 mo interferes with normal standing and gait." },
+
+  { id:"refl_atnr", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Asymmetric Tonic Neck Reflex (ATNR)", alt:"Fencer's posture",
+    pts:["Appears: Birth (best seen ~2 months)","Disappears: 6 months","Head turned to one side → ipsilateral limbs extend, contralateral limbs flex"],
+    mnemonic:"Fencer fades by 6",
+    causes:"Brainstem reflex, must resolve before midline hand play/rolling",
+    pearl:"Obligatory (fixed) or persistent ATNR beyond 6 mo is a classic early sign of cerebral palsy." },
+
+  { id:"refl_pos_support", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Positive Support Reflex", alt:null,
+    pts:["Appears: Birth","Disappears: 6 weeks – 2 months (up to 3–4 mo)","Held upright with feet touching surface → legs extend, bears some weight"],
+    mnemonic:"Stands briefly, gone by 2",
+    causes:"Precursor reflex, not true standing",
+    pearl:"Not the same as true standing (12 mo) — don't confuse the two on exams." },
+
+  { id:"refl_step", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Placing & Stepping Reflex", alt:null,
+    pts:["Appears: Birth","Disappears: ~2 months (4–6 wk)","Dorsum of foot touched against edge → places foot up and over; held upright and tilted forward → stepping movements"],
+    mnemonic:"Steps stop by 2",
+    causes:"Precursor to voluntary walking (unrelated in mechanism to true gait at 12–15 mo)",
+    pearl:"Absence in a term newborn should raise concern for spinal cord or peripheral nerve injury." },
+
+  { id:"refl_galant", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Galant Reflex", alt:"Trunk incurvation reflex",
+    pts:["Appears: Birth","Disappears: ~2 months (some texts: up to 4–6 mo)","Stroke paraspinal skin one side → trunk curves towards stimulated side"],
+    mnemonic:"Galant goes by 2",
+    causes:"Spinal reflex",
+    pearl:"Persistent Galant beyond infancy has been linked (non-classically) to bedwetting/poor posture in some rehab literature — not core exam content, but occasionally quoted." },
+
+  { id:"refl_landau", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Landau Reflex", alt:null,
+    pts:["Appears: 3 months","Disappears: 12–24 months","Held prone in ventral suspension → head, trunk, and legs extend into a straight line"],
+    mnemonic:"Landau lands at 3, leaves by 2 (years)",
+    causes:"Integrates vestibular, visual and proprioceptive input",
+    pearl:"Absent Landau at the expected age suggests hypotonia or a general motor delay." },
+
+  { id:"refl_parachute", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Parachute Reflex", alt:"Protective/postural reflex",
+    pts:["Appears: 6–9 months","Never disappears (persists lifelong)","Sudden forward tilt while held upright → arms extend forward to break a fall"],
+    mnemonic:"Parachute opens at 6–9, never closes",
+    causes:"Protective postural reflex, not a 'primitive' reflex in the disappearing sense",
+    pearl:"The one reflex on this list that should NOT disappear. Absence by 12 months predicts delayed independent walking and warrants neuro-developmental evaluation." },
+
+  { id:"refl_babinski", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Babinski Sign (Plantar Reflex)", alt:null,
+    pts:["Extensor (upgoing) response: Normal from birth","Converts to flexor (adult, downgoing) pattern: by 12–24 months","Stroking the lateral sole → big toe dorsiflexes, other toes fan out (normal in infancy)"],
+    mnemonic:"Babinski flips by 2",
+    causes:"Reflects an immature, incompletely myelinated corticospinal tract",
+    pearl:"Persistent extensor plantar response beyond 2 years = pathological Babinski = pyramidal (upper motor neuron) tract lesion." },
+
+  { id:"refl_neck_righting", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Neck Righting Reflex", alt:null,
+    pts:["Appears: Birth","Disappears: 6 months","Passive head rotation to one side → whole body (log-rolls) follows in the same direction"],
+    mnemonic:"Neck rights itself away by 6",
+    causes:"Precursor to voluntary, segmental rolling",
+    pearl:"Must disappear before true segmental rolling (trunk rotation) develops around 5–6 months." },
+
+  { id:"refl_dolls_eye", category:"CLIN", sys:"Primitive Reflexes", subject:"Pediatrics",
+    name:"Doll's Eye Reflex (Vestibulo-ocular)", alt:null,
+    pts:["Appears: Birth","Disappears: within days–weeks as visual fixation develops","Head turned → eyes move conjugately in the opposite direction"],
+    mnemonic:"Doll's eyes close (disappear) once real fixation opens",
+    causes:"Vestibulo-ocular reflex, present before cortical visual fixation matures",
+    pearl:"In an unconscious patient of any age, an intact doll's eye reflex implies an intact brainstem — a completely different clinical context from the newborn exam." },
+);
+
+// --- OSSIFICATION CENTRES (Forensic Medicine · Age Estimation) ---
+MASTER_DATA.push(
+  { id:"oss_intro", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Ossification Centres — Overview", alt:"Medicolegal age estimation",
+    pts:["Primary centres: appear in utero (diaphysis of long bones) — present at birth for most bones","Secondary centres: appear after birth (epiphyses) — used to estimate age in living/dead","Fusion (epiphyseal union): occurs at puberty/young adulthood — confirms attainment of a specific age (e.g. 18, 21, 25)"],
+    mnemonic:"Appearance = APPROXIMATE age; Fusion = CONFIRMED minimum age",
+    causes:"X-ray of wrist, elbow, knee, iliac crest and clavicle used in court for disputed-age cases",
+    pearl:"Radiological age estimation is accepted in Indian courts for juvenility (POCSO/JJ Act) and for confirming adulthood in marriage/employment/passport disputes." },
+
+  // --- A) FETAL / PRIMARY CENTRES (viability & gestational age of stillbirth) ---
+  { id:"oss_calcaneum", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Calcaneum — Ossification Centre", alt:"Earliest ossification centre in the fetus",
+    pts:["Appears: 3rd month IU (some texts: 5th–6th month)","Location: tarsal bone of the foot"],
+    mnemonic:"Calcaneum = Cradle of ossification (earliest of all)",
+    causes:"First bone in the body to show a visible ossification centre",
+    pearl:"Used medico-legally to confirm that a recovered fetus is beyond the very earliest stages of gestation." },
+
+  { id:"oss_talus", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Talus — Ossification Centre", alt:null,
+    pts:["Appears: 7th month IU","Location: tarsal bone of the foot"],
+    mnemonic:"Talus at 7 (7th month)",
+    causes:"Second tarsal bone to ossify",
+    pearl:"Presence of talus centre without femoral/tibial centres suggests a fetus of roughly 7 months gestation." },
+
+  { id:"oss_femur_lower", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Lower End of Femur — Ossification Centre", alt:"Beclard's Nucleus",
+    pts:["Appears: 36th week IU","Diameter ≥5 mm at term is classically considered a sign of a mature/viable fetus","Single most important fetal centre in forensic practice"],
+    mnemonic:"Beclard's = Born mature (36 wk)",
+    causes:"Distal femoral epiphysis",
+    pearl:"Its presence (Beclard's nucleus, ≥5 mm) is the classical medicolegal marker of fetal maturity/viability — heavily tested in stillbirth/infanticide questions." },
+
+  { id:"oss_tibia_upper", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Upper End of Tibia — Ossification Centre", alt:null,
+    pts:["Appears: 40th week IU (at term/birth)","Location: proximal tibial epiphysis"],
+    mnemonic:"Upper tibia = Term timing (40 wk)",
+    causes:"Second most-quoted fetal maturity marker after Beclard's nucleus",
+    pearl:"Used together with the lower femoral centre to confirm a full-term birth." },
+
+  { id:"oss_cuboid", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Cuboid — Ossification Centre", alt:null,
+    pts:["Appears: 40th week IU (at term)","Location: tarsal bone of the foot"],
+    mnemonic:"Cuboid = Complete-term",
+    causes:"Third tarsal centre, appears at full term",
+    pearl:"Absence of the cuboid centre with presence of talus/calcaneum suggests a pre-term (not full-term) fetus." },
+
+  // --- B) UPPER LIMB SECONDARY CENTRES (elbow = CRITOE) ---
+  { id:"oss_critoe", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Elbow Ossification — CRITOE", alt:"Order and age of appearance",
+    pts:["C — Capitellum: 1 year","R — Radial head: 3–5 years","I — Internal (medial) epicondyle: 5–7 years","T — Trochlea: 9–10 years","O — Olecranon: 9–11 years","E — External (lateral) epicondyle: 11–13 years"],
+    mnemonic:"CRITOE — Come, Rest, In This Old Elbow",
+    causes:"Six secondary centres of the elbow, ossify in this fixed sequence",
+    pearl:"If the medial epicondyle appears to ossify out of sequence (i.e. after the trochlea), suspect it is actually an AVULSED medial epicondyle fracture, not a normal ossification centre — classic pediatric radiology trap." },
+
+  { id:"oss_humerus_head", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Head of Humerus — Ossification Centre", alt:null,
+    pts:["Appears: at birth (shortly after)","Fuses with shaft: ~18–20 years"],
+    mnemonic:"Humeral head hatches at birth",
+    causes:"Proximal humeral epiphysis",
+    pearl:"One of the few secondary centres present right at birth." },
+
+  { id:"oss_carpals", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Carpal Bones — Order & Age of Ossification", alt:"Wrist bone ages",
+    pts:["Capitate & Hamate: birth – 3 months","Triquetrum: 2–3 years","Lunate: 2–4 years","Scaphoid, Trapezium, Trapezoid: 4–6 years","Pisiform: 8–12 years"],
+    mnemonic:"Some Lovers Try Positions That They Can't Handle (order) — Capitate/Hamate FIRST, Pisiform LAST",
+    causes:"8 carpal bones, ossify sequentially through childhood",
+    pearl:"Pisiform is both the last carpal to ossify AND the only one that is a sesamoid bone (within the flexor carpi ulnaris tendon)." },
+
+  { id:"oss_clavicle", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Medial (Sternal) End of Clavicle — Ossification Centre", alt:"LAST bone in the body to fuse",
+    pts:["Appears: 18–20 years","Fuses: ~25 years","Only long bone whose primary centre appears BEFORE the medial epiphysis (unusual pattern)"],
+    mnemonic:"Clavicle closes the case — last to fuse, at 25",
+    causes:"Medial clavicular epiphysis",
+    pearl:"The single most important bone in forensic age estimation of adults — its fusion (~25 yr) is used to confirm an individual is unambiguously past legal adulthood (>21 yr) in disputed-age court cases." },
+
+  // --- C) LOWER LIMB SECONDARY CENTRES ---
+  { id:"oss_femur_head", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Head of Femur — Ossification Centre", alt:null,
+    pts:["Appears: 6 months – 1 year","Fuses with shaft: ~18 years"],
+    mnemonic:"Femoral head by first birthday",
+    causes:"Proximal femoral epiphysis",
+    pearl:"Delayed appearance is a classic finding in developmental dysplasia of the hip (DDH) and hypothyroidism." },
+
+  { id:"oss_gt_femur", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Greater Trochanter of Femur — Ossification Centre", alt:null,
+    pts:["Appears: 3–4 years","Fuses: ~17–18 years"],
+    mnemonic:"Greater trochanter: 3–4, like a toddler standing tall",
+    causes:"Secondary centre of the proximal femur",
+    pearl:"Useful landmark on hip X-rays in preschool-age children." },
+
+  { id:"oss_patella", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Patella — Ossification Centre", alt:null,
+    pts:["Appears: 3–5 years","Usually ossifies from a single centre (may be multiple — bipartite patella variant)"],
+    mnemonic:"Patella: pre-school (3–5)",
+    causes:"Largest sesamoid bone in the body",
+    pearl:"A bipartite patella (extra ossification centre that fails to fuse) can mimic a fracture on X-ray — a classic radiology trap." },
+
+  { id:"oss_tibial_tubercle", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Tubercle of Tibia — Ossification Centre", alt:null,
+    pts:["Appears: 10–12 years","Fuses: ~16–18 years"],
+    mnemonic:"Tibial tubercle: tween years (10–12)",
+    causes:"Secondary centre, site of patellar tendon insertion",
+    pearl:"Traction apophysitis at this exact site and age = Osgood-Schlatter disease." },
+
+  // --- D) PUBERTY / ADULT AGE MARKERS ---
+  { id:"oss_iliac_crest", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Iliac Crest — Ossification Centre", alt:"Risser sign in scoliosis staging",
+    pts:["Appears: 15–17 years","Fuses: 21–23 years"],
+    mnemonic:"Iliac crest: mid-teens to early-20s",
+    causes:"Secondary centre along the crest of the ilium",
+    pearl:"Also used clinically as the Risser sign to grade skeletal maturity in adolescent idiopathic scoliosis — fusion signals the growth spurt has ended." },
+
+  // --- E) EPIPHYSEAL FUSION AGES (union) — summary ---
+  { id:"oss_fusion_summary", category:"ANAT", sys:"Ossification Centres", subject:"Forensic Medicine & Toxicology",
+    name:"Epiphyseal Fusion Ages — Summary Table", alt:"Major long bones",
+    pts:["Lower end radius & ulna: 18–20 years","Upper end humerus: 18–20 years","Lower end femur & upper end tibia/fibula: 18–20 years","Iliac crest: 21–23 years","Medial clavicular epiphysis: ~25 years (last bone in the body to fuse)"],
+    mnemonic:"18-20 = most long bones · 21-23 = iliac crest · 25 = clavicle (last)",
+    causes:"Fusion sequence used to estimate a minimum confirmed age",
+    pearl:"Wrist X-ray (radius/ulna fusion) confirms ≥18–20 yr; iliac crest confirms ≥21–23 yr; medial clavicle is the ONLY reliable marker to confirm ≥25 yr — the standard sequence quoted in Modi's and Reddy's Forensic Medicine for disputed-age cases." },
+);
+
 // ============================================================
 // SUBJECTS & MAPPING
 // ============================================================
@@ -4884,7 +5105,7 @@ const testModeLabel = document.getElementById('testModeLabel');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
 const noteForm = document.getElementById('noteForm');
 
-const DATA_VERSION = 12; // bump this number every time you edit MASTER_DATA
+const DATA_VERSION = 15; // bump this number every time you edit MASTER_DATA
 const VERSION_KEY = 'medvault_data_version';
 
 function loadNotes(){
@@ -5201,7 +5422,7 @@ function renderNoteCard(item){
         </div>
         <div class="space-y-1 text-xs border-t border-dashed border-slate-200 dark:border-slate-700/60 pt-2.5 mb-2">
           ${item.mnemonic ? `<div class="flex items-baseline gap-2"><span class="text-[10px] font-black uppercase text-amber-600 dark:text-amber-400 w-16 flex-shrink-0">Mnemonic</span><span class="font-mono text-slate-700 dark:text-slate-300 font-bold bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200/50 dark:border-amber-900/50">${escapeHtml(item.mnemonic)}</span></div>` : ''}
-          ${item.causes ? `<div class="flex items-baseline gap-2"><span class="text-[10px] font-black uppercase text-slate-400 w-16 flex-shrink-0">Etiology</span><span class="text-slate-600 dark:text-slate-300 font-medium">${escapeHtml(item.causes)}</span></div>` : ''}
+          ${item.causes ? `<div class="flex items-baseline gap-2"><span class="text-[10px] font-black uppercase text-slate-400 w-16 flex-shrink-0">ADD-ON</span><span class="text-slate-600 dark:text-slate-300 font-medium">${escapeHtml(item.causes)}</span></div>` : ''}
         </div>
       </div>
       ${item.pearl ? `<div onclick="toggleHighlight('${item.id}','pearl')" class="hl-pt ${hlClass} mt-2 p-2.5 rounded-xl border flex items-start justify-between gap-2 ${hl.pearl ? 'bg-amber-100 dark:bg-amber-900/40 border-amber-300 dark:border-amber-700' : 'bg-sky-50/80 dark:bg-sky-950/40 border-sky-100 dark:border-sky-900/50'}">
@@ -5297,29 +5518,33 @@ function renderMilestoneCard(){
         </div>
         <button class="gm-toggle-ref" id="gmToggleRef">Show Quick-Reference Table ▾</button>
         <div class="gm-reference" id="gmReference">
-          <table class="gm-table">
-            <thead><tr><th>Milestone</th><th>Usual Age</th></tr></thead>
-            <tbody>
-              <tr><td>Neck control</td><td>Partial: 3 mo | Complete: 5 mo</td></tr>
-              <tr><td>Feet to mouth</td><td>5 months</td></tr>
-              <tr><td>Rolls over</td><td>5–6 months</td></tr>
-              <tr><td>Sitting with support</td><td>6 months <span class="hy-inline">(tripod position)</span></td></tr>
-              <tr><td>Sitting without support; crawls</td><td>8 months</td></tr>
-              <tr><td>Standing with support</td><td>9 months</td></tr>
-              <tr><td>Creeps</td><td>10 months</td></tr>
-              <tr><td>Pivots, cruises</td><td>10–11 months</td></tr>
-              <tr><td>Standing without support</td><td>12 months</td></tr>
-              <tr><td>Walking with support</td><td>12 months</td></tr>
-              <tr><td>Walking without support</td><td>13–15 months</td></tr>
-              <tr class="gm-table-divider"><td colspan="2">Beyond 1 Year</td></tr>
-              <tr><td>18 months</td><td>Stairs holding rail; runs on level ground; pulls toy with string</td></tr>
-              <tr><td>2 years</td><td>Stairs 2 feet/step (up &amp; down); jumps; kicks a ball</td></tr>
-              <tr><td>3 years</td><td>Stairs — up with alternate feet, <span class="hy-inline">down with 2 feet/step</span>; rides tricycle</td></tr>
-              <tr><td>4 years</td><td>Stairs with alternate feet both ways; hops on one leg</td></tr>
-              <tr><td>5 years</td><td>Skips; stands on one leg &gt; 10 seconds</td></tr>
-            </tbody>
-          </table>
-        </div>
+  <table class="gm-table">
+    <thead><tr><th>Milestone</th><th>Usual Age</th><th>Mnemonic</th></tr></thead>
+    <tbody>
+      <tr><td>Neck control</td><td>Partial: 3 mo | Complete: 5 mo</td><td>3 = Wobbles · 5 = Steady</td></tr>
+      <tr><td>Feet to mouth</td><td>5 months</td><td>5 = Toes to Nose</td></tr>
+      <tr><td>Rolls over</td><td>5–6 months</td><td>Rolls like dice, 5–6</td></tr>
+      <tr><td>Sitting with support</td><td>6 months <span class="hy-inline">(tripod position)</span></td><td>6 = Tripod Sit</td></tr>
+      <tr><td>Sitting without support; crawls</td><td>8 months</td><td>8 = Great — sits alone, crawls</td></tr>
+      <tr><td>Standing with support</td><td>9 months</td><td>9 = pulls to stand, up we rise</td></tr>
+      <tr><td>Creeps</td><td>10 months</td><td>10 = Perfect Creep</td></tr>
+      <tr><td>Pivots, cruises</td><td>10–11 months</td><td>10–11 = Furniture Cruiser</td></tr>
+      <tr><td>Standing without support</td><td>12 months</td><td>12 = Solo Stand</td></tr>
+      <tr><td>Walking with support</td><td>12 months</td><td>12 = One-Hand Walk</td></tr>
+      <tr><td>Walking without support</td><td>13–15 months</td><td>13–15 = First Steps Alone</td></tr>
+      <tr class="gm-table-divider"><td colspan="3">Beyond 1 Year</td></tr>
+      <tr><td>18 months</td><td>Stairs holding rail; runs on level ground; pulls toy with string</td><td>18 = Rail, Run, Rope (3 R's)</td></tr>
+      <tr><td>2 years</td><td>Stairs 2 feet/step (up &amp; down); jumps; kicks a ball</td><td>2 = Two feet per step, both ways</td></tr>
+      <tr><td>3 years</td><td>Stairs — up with alternate feet, <span class="hy-inline">down with 2 feet/step</span>; rides tricycle</td><td>3 = Tricycle + alternate-Up-2feet-Down</td></tr>
+      <tr><td>4 years</td><td>Stairs with alternate feet both ways; hops on one leg</td><td>4 = Fully alternates + hops</td></tr>
+      <tr><td>5 years</td><td>Skips; stands on one leg &gt; 10 seconds</td><td>5 = Skips & Stands 10+ sec (Fully skilled)</td></tr>
+    </tbody>
+  </table>
+  <div class="highlight-box" style="margin-top:10px;">
+    <strong>🔑 High-Yield Anchor Rule</strong>
+    <p style="margin-top:4px;">3 = Neck control · 6 = Sits (with support) · 9 = Stands (with support) · 12 = Walks (with support) — the classic "3-6-9-12" ladder examiners love to test.</p>
+  </div>
+</div>
       </div>
     </article>`;
 }

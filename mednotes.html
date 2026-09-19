@@ -2682,6 +2682,7 @@
     <button onclick="setCategoryFilter('CANCER')" id="cat-CANCER" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-rose-600 dark:text-rose-400 transition whitespace-nowrap">💊 Cancer Drugs</button>
     <button onclick="setCategoryFilter('UPDATE')" id="cat-UPDATE" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-orange-600 dark:text-orange-400 transition whitespace-nowrap">🚨 Updates</button>
     <button onclick="setCategoryFilter('MILESTONE')" id="cat-MILESTONE" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-teal-600 dark:text-teal-400 transition whitespace-nowrap">👶 Milestones</button>
+    <button onclick="setCategoryFilter('VAX')" id="cat-VAX" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-blue-600 dark:text-blue-400 transition whitespace-nowrap">💉 Vaccines</button>
     <button onclick="setCategoryFilter('NOTE')" id="cat-NOTE" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-emerald-600 dark:text-emerald-400 transition whitespace-nowrap">📝 My Notes</button>
     <button onclick="setCategoryFilter('BOOKMARKS')" id="cat-BOOKMARKS" class="cat-btn px-3 py-1.5 rounded-lg border bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-amber-600 dark:text-amber-400 transition whitespace-nowrap">⭐ Saved (<span id="bookmarkCount">0</span>)</button>
   </div>
@@ -4532,6 +4533,68 @@ MASTER_DATA.push(
 );
 
 // ============================================================
+// VACCINATION — UIP / NIS (category: VAX)
+// ============================================================
+MASTER_DATA.push(
+  { id:"vax_bcg", category:"VAX", sys:"UIP · Birth", subject:"Community Medicine", name:"BCG", alt:"Live attenuated · Freeze-dried",
+    pts:["When: Birth (up to 1 yr)","Dose: 0.1 mL (0.05 mL if <1 month) — Intradermal","Site: Left upper arm","Reconstituted vial: discard after 4 hr","Side effects: papule at 2–3 wk → ulcer → scar by 12 wk; axillary lymphadenitis (BCG-itis)"],
+    mnemonic:"BCG = Birth, Cutaneous (ID), Green-light scar", causes:"Live attenuated M. bovis",
+    pearl:"Scar = successful take. No repeat dose if no scar. Not protective against adult pulmonary TB, but prevents miliary TB/TBM in children." },
+  { id:"vax_hepb0", category:"VAX", sys:"UIP · Birth", subject:"Community Medicine", name:"Hepatitis B (Birth dose)", alt:"Recombinant HBsAg",
+    pts:["When: Within 24 hrs of birth","Dose: 0.5 mL — IM","Site: Left anterolateral thigh","Later doses: through Pentavalent at 6, 10, 14 wk"],
+    mnemonic:"Hep B = 24 hr", causes:"Prevents perinatal transmission",
+    pearl:"Birth dose is the key step to stop vertical transmission. Never gluteal — poor immunogenicity." },
+  { id:"vax_opv", category:"VAX", sys:"UIP · Birth → 2 yr", subject:"Community Medicine", name:"OPV (bOPV)", alt:"Oral polio vaccine",
+    pts:["When: 0 dose (within 15 days), 6, 10, 14 wk; booster 16–24 mo","Dose: 2 drops — Oral","Site: Oral","Side effect: VAPP (rare); check VVM before use"],
+    mnemonic:"OPV: 0-6-10-14 + booster", causes:"Live attenuated Sabin",
+    pearl:"OPV-0 = zero dose. Heat-sensitive: VVM stage 3–4 = discard. VAPP risk highest with 1st dose." },
+  { id:"vax_penta", category:"VAX", sys:"UIP · 6–14 wk", subject:"Community Medicine", name:"Pentavalent (DPT + HepB + Hib)", alt:"Freeze-sensitive",
+    pts:["When: 6, 10, 14 wk","Dose: 0.5 mL — IM","Site: Left anterolateral mid-thigh","Side effects: fever, local pain/swelling; rare: persistent crying >3 hr, seizure, HHE","Contraindication: encephalopathy within 7 days of previous dose"],
+    mnemonic:"Penta = 5 in 1: D-P-T-HepB-Hib", causes:"Whole-cell pertussis causes most reactions",
+    pearl:"Do the shake test if freezing is suspected. Never give in the gluteal region. Hib prevents meningitis and epiglottitis." },
+  { id:"vax_rota", category:"VAX", sys:"UIP · 6–14 wk", subject:"Community Medicine", name:"Rotavirus vaccine", alt:"Oral live attenuated",
+    pts:["When: 6, 10, 14 wk","Dose: 5 drops — Oral","Side effect: intussusception (small risk)","Live vaccine"],
+    mnemonic:"Rota = 3 doses, 3 drops-ish (5 drops)", causes:"Rotavirus diarrhoea prevention",
+    pearl:"Intussusception risk highest in the 1st week after dose 1. Contraindicated in prior intussusception and SCID." },
+  { id:"vax_fipv", category:"VAX", sys:"UIP · 6 wk → 9 mo", subject:"Community Medicine", name:"fIPV (Fractional IPV)", alt:"Injectable polio · intradermal",
+    pts:["When: 6 wk, 14 wk (+ 3rd dose at 9–12 mo)","Dose: 0.1 mL — Intradermal (1/5th of full dose)","Site: Right upper arm","Inactivated: no VAPP"],
+    mnemonic:"fIPV: Fractional, Fifth of dose, Right arm", causes:"Inactivated Salk-type",
+    pearl:"Fractional dose is used to stretch supply and gives comparable immunity. Needs an intradermal wheal." },
+  { id:"vax_pcv", category:"VAX", sys:"UIP · 6 wk → 9 mo", subject:"Community Medicine", name:"PCV (Pneumococcal conjugate)", alt:"PCV13 / PCV10",
+    pts:["When: 6 wk, 14 wk; booster at 9 mo","Dose: 0.5 mL — IM","Site: Right anterolateral thigh","Side effects: fever, local reaction"],
+    mnemonic:"PCV = 2 + 1 (two primary + one booster)", causes:"S. pneumoniae",
+    pearl:"2+1 schedule. Conjugate vaccines induce T-cell dependent immunity even in <2 yr." },
+  { id:"vax_mr", category:"VAX", sys:"UIP · 9 mo → 2 yr", subject:"Community Medicine", name:"MR (Measles-Rubella)", alt:"Live attenuated",
+    pts:["When: 9–12 mo (MR-1); 16–24 mo (MR-2)","Dose: 0.5 mL — Subcutaneous","Site: Right upper arm","Reconstituted vial: discard after 4 hr","Side effects: fever/rash 6–12 days after; toxic shock syndrome if contaminated vial"],
+    mnemonic:"MR = 9 and 16 · Right arm · SC", causes:"Live attenuated",
+    pearl:"Toxic shock syndrome = reused or contaminated reconstituted vial. Fever and rash appear in the 2nd week." },
+  { id:"vax_je", category:"VAX", sys:"UIP · 9 mo → 2 yr", subject:"Community Medicine", name:"JE (SA 14-14-2)", alt:"Live attenuated · endemic districts",
+    pts:["When: 9–12 mo (JE-1); 16–24 mo (JE-2)","Dose: 0.5 mL — Subcutaneous","Site: Left upper arm","Only in endemic districts"],
+    mnemonic:"JE = Left arm (with BCG); MR = Right arm", causes:"Culex-borne flavivirus",
+    pearl:"Vaccine strain: SA 14-14-2 (live attenuated, Chinese). Amplifier host: pig; reservoir: Ardeid birds." },
+  { id:"vax_dpt_b", category:"VAX", sys:"UIP · 16 mo → 6 yr", subject:"Community Medicine", name:"DPT Boosters", alt:"DPT-B1 and DPT-B2",
+    pts:["When: 16–24 mo (B1); 5–6 yr (B2)","Dose: 0.5 mL — IM","Site: Thigh in toddlers, deltoid at 5–6 yr","Side effects: fever, local swelling; Arthus-type reaction with repeated boosters"],
+    mnemonic:"DPT-B: 16-24 mo and 5-6 yr", causes:"Waning pertussis and diphtheria immunity",
+    pearl:"Pentavalent is not used after 1 yr. From 5 yr onwards, DPT is replaced by Td at 10 and 16 yr." },
+  { id:"vax_td", category:"VAX", sys:"UIP · Adolescents & Pregnancy", subject:"Community Medicine", name:"Td (Tetanus-diphtheria)", alt:"Replaced TT in 2018",
+    pts:["When: 10 yr and 16 yr","Pregnancy: Td-1 early, Td-2 ≥4 wk later; only 1 booster if vaccinated in last 3 yr","Dose: 0.5 mL — IM","Site: Upper arm"],
+    mnemonic:"Td: 10 and 16 (adolescent), Td-1 + Td-2 (pregnancy)", causes:"Maternal and neonatal tetanus elimination",
+    pearl:"Td replaced TT to add diphtheria cover. Give in the deltoid. Freeze-sensitive." },
+  { id:"vax_vita", category:"VAX", sys:"UIP · Supplement", subject:"Community Medicine", name:"Vitamin A (not a vaccine)", alt:"Given with immunization visits",
+    pts:["9 mo: 1 lakh IU (with MR-1)","16–18 mo: 2 lakh IU, then every 6 months up to 5 yr","Route: Oral","Side effects of overdose: bulging fontanelle, vomiting"],
+    mnemonic:"1 lakh at 9, then 2 lakh every 6 months", causes:"Prevents xerophthalmia",
+    pearl:"Total 9 doses. The first is given with MR-1." },
+  { id:"vax_site", category:"VAX", sys:"UIP · Quick Maps", subject:"Community Medicine", name:"Site Map of UIP Vaccines", alt:"Where to give what",
+    pts:["Left upper arm: BCG, JE","Right upper arm: fIPV, MR","Left anterolateral thigh: Hep B birth, Pentavalent","Right anterolateral thigh: PCV","Oral: OPV, Rotavirus"],
+    mnemonic:"B-J Left arm, F-M Right arm; Penta Left thigh, PCV Right thigh", causes:"Standardised sites allow easy attribution of adverse events",
+    pearl:"Never inject in the gluteus. Use separate limbs or ≥1 inch apart when two IM vaccines are given together." },
+  { id:"vax_cold", category:"VAX", sys:"UIP · Quick Maps", subject:"Community Medicine", name:"Freeze-sensitive vs Heat-sensitive", alt:"Cold chain",
+    pts:["Freeze-sensitive (alum-adsorbed / inactivated): Hep B, Pentavalent, DPT, Td, PCV, IPV — shake test","Heat-sensitive: OPV, BCG, MR, JE — use VVM","Storage: 2–8 °C in ILR; deep freezer for OPV storage","Never freeze: diluent"],
+    mnemonic:"Alum = Avoid freezing", causes:"Cold-chain principles",
+    pearl:"Shake test for freeze-sensitive vaccines; VVM for heat-sensitive ones. OPV can be stored frozen for long periods." },
+);
+
+// ============================================================
 // SUBJECTS & MAPPING
 // ============================================================
 const SUBJECTS = [
@@ -4573,7 +4636,7 @@ const CATEGORY_SUBJECT_OVERRIDE = {
   MICRO: "Microbiology", PATH: "Pathology", CANCER: "Pharmacology",
   UPDATE: "Community Medicine", MILESTONE: "Pediatrics", TRIAD: "General Medicine",
   MNEM: "General Medicine", CLIN: "General Medicine", FORMULA: "General Medicine",
-  PLAN: "General Medicine", NOTE: "General Medicine"
+  PLAN: "General Medicine", NOTE: "General Medicine", VAX: "Community Medicine",
 };
 
 function normalizeItem(item){
@@ -4731,7 +4794,7 @@ const testModeLabel = document.getElementById('testModeLabel');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
 const noteForm = document.getElementById('noteForm');
 
-const DATA_VERSION = 3; // bump this number every time you edit MASTER_DATA
+const DATA_VERSION = 4; // bump this number every time you edit MASTER_DATA
 const VERSION_KEY = 'medvault_data_version';
 
 function loadNotes(){
@@ -5175,6 +5238,7 @@ function getCategoryBadgeColor(cat) {
     case 'UPDATE': return 'bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-300';
     case 'MILESTONE': return 'bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300';
     case 'NOTE': return 'bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200';
+    case 'VAX': return 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300';
     default: return 'bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300';
   }
 }

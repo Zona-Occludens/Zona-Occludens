@@ -866,8 +866,6 @@
       </div>
       
       <div class="nav-menu">
-        <div class="nav-section">Vault</div>
-        <div class="nav-item" onclick="navTo('mednotes', this)" style="color:var(--green); font-weight:600; background:rgba(16,185,129,0.08);"><i class="fas fa-notes-medical w-5 text-center"></i> MedNotes Vault</div>
         <div class="nav-section">Dashboard</div>
         <div class="nav-item active" onclick="navTo('dashboard', this)"><i class="fas fa-chart-pie w-5 text-center"></i> Overview</div>
         
@@ -889,10 +887,11 @@
         <div class="nav-item" onclick="navTo('error-log', this)"><i class="fas fa-triangle-exclamation w-5 text-center"></i> Mistake Notebook</div>
         
         <div class="nav-section">Community & Resources</div>
-        <div class="nav-item" onclick="navTo('revision-schedule', this)" style="color:var(--orange); font-weight:600;"><i class="fas fa-calendar-alt w-5 text-center"></i> 40-Day Final Sprint</div>
+        <div class="nav-item" onclick="navTo('revision-schedule', this)" style="color:var(--orange); font-weight:600;"><i class="fas fa-calendar-alt w-5 text-center"></i> 90-Day Revision Schedule</div>
         <div class="nav-item" onclick="navTo('syllabus', this)"><i class="fas fa-scale-balanced w-5 text-center"></i> Syllabus & Weightage</div>
 
-
+        <div class="nav-section">Vault</div>
+        <div class="nav-item" onclick="navTo('mednotes', this)" style="color:var(--green); font-weight:600;"><i class="fas fa-notes-medical w-5 text-center"></i> MedNotes Vault</div>
       </div>
       <button onclick="resetMyData()" 
         style="margin:0 16px 8px 16px; width:calc(100% - 32px); padding:8px 10px; font-size:13px; background:red; color:white; font-weight:700; cursor:pointer; border:none; border-radius:8px;">
@@ -1168,46 +1167,46 @@
           <div class="planner-grid" id="plannerContainer"></div>
         </div>
 
-        <!-- ================= 40-DAY FINAL SPRINT SCHEDULE ================= -->
+        <!-- ================= 90-DAY REVISION SCHEDULE ================= -->
         <div id="page-revision-schedule" class="page">
           <div class="glass-card" style="margin-top: 24px; border-left: 4px solid var(--orange);">
-              <h2 class="h2-title"><i class="fas fa-calendar-alt mr-2 text-orange-400"></i> 40-Day Final Sprint Schedule</h2>
-              <p class="sub-text" style="margin-bottom: 20px;">Calculated from September 22, 2026. The structured blueprint to conquer INICET Nov (Exam: Nov 1, 2026).</p>
+              <h2 class="h2-title"><i class="fas fa-calendar-alt mr-2 text-orange-400"></i> 90-Day Master Revision Schedule</h2>
+              <p class="sub-text" style="margin-bottom: 20px;">Calculated from June 27, 2026. The structured blueprint to conquer NEET PG, INICET & FMGE.</p>
               <div style="display: flex; flex-direction: column; gap: 16px;">
                   <div style="background: rgba(249, 115, 22, 0.05); border: 1px solid rgba(249, 115, 22, 0.18); padding: 16px; border-radius: var(--radius-md);">
                       <div class="flex-between" style="flex-wrap: wrap; margin-bottom: 8px;">
-                          <h3 style="color: var(--orange); font-size: 16px; font-weight: 700; margin: 0;">Round 1 (R1): The Rapid Deep Dive</h3>
-                          <span class="badge" style="background: rgba(249, 115, 22, 0.12); color: var(--orange);">22 Days | Sep 22 — Oct 13, 2026</span>
+                          <h3 style="color: var(--orange); font-size: 16px; font-weight: 700; margin: 0;">Round 1 (R1): The Deep Dive</h3>
+                          <span class="badge" style="background: rgba(249, 115, 22, 0.12); color: var(--orange);">50 Days | May 22 — July 10, 2026</span>
                       </div>
-                      <p style="font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">Starting with high-yield clinical subjects (Medicine, Surgery, OBG, PSM), then Path, Micro, Pharma, Pedia, and short subjects.</p>
+                      <p style="font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">Starting with Surgery, OBG, PSM, Path, Micro, Pharma, Medicine, Biochem and Pedia followed by other subjects</p>
                       <ul style="list-style: disc inside; margin-left: 1rem; font-size: 13px; color: var(--text-muted); line-height: 1.6;">
-                          <li><strong style="color:var(--text-main);">Core Revision:</strong> Focused review from primary source, skipping low-yield minutiae.</li>
-                          <li><strong style="color:var(--text-main);">Mandatory PYQs:</strong> Strict completion of last 10 years' PYQs for each subject.</li>
-                          <li><strong style="color:var(--text-main);">Testing:</strong> 1-2 SWTs (Complete Syllabus) every 2-3 days and 1 GT every 8 days.</li>
+                          <li><strong style="color:var(--text-main);">Core Revision:</strong> Comprehensive review from primary source.</li>
+                          <li><strong style="color:var(--text-main);">Mandatory PYQs:</strong> Strict completion of last 10 years' PYQs.</li>
+                          <li><strong style="color:var(--text-main);">Testing:</strong> 1-2 SWTs (Complete Syllabus) every 3 days and 1 GT every 10 days.</li>
                       </ul>
                   </div>
                   <div style="background: rgba(249, 115, 22, 0.05); border: 1px solid rgba(249, 115, 22, 0.18); padding: 16px; border-radius: var(--radius-md);">
                       <div class="flex-between" style="flex-wrap: wrap; margin-bottom: 8px;">
-                          <h3 style="color: var(--orange); font-size: 16px; font-weight: 700; margin: 0;">Round 2 (R2): Consolidation & Weakness Fix</h3>
-                          <span class="badge" style="background: rgba(249, 115, 22, 0.12); color: var(--orange);">10 Days | Oct 14 — Oct 23, 2026</span>
+                          <h3 style="color: var(--orange); font-size: 16px; font-weight: 700; margin: 0;">Round 2 (R2): Consolidation</h3>
+                          <span class="badge" style="background: rgba(249, 115, 22, 0.12); color: var(--orange);">25 Days | July 11 — Aug 5, 2026</span>
                       </div>
                       <p style="font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">Focus on revision quality, mixed Qs, and balancing weak subjects with high-yield phases.</p>
                       <ul style="list-style: disc inside; margin-left: 1rem; font-size: 13px; color: var(--text-muted); line-height: 1.6;">
-                          <li><strong style="color:var(--text-main);">Consolidation:</strong> Active recall and incremental review from your own notes.</li>
-                          <li><strong style="color:var(--text-main);">Mock Integration:</strong> 1 GT + 3 SWTs every week.</li>
-                          <li><strong style="color:var(--text-main);">Weakness Fix:</strong> Target negative topics from your Mistake Notebook in daily micro-sessions.</li>
+                          <li><strong style="color:var(--text-main);">Consolidation:</strong> Active recall and incremental review.</li>
+                          <li><strong style="color:var(--text-main);">Mock Integration:</strong> 1 GT + 2 SWTs every week.</li>
+                          <li><strong style="color:var(--text-main);">Weakness Fix:</strong> Target negative topics in daily micro-sessions.</li>
                       </ul>
                   </div>
                   <div style="background: rgba(249, 115, 22, 0.05); border: 1px solid rgba(249, 115, 22, 0.18); padding: 16px; border-radius: var(--radius-md);">
                       <div class="flex-between" style="flex-wrap: wrap; margin-bottom: 8px;">
                           <h3 style="color: var(--orange); font-size: 16px; font-weight: 700; margin: 0;">Round 3 (R3): Lock & Polish</h3>
-                          <span class="badge" style="background: rgba(249, 115, 22, 0.12); color: var(--orange);">8 Days | Oct 24 — Oct 31, 2026</span>
+                          <span class="badge" style="background: rgba(249, 115, 22, 0.12); color: var(--orange);">15 Days | Aug 6 — Aug 21, 2026</span>
                       </div>
-                      <p style="font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">Final lock-in phase with sharp MCQ sessions, active memory testing, and rapid recall drills. Reserve the last day for rest and light revision.</p>
+                      <p style="font-size: 13px; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">Final lock-in phase with sharp MCQ sessions, active memory testing, and rapid recall drills.</p>
                       <ul style="list-style: disc inside; margin-left: 1rem; font-size: 13px; color: var(--text-muted); line-height: 1.6;">
-                          <li><strong style="color:var(--text-main);">High-Yield Focus:</strong> Only top flagged concepts, PYQs, and image-based questions.</li>
-                          <li><strong style="color:var(--text-main);">Rapid Revision:</strong> Short, frequent cycles with self-assessment (RR Notes / your notes).</li>
-                          <li><strong style="color:var(--text-main);">Confidence Calibration:</strong> Review only what boosts accuracy and speed. No new topics.</li>
+                          <li><strong style="color:var(--text-main);">High-Yield Focus:</strong> Only top flagged concepts and PYQs.</li>
+                          <li><strong style="color:var(--text-main);">Rapid Revision:</strong> Short, frequent cycles with self-assessment.</li>
+                          <li><strong style="color:var(--text-main);">Confidence Calibration:</strong> Review only what boosts accuracy and speed.</li>
                       </ul>
                   </div>
               </div>
@@ -4767,7 +4766,7 @@ if (ctxT) {
     // ============================================================
     function applyInicetNovemberSchedule() {
       // 1. Check if schedule already applied (using a marker on today's date)
-      const markerDate = '2026-09-22';
+      const markerDate = '2026-09-10';
       if (state.planner[markerDate] && state.planner[markerDate].notes === 'INI-CET_SCHEDULE_APPLIED') {
         console.log("INI-CET schedule already applied. Skipping.");
         return;
@@ -4789,7 +4788,7 @@ if (ctxT) {
       ];
 
       // 3. Start from Sep 10, 2026
-      const startDate = new Date('2026-09-22T00:00:00');
+      const startDate = new Date('2026-09-10T00:00:00');
       let currentDate = new Date(startDate);
 
       const subjectMap = {
@@ -4837,19 +4836,19 @@ if (ctxT) {
 
       // 6. Handle the 5 GTs (1 every 10 days starting from Sep 10)
       for (let i = 1; i <= 5; i++) {
-  const gtDate = new Date('2026-09-22T00:00:00');
-  gtDate.setDate(gtDate.getDate() + (i * 8)); // GT on day 8, 16, 24, 32, 40
+        const gtDate = new Date('2026-09-10T00:00:00');
+        gtDate.setDate(gtDate.getDate() + (i * 10)); // Day 10, 20, 30, 40, 50
         const dStr = getLocalDateString(gtDate);
         ensureDayExists(dStr);
         state.planner[dStr].targets.push({ text: `🏆 GRAND TEST #${i}`, done: false });
       }
 
       // 7. Mark as applied to prevent duplicate runs
-      if (state.planner['2026-09-22']) {
-  state.planner['2026-09-22'].notes = 'INI-CET_SCHEDULE_APPLIED';
+      if (state.planner['2026-09-10']) {
+        state.planner['2026-09-10'].notes = 'INI-CET_SCHEDULE_APPLIED';
       }
 
-      console.log("INI-CET Schedule applied successfully from Sep 22 to Oct 31.");
+      console.log("INI-CET Schedule applied successfully from Sep 10 to Oct 31.");
     }
   </script>
 </body>
